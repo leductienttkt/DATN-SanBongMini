@@ -1,0 +1,27 @@
+<div class="row block-shop-feed-item2 padding-l div-item">
+  <div class="col-md-4 shop_image">
+    <div class="row shop_width">
+      <%= link_to dashboard_pitch_path(pitch) do %>
+        <%= image_tag pitch.avatar.url, class: "image-shop-show" %>
+      <% end %>  
+    </div>
+  </div>
+  <div class="col-md-8 shop_text">
+    <div class="row shop-manager-margin-left-right">
+      <h3 class="pitch-name-small">
+        <%= link_to pitch.name, dashboard_pitch_path(pitch) %>
+      </h3>
+      <%= render "shared/pitch_status_label", pitch: pitch %>
+      <input id="pitch-average-rating" type="number"
+        class="rating-loading star-rating" data-size="sm"
+        value="<%= pitch.averate_rating %>">
+      <div class="description quote", title="<%= pitch.description %>"><p>
+        <%= truncate(pitch.description, length: Settings.max_description) %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-50">
+    <div class="col-lg-12">
+    </div>
+  </div>
+</div>

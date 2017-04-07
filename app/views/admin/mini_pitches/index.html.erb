@@ -1,0 +1,38 @@
+<% provide :title, t("common.all_products") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
+      <table class="table table-striped table-hover table-bordered">
+        <thead class="">
+          <tr>
+            <th><%= t "common.number" %></th>
+            <th><%= t "dashboard.shops.products.name" %></th>
+            <th><%= t "dashboard.shops.products.image" %></th>
+            <th><%= t "description" %></th>
+            <th><%= t "dashboard.shops.products.price" %></th>
+            <th><%= t "dashboard.shops.new.shop" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @mini_pitches.each_with_index do |mini_pitch, index| %>
+            <tr>
+              <td><%= increase_one index %></td>
+              <td><%= mini_pitch.name %></td>
+              <td>
+                <div class="search-user-image">
+                  <%= image_tag mini_pitch.image.url, class: "thumbnail" %>
+                </div>
+              </td>
+              <td><%= mini_pitch.description %></td>
+              <td><%= format_price mini_pitch.price %></td>
+              <td><%= mini_pitch.pitch_name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-12 text-center">
+      <%= paginate @mini_pitches, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

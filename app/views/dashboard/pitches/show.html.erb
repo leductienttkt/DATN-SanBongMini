@@ -1,0 +1,117 @@
+<div class="block-shop-header clearfix">
+  <div class="shop-cover media-margin-shop-top">
+    <h2 class="row_h2">
+      <%= @pitch.name %>
+    </h2>
+    <%= image_tag @pitch.cover_image.url, class: "defaut-pic-cover" %>
+    <div class="shop-info-wrapper">
+      <div class="shop-avatar-wrapper row">
+        <div class="col-sm-3 col-xs-3 show-shop-avatar">
+          <%= image_tag @pitch.avatar.url, class: "avatar igm245", 
+            id: "img-avatar" %>
+          <%= simple_form_for [:dashboard, @pitch], html: {id: "form_id"} do |f| %>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <%= f.file_field :avatar, onchange: "this.form.submit();",
+                    class: "glyphicon glyphicon-camera wh change-picture" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-12 shop-nav-wrapper">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-5 col-xs-offset-3 col-xs-5">
+          <div class="row shop-basic-info margin_top_shop">
+            <h4 class="title">
+              <%= @pitch.name %>
+              <%= render "shared/pitch_status_label", pitch: @pitch %>
+            </h4>
+            <h4>
+              <%= link_to t("dashboard.order.view_order_list"),
+                "dashboard_shop_orders_path(@shop.id)",
+                class: "btn btn-theme width_btn" %>
+              <%= link_to t("dashboard.order.view_history_orders"),
+                "dashboard_shop_order_managers_path(@shop.id)",
+                class: "btn btn-theme" %>
+            </h4>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-5">
+          <div class="panel panel-info shop_user">
+            <div class="panel-heading">
+              <%= t "common.shop_managers" %>
+            </div>
+            <div class="shop_user-own">
+              <%= link_to user_path(@user.id), class: "user-item-image" do %>
+                <%= image_tag @user.avatar.url, alt: @user.name %>
+                <p><strong><%= t "shop_owner"%></strong><%= @user.name %></p>
+              <% end %>
+            </div>
+            <div class="panel-footer">
+              <%= link_to t("change_shop_owner"), "#",
+                class: "btn btn-default btn-block",
+                data: {toggle: "modal", target: "#shop-manager-modal"} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="margin-for-shopinfo">
+    <table class="table table-striped table-inverse padding-102">
+      <tr>
+        <td class="for-td">
+          <strong><%= t "shop_name" %></strong><%= @pitch.name %>
+        </td>
+        <td class="for-td">
+          <strong><%= t "time_auto_reject" %></strong>
+          <%= l @pitch.time_auto_reject, format: :short_time %>
+          <%= t "minutes" %>
+        </td>
+        <td class="for-td">
+          <strong><%= t "number_product" %></strong><%= @pitch.mini_pitches.size %>
+        </td>
+        <td class="for-td">
+          <%= link_to t(".edit"), edit_dashboard_pitch_path(@pitch),
+            class: "btn btn-success pull-right margin_right_10px" %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="block-shop-header clearfix">
+  <div>
+  <h2 class="section_title margin_right_15px row_h2">
+    <div class="btn_view_all_wrapper pull-right">
+      <%= link_to t("common.create_button"),
+        "new_dashboard_shop_product_path(@shop)",
+        class: "btn btn_view_all btn-warning" %>
+    </div>
+    <% if @mini_pitches.any? %>
+      <%= t ".has_products" %>
+    <% else %>
+      <%= t ".no_product" %>
+    <% end %>
+  </h2>
+  </div>
+  <div class="box_pro">
+    <%= render "mini_pitches" if @mini_pitches.any? %>
+  </div>
+</div>
+
+<div id="shop-manager-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"> 
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

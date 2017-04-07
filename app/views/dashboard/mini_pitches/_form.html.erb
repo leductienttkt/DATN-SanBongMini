@@ -1,0 +1,38 @@
+<%= simple_form_for [:dashboard, @pitch, @mini_pitch] do |f| %>
+  <%= render "shared/error_messages", object: @mini_pitch %>
+  <div class="form-group">
+    <%= f.label t "new_product.name" %>
+    <%= f.text_field :name, placeholder: t(".product_name"),
+      error: t(".product_name_error") , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t "new_product.description" %>
+    <%= f.text_area :description, placeholder: t(".product_description"),
+      error: t(".product_description_error"), class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t "new_product.price" %>
+    <%= f.number_field :price, placeholder: t(".product_price"),
+      error: t(".product_price_error"), class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t "new_product.start_hour" %>
+    <%= f.time_select :start_hour,  minute_step: 5 %>
+    <%= f.label t "new_product.end_hour" %>
+    <%= f.time_select :end_hour,  minute_step: 5 %>
+  </div>
+  <div class="form-group">
+    <%= f.input :status, collection: MiniPitch.statuses.keys, selected: :active,
+      label_html: {class: "padding-right-for-button"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label t "new_product.image" %>
+    <%= image_tag @mini_pitch.image.url, class: "avatar padding_top_10px defaut-size" %>
+    <%= f.file_field :image, accept: Settings.pictures.accepted_files,
+      class: "upload_img" %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= link_to t("common.back_button"), :back, class: "btn btn-warning" %>
+  <%= f.submit yield(:submit_button),
+    class: "btn btn-primary space-top-submit" %>
+<% end %>

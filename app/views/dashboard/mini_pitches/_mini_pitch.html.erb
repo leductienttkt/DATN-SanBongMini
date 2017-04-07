@@ -1,0 +1,33 @@
+<tr>
+  <td>
+    <%= link_to "mini_pitch_path" do %>
+      <div class="shop-product-image">
+        <%= image_tag mini_pitch.image.url %>
+      </div><br>
+      <h5 class="time-output"><strong>
+        <%= t "cart.order_time_text" %>
+        <%= l mini_pitch.start_hour, format: :short_time %>
+        <%= t "split" %>
+        <%= l mini_pitch.end_hour, format: :short_time %>
+      </strong></h5>
+    <% end %>
+    
+  </td>
+  <td><%= mini_pitch.name %></td>
+  <td>
+    <div class="truncate">
+      <%= mini_pitch.description %>
+    </div>
+  </td>
+  <td><%= mini_pitch.price %></td>
+  <td><%= t "all_status.#{mini_pitch.status}" %></td>
+  <td>
+    <%= link_to t("common.edit_button"),
+      edit_dashboard_pitch_mini_pitch_path(mini_pitch.pitch, mini_pitch),
+      class: "btn btn-sm btn-primary" %>
+    <%= link_to t("common.delete_button"),
+      dashboard_pitch_mini_pitch_path(mini_pitch.pitch, mini_pitch),
+      method: :delete, data: {confirm: t("common.delete_confirm")},
+      class: "btn btn-sm btn-danger" %>
+  </td>
+</tr>

@@ -1,0 +1,154 @@
+<% provide :title, t(".page_title") %>
+<div class="row">
+  <div class="col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><%= User.name.pluralize %></span>
+        <span class="info-box-number"><%= User.count %></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="fa fa-home"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><%= Pitch.name.pluralize %></span>
+        <span class="info-box-number"><%= Pitch.count %></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-yellow"><i class="fa fa-shopping-bag"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><%= MiniPitch.name.pluralize %></span>
+        <span class="info-box-number"><%= MiniPitch.count %></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="fa fa-wpforms"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><%= Rent.name.pluralize %></span>
+        <span class="info-box-number"><%= Rent.count %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="info-box bg-purple">
+      <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><%= Comment.name.pluralize %></span>
+        <span class="info-box-number"><%= Comment.count %></span>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <span class="progress-description">
+          <%= t ".updating" %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".new_member" %></h3>
+        <div class="box-tools pull-right">
+          <span class="label label-info">
+            <%= t ".new_member_num", num: @users.count %>
+          </span>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+          <% @users.each do |user| %>
+            <li>
+              <%= image_tag user.avatar.url, class: "user-image admin-pic" %>
+              <%= link_to user.name, user, class: "users-list-name" %>
+              <span class="users-list-date">
+                <%= time_ago_in_words user.created_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <%= link_to t(".all_users"), admin_users_path, class: "uppercase" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".new_shop" %></h3>
+        <div class="box-tools pull-right">
+          <span class="label label-success">
+            <%= t ".new_shop_num", num: @pitches.count %>
+          </span>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+          <% @pitches.each do |pitch| %>
+            <li>
+              <%= image_tag pitch.avatar.url, class: "user-image admin-pic" %>
+              <%= link_to pitch.name, pitch, class: "users-list-name" %>
+              <span class="users-list-date">
+                <%= time_ago_in_words pitch.created_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <%= link_to t(".all_shops"), admin_pitches_path, class: "uppercase" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="box box-warning">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".new_product" %></h3>
+        <div class="box-tools pull-right">
+          <span class="label label-warning">
+            <%= t ".new_product_num", num: @mini_pitches.count %>
+          </span>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+          <% @mini_pitches.each do |mini_pitch| %>
+            <li>
+              <%= image_tag mini_pitch.image.url, class: "user-image admin-pic" %>
+              <%= link_to mini_pitch.name, "#", class: "users-list-name" %>
+              <span class="users-list-date">
+                <%= time_ago_in_words mini_pitch.created_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <%= link_to t(".all_products"), admin_mini_pitches_path, class: "uppercase" %>
+      </div>
+    </div>
+  </div>
+</div>
