@@ -24,7 +24,7 @@ class Dashboard::MiniPitchesController < BaseDashboardController
     @mini_pitch = @pitch.mini_pitches.new mini_pitch_params
     if @mini_pitch.save
       flash[:success] = t "flash.success.dashboard.create_mini_pitch"
-      redirect_to domain_dashboard_pitch_path(@domain, @pitch)
+      redirect_to @mini_pitch
     else
       flash[:danger] = t "flash.danger.dashboard.create_mini_pitch"
       render :new

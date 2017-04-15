@@ -1,0 +1,10 @@
+<% provide :title, t(".all_mini_pitches") %>
+<div class="row">
+  <h2 class="section_title">
+    <%= t ".all_mini_pitches" %>
+  </h2>
+</div>
+<div class="col-md-12 magin_top_10px">
+  <%= render @mini_pitches %>
+</div>
+<%= paginate @mini_pitches %>

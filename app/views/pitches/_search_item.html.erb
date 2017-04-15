@@ -1,28 +1,28 @@
 <div class="well">
   <div class="media">
-    <%= link_to shop, class: "pull-left item-thumbnail" do %>
-      <%= image_tag shop.avatar.url, class: "media-object" %>
+    <%= link_to pitch, class: "pull-left item-thumbnail" do %>
+      <%= image_tag pitch.avatar.url, class: "media-object" %>
     <% end %>
     <div class="media-body">
       <h3 class="media-heading">
         <i class="fa fa-home"></i>
-        <%= link_to shop.name, shop %>
+        <%= link_to pitch.name, pitch %>
       </h3>
       <p class="text-right">
-        <%= render "shared/shop_status_label", shop: shop %>
+        <%= render "shared/pitch_status_label", pitch: pitch %>
       </p>
-      <p><%= shop.description %></p>
+      <p><%= pitch.description %></p>
       <ul class="list-inline list-unstyled">
         <li>
           <span>
             <i class="fa fa-user"></i>
-            <%= link_to shop.owner_name, shop.owner %>
+            <%= link_to pitch.owner.name, pitch.owner %>
           </span>
         </li>
         <li>|</li>
         <span>
           <i class="fa fa-shopping-bag"></i>
-          <%= t "livesearch.shop_products", number: shop.products.size %>
+          <%= t ".mini_pitches", num: pitch.mini_pitches.size %>
         </span>
         <li>|</li>
         <li>
@@ -34,7 +34,7 @@
         </li>
         <li>|</li>
         <li>
-          <%= social_share_button_tag shop.name %>
+          <%= social_share_button_tag pitch.name %>
         </li>
       </ul>
     </div>

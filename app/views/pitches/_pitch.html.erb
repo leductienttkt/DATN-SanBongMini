@@ -1,0 +1,19 @@
+<div class="col-md-4 col-sm-4 col-xs-4 box_shop">
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <div class="col-md-5 col-sm-5 col-xs-5">
+      <div class="row thumbnail">
+        <%= link_to pitch_path(pitch) do %>
+          <%= image_tag pitch.avatar.url, class: "top-shop" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-7 col-xs-7">
+      <div class="shop-name-small">
+        <h3 class="margin_top_5px">
+          <%= link_to pitch.name, pitch_path(pitch) %>
+        </h3>
+      </div>
+      <%= render "shared/pitch_status_label", pitch: pitch %>
+    </div>
+  </div>
+</div>

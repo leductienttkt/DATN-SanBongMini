@@ -3,7 +3,7 @@
     <div class="container media-margin-header-bar">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">
-          <%= image_tag "logo.png", alt: t("common.base_title")  %>
+          <%= image_tag "logo.png", alt: t(".base_title")  %>
         </a>
         <button type="button" class="navbar-toggle" data-toggle="collapse"
           data-target="#Navbar-header-page">
@@ -19,7 +19,7 @@
           <div class="form-group">
             <%= text_field_tag :search, params[:search],
               class: "form-control search dropdown-toggle",
-              placeholder: t("livesearch.search_placeholder"),
+              placeholder: t(".search_placeholder"),
               "data-toggle": "dropdown", "aria-hidden": :true,
               autocomplete: :off, required: true, id: "live-search-form" %>
             <ul class="dropdown-menu">
@@ -54,9 +54,9 @@
               <div class="dropdown-notification">
                 <li class="header clearfix">
                   <h4 class="title">
-                    <span><%= t "common.notifications" %></span>
+                    <span><%= t ".notifications" %></span>
                   </h4>
-                  <h6><%= link_to t("notification.read_all"),
+                  <h6><%= link_to t(".read_all"),
                     read_all_events_path, method: :post,
                     remote: true, class: "pull-right read-all" %></h6>
                 </li>
@@ -67,7 +67,7 @@
                 <% else %>
                   <li>
                     <p class="no-notification">
-                      <span><%= t "common.no_notifications" %></span>
+                      <span><%= t ".no_notifications" %></span>
                     </p>
                   </li>
                 <% end %>
@@ -100,7 +100,7 @@
                 <li role="presentation" class="">
                   <%= link_to user_path(current_user) do %>
                     <i class="fa fa-user"></i>
-                    <span><%= t "header.account" %></span>
+                    <span><%= t ".account" %></span>
                   <% end %>
                 </li>
                 <li role="separator" class="divider"></li>
@@ -108,7 +108,7 @@
                 <li role="presentation" class="">
                   <%= link_to dashboard_pitches_path do %>
                     <i class="glyphicon glyphicon-pencil"></i>
-                    <span><%= t "header.shop_manager" %></span>
+                    <span><%= t ".pitch_manager" %></span>
                   <% end %> 
                 </li>
                 <li role="separator" class="divider"></li>
@@ -118,7 +118,7 @@
                   <li role="presentation" class="">
                     <%= link_to "#" do %>
                       <i class="fa fa-bar-chart"></i>
-                      <span><%= t "header.shop_statistic" %></span>
+                      <span><%= t ".pitch_statistic" %></span>
                     <% end %>
                   </li>
                 <% end %>
@@ -126,20 +126,20 @@
                 <li role="presentation" class="">
                   <a role="menuitem" href="#" tabindex="-1">
                     <i class="fa fa-ticket"></i>
-                    <span><%= t "header.report_abuse" %></span>
+                    <span><%= t ".report_abuse" %></span>
                   </a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li role="presentation" class="">
                   <%= link_to edit_user_registration_path do %>
                     <i class="fa fa-cog"></i>
-                    <span><%= t "header.settings" %></span>
+                    <span><%= t ".settings" %></span>
                   <% end %>                 
                 </li>
                 <li role="presentation" class="">
                   <%= link_to destroy_user_session_path, method: :delete do %>
                     <i class="fa fa-sign-out"></i>
-                    <span><%= t "header.logout" %></span>
+                    <span><%= t ".logout" %></span>
                   <% end %>
                 </li>
               </ul>

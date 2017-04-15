@@ -1,0 +1,38 @@
+<div class="well">
+  <div class="media">
+    <%= link_to mini_pitch, class: "pull-left item-thumbnail" do %>
+      <%= image_tag mini_pitch.image.url, class: "media-object" %>
+    <% end %>
+    <div class="media-body">
+      <h3 class="media-heading">
+        <i class="fa fa-shopping-bag"></i>
+        <%= link_to mini_pitch.name, mini_pitch %>
+      </h3>
+      <p class="text-right">
+        <%= format_price mini_pitch.price %>
+      </p>
+      <p><%= mini_pitch.description %></p>
+      <ul class="list-inline list-unstyled">
+        <li>
+          <span>
+            <i class="fa fa-shopping-cart"></i>
+            <%= link_to mini_pitch.pitch_name, mini_pitch.pitch %>
+          </span>
+        </li>
+        <li>|</li>
+        <li>|</li>
+        <li>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </li>
+        <li>|</li>
+        <li>
+          <%= social_share_button_tag mini_pitch.name %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

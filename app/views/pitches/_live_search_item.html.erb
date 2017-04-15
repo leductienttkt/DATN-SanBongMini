@@ -1,20 +1,22 @@
 <li class="search-item">
-  <%= link_to product do %>
+  <%= link_to pitch do %>
     <div class="col-xs-12 col-sm-3 col-md-3">
-      <span>
-        <%= image_tag product.image.url, class: "search-pic" %>
-      </span>
+      <%= image_tag pitch.avatar.url, class: "img-responsive" %>
     </div>
     <div class="col-xs-12 col-sm-9 col-md-9">
       <div class="row">
-        <strong><%= product.name %></strong>
+        <strong><%= pitch.name %></strong>
+        <%= t ".owner" %><%= pitch.owner_name %>
       </div>
       <div class="row">
         <div class="col-md-8">
-          <%= product.shop_name %>
+          <%= pitch.address_details %>
         </div>
         <div class="col-md-4">
-          <%= format_price product.price %>
+          <%= link_to "" do %>
+            <%= t ".mini_pitches",
+              num: pitch.mini_pitches.size %>
+          <% end %>
         </div>
       </div>
     </div>

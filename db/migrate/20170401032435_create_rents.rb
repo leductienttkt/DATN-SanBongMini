@@ -5,7 +5,7 @@ class CreateRents < ActiveRecord::Migration[5.0]
       t.time :end_hour
       t.date :date
       t.integer :status, default: 0
-      t.references :pitch, foreign_key: true
+      t.references :mini_pitch, foreign_key: true
       t.references :user, foreign_key: true
     end
   end

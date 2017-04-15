@@ -65,7 +65,7 @@
 }
 
 .row_h2 {
-  background: image-url(header_bg) #ff5722;
+  background: image-url(header_bg) #08bf73;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
   text-align: center;
@@ -104,4 +104,41 @@
 
 .shop_not_activate {
   color: red;
+}
+
+.pitch-address {
+  color: green;
+}
+
+.gmap-show-pitch {
+  margin-top: 50px;
+  min-height: 500px;
+  width: auto;
+}
+
+.show-pitch-address {
+  color: green;
+}
+
+.fb-comments-mini-pitch {
+  max-width: 10px !important;
+}
+
+.picth-avatar-mini {
+  display: block;
+  float: left;
+  padding-top: 15px;
+
+  img {
+    height: 100px;
+    border-radius: 4px;
+  }
+}
+
+.show-pitch-name {
+  color: green;
+}
+
+.show-pitch-type {
+  padding-left: 20px;
 }

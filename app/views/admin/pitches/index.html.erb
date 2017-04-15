@@ -1,4 +1,4 @@
-<% provide :title, "Pitches" %>
+<% provide :title, t(".all_pitches") %>
 <div class="common">
   <div class="modal fade shop-request-modal" tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true" >
@@ -7,10 +7,10 @@
         <div class="modal-header modal-message"></div>
         <div class="modal-footer">
           <button class="btn btn-primary width-80 btn-ok">
-            <%= t "common.btn_ok" %>
+            <%= t ".btn_ok" %>
           </button>
           <button class="btn btn-primary width-80" data-dismiss="modal">
-            <%= t "common.btn_cancel" %>
+            <%= t ".btn_cancel" %>
           </button>
         </div>
       </div>
@@ -23,7 +23,7 @@
       <table class="table table-striped table-hover table-bordered">
         <thead>
           <tr>
-            <th><%= t "common.number" %></th>
+            <th><%= t ".number" %></th>
             <th><%= t ".name" %></th>
             <th><%= t ".avatar" %></th>
             <th><%= t ".owner" %></th>
@@ -57,11 +57,11 @@
                   <%= f.select :status,
                     Pitch.statuses.keys.map{|status| [status.titleize, status]},
                     {}, {class: "form-control inline"} %>
-                  <%= f.submit t("common.set_button"),
+                  <%= f.submit t(".set_button"),
                     class: "btn btn-sm btn-primary" %>
                 <% end %>
-                <%= link_to t("common.delete_button"), admin_pitch_path(pitch),
-                  method: :delete, data: {confirm: t("common.delete_confirm")},
+                <%= link_to t(".delete_button"), admin_pitch_path(pitch),
+                  method: :delete, data: {confirm: t(".delete_confirm")},
                   class: "btn btn-sm btn-danger" %>
               </td>
             </tr>

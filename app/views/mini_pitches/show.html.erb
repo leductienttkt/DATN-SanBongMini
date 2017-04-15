@@ -1,0 +1,125 @@
+<div class="line">
+  <div class="unit7 col-md-7 col-sm-7 col-xs-7">
+    <div class="m-panel pad-50">
+      <div class="aligner-c" id="product_preview">
+        <%= image_tag @mini_pitch.image.url, class: "set-image" %>
+      </div>
+    </div>
+    <div class="a-divider--hidden"></div>
+    <div class="share-product">
+      <%= social_share_button_tag @mini_pitch.name %>
+    </div>
+    <div class="fb-like" data-href="<%= request.original_url %>"
+    data-layout="standard" data-action="like"></div>
+    <div class="a-divider--hidden"></div>
+    <div class="bordered rounded bg-eb-white">
+      <%= render "shared/comments", object: @mini_pitch, comment: @comment,
+        comments: @comments %>
+    </div>
+  </div>
+  <div class="unit5 col-md-5 col-sm-5 col-xs-5">
+    <div class="m-panel pad-50">
+      <h3 class="lead margin-zerob">
+        <strong>
+          <span class="show-pitch-name"><%= @mini_pitch.name %></span>
+          <span class="show-pitch-type">
+            <%= t(".type", type: @mini_pitch.pitch_type) %>
+          </span>
+        </strong>
+      </h3>
+      <div class="a-divider--fit"></div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <%= format_price @mini_pitch.price %>
+        </h3>
+        </p>
+      </div>
+      <div class="a-divider--fit mar-bottom-30"></div>
+      <div class="mar-bottom-20">
+        <h3>
+          <%= t ".rent_time" %>
+          <%= l @mini_pitch.start_hour, format: :short_time %>-
+          <%= l @mini_pitch.end_hour, format: :short_time %>
+        </h3>
+      </div>
+      <div class="mar-bottom-20">
+        <p><%= @mini_pitch.description %></p>
+      </div>
+      <div class="hide mar-bottom-20">
+        <p><%= @mini_pitch.description %></p>
+        <div class="mar-bottom-30">
+          <div class="a-divider--fit"></div>
+        </div>
+      </div>
+      <div class="a-divider--hidden"></div>
+    </div>
+    <div id="gmap-show-mini-pitch" class="gmap-show-mini-pitch">
+    </div>
+    <div class="m-panel m-panel-item col-md-12 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-5">
+          <span class="shop-thumbnail">
+            <%= image_tag @mini_pitch.pitch_avatar.url %>
+          </span>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-7">
+          <h3>
+            <%= link_to @mini_pitch.pitch_name, @mini_pitch.pitch,
+              class: "lead padd-left-products" %>
+          </h3>
+          <p class="padd-left-products">
+            <%= t ".mini_pitch_number",
+              num: @mini_pitch.pitch.mini_pitches.size %>
+          </p>
+        </div>
+      </div>
+      <div class="m-panel__content">
+        <div class="line">
+          <% @mini_pitch.pitch.mini_pitches.each do |mini_pitch| %>
+            <div class="unit3"> 
+              <%= link_to mini_pitch_path(mini_pitch) do %>
+                <span class="product-thumbnail">
+                  <%= image_tag mini_pitch.image.url,
+                    alt: mini_pitch.name, class: "product-show" %>
+                  <%= mini_pitch.name %>
+                </span>
+              <% end %>
+            </div>
+          <% end %>    
+        </div>
+        <div class="a-divider--fit"></div>
+        <div class="unit">
+          <%= link_to t(".btn_view_all"), 
+            pitch_path(@mini_pitch.pitch),
+            class: "btn btn-success btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @mini_pitch.address.present? %>
+  <%= hidden_field_tag "lat", @mini_pitch.address.latitude %>
+  <%= hidden_field_tag "lng", @mini_pitch.address.longitude %>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var latt = Number($('#lat').val());
+  var lngt = Number($('#lng').val());
+  var center = {
+    lat: latt,
+    lng: lngt
+  }
+  var gmap_mini_picth = document.getElementById('gmap-show-mini-pitch');
+  map = new google.maps.Map(gmap_mini_picth, {
+    zoom: 13,
+    center: center
+  });
+  marker = new google.maps.Marker({
+    map: map,
+    position: center
+  });
+});
+</script>

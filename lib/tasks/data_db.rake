@@ -27,30 +27,40 @@ namespace :db do
 
       puts "Creat pitches and mini pitches"
       type = {1=>5, 2=>7} 
-      
       10.times do |n|
-        Pitch.create!(
+        pitch = Pitch.create!(
           name: "Pitch #{n+1}",
           description: "Pitch #{n+1}",
           status: 0,
           cover_image: "image",
-          avatar: File.open(Rails.root + "public/images/quansinhto.jpg"),
+          avatar: "image",
           owner_id: n + 1
         )
 
         5.times do |t|
           MiniPitch.create!(
-          name: "Pitch #{n} - mini #{t+1}",
-          description: "Pitch #{n} - mini #{t+1}",
-          status: 0,
-          image: File.open(Rails.root + "public/images/comsuon.jpg"),
-          price: 10000,
-          start_hour: "05:30:00",
-          end_hour: "22:30:00",
-          pitch_type: type[rand(1..2) ],
-          pitch_id: n+1
+            name: "Pitch #{n} - mini #{t+1}",
+            description: "Pitch #{n} - mini #{t+1}",
+            status: 0,
+            image: "image",
+            price: 10000,
+            start_hour: "05:30:00",
+            end_hour: "22:30:00",
+            pitch_type: type[rand(1..2) ],
+            pitch_id: n+1,
+            user_id: n+1
           )
         end
+      end
+
+      puts "Creat rents"
+      MiniPitch.all do |mini_pitch|
+        mini_pitch.rents.create!(
+          start_hour: "07:30:00",
+          end_hour: "08:30:00",
+          date: "20-03-2017",
+          user_id: 1
+        )
       end
     end
   end

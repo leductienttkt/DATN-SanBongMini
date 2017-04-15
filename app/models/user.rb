@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :matches, through: :user_matchs, dependent: :destroy
   has_many :vip_customers, dependent: :destroy
   has_many :rents, dependent: :destroy
+  has_many :mini_pitches, dependent: :destroy
   
 
   enum status: {wait: 0, active: 1, blocked: 2}

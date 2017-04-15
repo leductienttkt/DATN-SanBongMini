@@ -4,13 +4,15 @@ class Pitch < ApplicationRecord
 
   has_many :vip_customers, dependent: :destroy
   has_many :mini_pitches, dependent: :destroy
+  has_many :rents, through: :mini_pitches, dependent: :destroy
   has_many :promotions, dependent: :destroy
-  has_many :rents, dependent: :destroy
+  has_one :address, dependent: :destroy, inverse_of: :pitch
 
   enum status: {pending: 0, active: 1, closed: 2, rejected: 3, blocked: 4}
 
   delegate :name, to: :owner, prefix: :owner, allow_nil: true
   delegate :email, to: :owner, prefix: :owner
+  delegate :details, to: :address, prefix: :address, allow_nil: true
 
   validates :name, presence: true, length: {maximum: 50}
   validates :description, presence: true
@@ -22,6 +24,8 @@ class Pitch < ApplicationRecord
 
   scope :by_date_newest, ->{order created_at: :desc}
   scope :by_active, ->{where status: :active}
+
+  accepts_nested_attributes_for :address, allow_destroy: true
 
   private
 

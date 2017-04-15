@@ -38,6 +38,16 @@ Rails.application.routes.draw do
   end
 
   resources :pitches
+  resources :mini_pitches, only: [:index, :show, :new] do
+    resources :comments, only: :create
+  end
+
+  get "search(/:search)", to: "searches#index", as: :search
+
+
+
+
+  
   
   resources :user_domains
   resources :shop_domains
@@ -58,7 +68,7 @@ Rails.application.routes.draw do
     resources :products
   end
   resources :tags, only: :show
-  get "search(/:search)", to: "searches#index", as: :search
+  
 
   resources :request_shop_domains
   resources :set_carts

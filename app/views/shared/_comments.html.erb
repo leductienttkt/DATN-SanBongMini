@@ -28,7 +28,8 @@
       </div>
     <% end %>
     <div id="fb-root"></div>
-    <div class="fb-comments" data-href="<%= request.original_url %>"
+    <div class="fb-comments" 
+      data-href="<%= request.original_url %>"
       data-num-posts="<%= Settings.comment.num_posts %>"></div>
     <ul class="commentList">
       <%= render comments %>

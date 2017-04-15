@@ -31,10 +31,10 @@
               <%= render "shared/pitch_status_label", pitch: @pitch %>
             </h4>
             <h4>
-              <%= link_to t("dashboard.order.view_order_list"),
+              <%= link_to t(".view_rent_list"),
                 "dashboard_shop_orders_path(@shop.id)",
                 class: "btn btn-theme width_btn" %>
-              <%= link_to t("dashboard.order.view_history_orders"),
+              <%= link_to t(".view_history_rent"),
                 "dashboard_shop_order_managers_path(@shop.id)",
                 class: "btn btn-theme" %>
             </h4>
@@ -43,16 +43,16 @@
         <div class="col-md-4 col-xs-5">
           <div class="panel panel-info shop_user">
             <div class="panel-heading">
-              <%= t "common.shop_managers" %>
+              <%= t ".pitch_managers" %>
             </div>
             <div class="shop_user-own">
               <%= link_to user_path(@user.id), class: "user-item-image" do %>
                 <%= image_tag @user.avatar.url, alt: @user.name %>
-                <p><strong><%= t "shop_owner"%></strong><%= @user.name %></p>
+                <p><strong><%= t ".pitch_owner"%></strong><%= @user.name %></p>
               <% end %>
             </div>
             <div class="panel-footer">
-              <%= link_to t("change_shop_owner"), "#",
+              <%= link_to t(".change_pitch_owner"), "#",
                 class: "btn btn-default btn-block",
                 data: {toggle: "modal", target: "#shop-manager-modal"} %>
             </div>
@@ -65,15 +65,15 @@
     <table class="table table-striped table-inverse padding-102">
       <tr>
         <td class="for-td">
-          <strong><%= t "shop_name" %></strong><%= @pitch.name %>
+          <strong><%= t ".name" %></strong><%= @pitch.name %>
         </td>
         <td class="for-td">
-          <strong><%= t "time_auto_reject" %></strong>
+          <strong><%= t ".time_auto_reject" %></strong>
           <%= l @pitch.time_auto_reject, format: :short_time %>
-          <%= t "minutes" %>
+          <%= t ".minutes" %>
         </td>
         <td class="for-td">
-          <strong><%= t "number_product" %></strong><%= @pitch.mini_pitches.size %>
+          <strong><%= t ".number_mini_pitch" %></strong><%= @pitch.mini_pitches.size %>
         </td>
         <td class="for-td">
           <%= link_to t(".edit"), edit_dashboard_pitch_path(@pitch),
@@ -87,14 +87,14 @@
   <div>
   <h2 class="section_title margin_right_15px row_h2">
     <div class="btn_view_all_wrapper pull-right">
-      <%= link_to t("common.create_button"),
-        "new_dashboard_shop_product_path(@shop)",
+      <%= link_to t(".create_button"), 
+        new_dashboard_pitch_mini_pitch_path(@pitch),
         class: "btn btn_view_all btn-warning" %>
     </div>
     <% if @mini_pitches.any? %>
-      <%= t ".has_products" %>
+      <%= t ".has_mini_pitches", num: @mini_pitches.size %>
     <% else %>
-      <%= t ".no_product" %>
+      <%= t ".no_mini_pitch" %>
     <% end %>
   </h2>
   </div>

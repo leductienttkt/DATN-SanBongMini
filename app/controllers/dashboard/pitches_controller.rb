@@ -6,6 +6,7 @@ class Dashboard::PitchesController < BaseDashboardController
 
   def new
     @pitch = current_user.own_pitches.build
+    @pitch.build_address
   end
 
   def create
@@ -38,6 +39,7 @@ class Dashboard::PitchesController < BaseDashboardController
   end
 
   def edit
+    @pitch.build_address unless @pitch.address.present?
   end
 
   def update
@@ -47,7 +49,7 @@ class Dashboard::PitchesController < BaseDashboardController
     else
       if @pitch.update_attributes pitch_params
         flash[:success] = t "flash.success.dashboard.updated_pitch"
-        redirect_by_domain
+        redirect_to request.referrer
       else
         flash[:danger] = t "flash.danger.dashboard.updated_pitch"
         render :edit
@@ -58,7 +60,8 @@ class Dashboard::PitchesController < BaseDashboardController
   private
   def pitch_params
     params.require(:pitch).permit :id, :name, :description,
-      :cover_image, :avatar, :time_auto_reject
+      :cover_image, :avatar, :time_auto_reject,
+      address_attributes: [:details, :city, :postal_code, :street_address, :unit, :id]
   end
 
   def load_params_update

@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401033126) do
+ActiveRecord::Schema.define(version: 20170408024902) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "details",                   null: false
+    t.string   "city"
+    t.float    "latitude",       limit: 24
+    t.float    "longitude",      limit: 24
+    t.string   "postal_code"
+    t.string   "street_address"
+    t.string   "unit"
+    t.integer  "pitch_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["pitch_id"], name: "index_addresses_on_pitch_id", using: :btree
+  end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -79,11 +93,13 @@ ActiveRecord::Schema.define(version: 20170401033126) do
     t.time     "start_hour"
     t.time     "end_hour"
     t.integer  "pitch_id"
+    t.integer  "user_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.index ["name"], name: "index_mini_pitches_on_name", using: :btree
     t.index ["pitch_id"], name: "index_mini_pitches_on_pitch_id", using: :btree
     t.index ["pitch_type"], name: "index_mini_pitches_on_pitch_type", using: :btree
+    t.index ["user_id"], name: "index_mini_pitches_on_user_id", using: :btree
   end
 
   create_table "pitches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -112,10 +128,10 @@ ActiveRecord::Schema.define(version: 20170401033126) do
     t.time    "start_hour"
     t.time    "end_hour"
     t.date    "date"
-    t.integer "status",     default: 0
-    t.integer "pitch_id"
+    t.integer "status",        default: 0
+    t.integer "mini_pitch_id"
     t.integer "user_id"
-    t.index ["pitch_id"], name: "index_rents_on_pitch_id", using: :btree
+    t.index ["mini_pitch_id"], name: "index_rents_on_mini_pitch_id", using: :btree
     t.index ["user_id"], name: "index_rents_on_user_id", using: :btree
   end
 
@@ -155,8 +171,9 @@ ActiveRecord::Schema.define(version: 20170401033126) do
   add_foreign_key "match_users", "users"
   add_foreign_key "matches", "rents"
   add_foreign_key "mini_pitches", "pitches"
+  add_foreign_key "mini_pitches", "users"
   add_foreign_key "promotions", "pitches"
-  add_foreign_key "rents", "pitches"
+  add_foreign_key "rents", "mini_pitches"
   add_foreign_key "rents", "users"
   add_foreign_key "vip_customers", "pitches"
   add_foreign_key "vip_customers", "users"

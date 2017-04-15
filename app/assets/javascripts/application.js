@@ -29,6 +29,8 @@
 //= require social-share-button
 //= require i18n.js
 //= require i18n/translations
+//= require gmaps/google
+//= require underscore
 
 $(document).ready(function () {
   $('.alert').fadeOut(5000);

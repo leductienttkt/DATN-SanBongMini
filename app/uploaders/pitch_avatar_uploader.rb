@@ -36,7 +36,7 @@ class PitchAvatarUploader < CarrierWave::Uploader::Base
   def default_url *args
     ActionController::Base
       .helpers
-      .asset_path([version_name, "default_shop_avatar.png"].compact.join("_"))
+      .asset_path([version_name, "default_pitch_avatar.png"].compact.join("_"))
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

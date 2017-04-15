@@ -55,6 +55,10 @@ gem "friendly_id", "~> 5.1.0"
 gem "ratyrate"
 gem "redis", "~> 3.0"
 gem "fcm"
+gem "validates_timeliness"
+gem "geocoder"
+gem "gmaps4rails"
+gem "underscore-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri

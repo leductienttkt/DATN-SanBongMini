@@ -3,11 +3,11 @@ class SearchesController < ApplicationController
 
   def index
     q = params[:search]
-    products = Product.in_domain(@domain.id).active.search(name_or_description_cont: q).result
-      .includes :shop
-    shops = Shop.shop_in_domain(@domain.id).search(name_or_description_or_owner_name_cont: q).result
-      .includes(:owner).decorate
-    @items = products + shops
+    mini_pitches = MiniPitch.active.search(name_or_address_details_cont: q).result
+      .includes :pitch
+    pitches = Pitch.search(name_or_address_details_cont: q).result
+      .includes(:owner)
+    @items = mini_pitches + pitches
     respond_to do |format|
       format.js
       format.html

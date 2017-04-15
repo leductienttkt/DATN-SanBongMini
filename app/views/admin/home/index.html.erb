@@ -90,10 +90,10 @@
   <div class="col-md-4">
     <div class="box box-success">
       <div class="box-header with-border">
-        <h3 class="box-title"><%= t ".new_shop" %></h3>
+        <h3 class="box-title"><%= t ".new_pitch" %></h3>
         <div class="box-tools pull-right">
           <span class="label label-success">
-            <%= t ".new_shop_num", num: @pitches.count %>
+            <%= t ".new_pitch_num", num: @pitches.count %>
           </span>
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -115,17 +115,17 @@
         </ul>
       </div>
       <div class="box-footer text-center">
-        <%= link_to t(".all_shops"), admin_pitches_path, class: "uppercase" %>
+        <%= link_to t(".all_pitches"), admin_pitches_path, class: "uppercase" %>
       </div>
     </div>
   </div>
   <div class="col-md-4">
     <div class="box box-warning">
       <div class="box-header with-border">
-        <h3 class="box-title"><%= t ".new_product" %></h3>
+        <h3 class="box-title"><%= t ".new_mini_pitch" %></h3>
         <div class="box-tools pull-right">
           <span class="label label-warning">
-            <%= t ".new_product_num", num: @mini_pitches.count %>
+            <%= t ".new_mini_pitch_num", num: @mini_pitches.count %>
           </span>
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -147,7 +147,7 @@
         </ul>
       </div>
       <div class="box-footer text-center">
-        <%= link_to t(".all_products"), admin_mini_pitches_path, class: "uppercase" %>
+        <%= link_to t(".all_mini_pitches"), admin_mini_pitches_path, class: "uppercase" %>
       </div>
     </div>
   </div>
