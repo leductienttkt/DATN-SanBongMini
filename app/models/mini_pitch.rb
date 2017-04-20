@@ -22,6 +22,7 @@ class MiniPitch < ApplicationRecord
 
   scope :by_date_newest, ->{order created_at: :desc}
   scope :by_active, ->{where status: :active}
+  scope :of_ids, -> ids {where id: ids}
 
   private
   def image_size

@@ -25,7 +25,7 @@ namespace :db do
         )
       end
 
-      puts "Creat pitches and mini pitches"
+      puts "Create pitches and mini pitches"
       type = {1=>5, 2=>7} 
       10.times do |n|
         pitch = Pitch.create!(
@@ -44,8 +44,8 @@ namespace :db do
             status: 0,
             image: "image",
             price: 10000,
-            start_hour: "05:30:00",
-            end_hour: "22:30:00",
+            start_hour: "05:00:00",
+            end_hour: "22:00:00",
             pitch_type: type[rand(1..2) ],
             pitch_id: n+1,
             user_id: n+1
@@ -53,13 +53,14 @@ namespace :db do
         end
       end
 
-      puts "Creat rents"
-      MiniPitch.all do |mini_pitch|
-        mini_pitch.rents.create!(
-          start_hour: "07:30:00",
-          end_hour: "08:30:00",
-          date: "20-03-2017",
-          user_id: 1
+      puts "Create rents"
+      10.times do |t|
+        Rent.create!(
+          start_hour: "07:00:00",
+          end_hour: "10:00:00",
+          date: "20-04-2017",
+          user_id: t+1,
+          mini_pitch_id: t+1
         )
       end
     end

@@ -661,14 +661,20 @@ ja:
       type: 'Loại sân: %{type}'
       view_button: Xem
     show:
+      btn_check: Kiểm tra
       btn_view_all: Xem tất cả
       btn_view_all": 'Xem tất cả
 
         '
+      date: Ngày
+      end_hour: 'Giờ kết thúc
+
+        Giờ kết thúc'
       mini_pitch_number: '%{num} sân mini
 
         '
       rent_time: 'Thời gian: '
+      start_hour: Giờ bắt đầu
       type: 'Loại sân: %{type}'
   minutes: ' (分)'
   new_domain:

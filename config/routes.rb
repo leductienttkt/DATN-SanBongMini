@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   end
 
   get "search(/:search)", to: "searches#index", as: :search
-
+  resources :check_mini_pitches, only: :index
 
 
 

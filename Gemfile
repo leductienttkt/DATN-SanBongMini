@@ -60,6 +60,7 @@ gem "geocoder"
 gem "gmaps4rails"
 gem "underscore-rails"
 
+
 group :development, :test do
   gem "byebug", platform: :mri
   gem "factory_girl_rails"

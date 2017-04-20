@@ -5,6 +5,38 @@
         <%= image_tag @mini_pitch.image.url, class: "set-image" %>
       </div>
     </div>
+    <div class="form-check-mini-pitch">    
+      <div class="col-md-3">
+        <label for="start_hour"><%= t(".start_hour") %></label> 
+        <%= text_field_tag :start_hour, params[:start_hour],
+          class: "form-control pitch-timepicker",
+          placeholder: t(".start_hour") %>
+      </div>
+      
+      <div class="col-md-3">
+        <label for="end_hour"><%= t(".end_hour") %></label> 
+        <%= text_field_tag :end_hour, params[:end_hour],
+          class: "form-control pitch-timepicker",
+          placeholder: t(".end_hour") %>
+      </div>
+      <div class="col-md-3">
+        <label for="date"><%= t(".date") %></label> 
+        <%= text_field_tag :date, params[:date],
+          class: "form-control picth-datepicker",
+          placeholder: t(".date") %>
+      </div>
+      <div class="col-md-3 check-mini-pitch">
+        <%= link_to t(".btn_check"), "#",
+          class: "btn btn-primary" %>
+      </div>
+      
+    </div>
+
+    <div class="form-check-result text-center">
+      <div class="check-result-text"></div>
+      <%= link_to t(".rent"), "#", class: "btn btn-primary rent-btn",
+        data: {toggle: "modal", target: "#rent-modal"} %>
+    </div>
     <div class="a-divider--hidden"></div>
     <div class="share-product">
       <%= social_share_button_tag @mini_pitch.name %>
@@ -98,11 +130,12 @@
     </div>
   </div>
 </div>
-
+<%= hidden_field_tag :mini_pitch_id, @mini_pitch.id %>
 <% if @mini_pitch.address.present? %>
   <%= hidden_field_tag "lat", @mini_pitch.address.latitude %>
   <%= hidden_field_tag "lng", @mini_pitch.address.longitude %>
 <% end %>
+<%= render "rent_modal" %>
 
 <script type="text/javascript">
 $(document).ready(function(){

@@ -669,10 +669,14 @@ en:
       type: 'Type: %{type}'
       view_button: View
     show:
+      btn_check: Check
       btn_view_all: View all
       btn_view_all": View all
+      date: Date
+      end_hour: End hour
       mini_pitch_number: '%{num} mini pitches'
       rent_time: 'Rent time: '
+      start_hour: Start hour
       type: 'Type: %{type}'
   minutes: ' (minutes)'
   new_domain:
