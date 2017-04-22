@@ -6,7 +6,7 @@ class Rent < ApplicationRecord
   has_one :match, dependent: :destroy
 
   scope :by_mini_pitch, -> id do
-    where id: id
+    where mini_pitch_id: id
   end
 
   scope :mini_pitch_in_rent, ->params do
@@ -21,6 +21,13 @@ class Rent < ApplicationRecord
       params[:start_hour], params[:end_hour],
       params[:date].to_date)
       .pluck :mini_pitch_id
+  end
+
+  scope :ids_for_match, ->params do
+    where("
+      start_hour = ? AND end_hour = ? AND date = ?
+      ", params[:start_hour], params[:end_hour], params[:date].to_date)
+      .pluck :id
   end
 
 end

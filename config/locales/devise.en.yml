@@ -9,6 +9,9 @@ devise:
         delete_confirm: '
 
           '
+  shared:
+    join_match_modal:
+      join: Join
 en:
   devise:
     confirmations:

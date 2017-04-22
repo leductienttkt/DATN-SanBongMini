@@ -431,6 +431,9 @@ ja:
         btn_search: サーチ
       shop:
         shop: 店
+  date:
+    formats:
+      date: '%d-%m-%y'
   date_format: '%d/%m/%Y'
   delete: 削除
   delete_domain: 成功します
@@ -651,6 +654,24 @@ ja:
     view_all_domains: すべてのドメイン
   manual_help_forder: マニュアル
   many_user: ' アカウントは更新できませんと '
+  matches:
+    show:
+      actions: Action
+      avatar: Avatar
+      current_quantity: 'Current quantity: '
+      date: 'Date: '
+      join: Join
+      match_info: Match information
+      match_owner: 'Owner: '
+      max_quantity: 'Max quantity: '
+      member: Participants
+      name: Name
+      number: No.
+      phone: Phone number
+      pitch_info: Pitch information
+      pitch_owner: 'Owner: '
+      quantity: Number of registered
+      time: 'Time: '
   members: メンバー
   mini_pitches:
     index:
@@ -790,6 +811,15 @@ ja:
   public_domain: パブリックなドメイン
   rejected_products: 製品が拒否されました
   remote_domain_manager: ちょうどドメイン管理のリストからあなたを削除します。
+  rents:
+    show:
+      create_match: 'Do you want to make a match? '
+      date: 'Date: '
+      note: Please arrive %{time} minutes earlier to receive pitch
+      pitch_info: Pitch Information
+      pitch_owner: 'Owner: '
+      rent_info: Rent Infomation
+      time: 'Time: '
   request_have_been_delete: リクエストが削除されました
   request_join_domain: ちょうどドメインに参加して
   request_shop:
@@ -837,8 +867,28 @@ ja:
       comment_box: コメントブラケット
       comment_button: コメント
       comment_placeholder_text: ここでコメント...
+    join_match_modal:
+      cancel: Cancel
+      info: Join this match
+      join: Join
+      quantity: Number of registrations
+    new_match_modal:
+      cancel: Cancel
+      create: Create
+      info: Create match
+      max_quantity: 'Max quantity: '
+      quantity: 'Current quantity: '
     pitch_status_label:
       pitch_not_activate: Sân chưa kích hoạt
+    rent_modal:
+      cancel: Cancel
+      confirm: Confirm
+      date: 'Date: '
+      end_hour: 'End hour: '
+      info: Rent Information
+      mini_pitch: 'Pitch: '
+      note: Please come %{time} minutes early
+      statr_hour: "Start hour: \nStart hour"
   shop: 店
   shop_accept: 店が受け入れる
   shop_accept_request: 習慣をつくる

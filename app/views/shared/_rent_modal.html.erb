@@ -1,0 +1,29 @@
+<div id="rent-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog rent_mini_pitch-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center"><%= t ".info" %></h3>
+      </div>
+      <div class="modal-body">
+        <div class="fade in well confirm_order">
+          <div><%= t ".mini_pitch" %>
+            <i class="rent-mini-pitch-name"><%= @mini_pitch.full_name %></i>
+          </div>
+          <div><%= t ".statr_hour" %><i class="rent-mini-pitch-start"></i></div>
+          <div><%= t ".end_hour" %><i class="rent-mini-pitch-end"></i></div>
+          <div><%= t ".date" %><i class="rent-mini-pitch-date"></i></div>
+          <div><%= t(".note", time: @mini_pitch.time_auto_reject.to_s(:time)) %></div>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <%= link_to t(".confirm"), "#",
+            class: "btn btn_add_to_cart btn-add rent-mini-pitch-btn" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".cancel" %>
+        </butto>
+      </div>
+    </div>
+
+  </div>
+</div>

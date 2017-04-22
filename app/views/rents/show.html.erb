@@ -1,0 +1,103 @@
+<div class="row">
+  <h2 class="row_h2">
+    <%= t ".rent_info" %>
+  </h2>
+</div>
+<div class="line">
+  <div class="unit7 col-md-7 col-sm-7 col-xs-7">
+    <div class="m-panel pad-50">
+      <div class="aligner-c" id="product_preview">
+        <div id="gmap-show-rent" class="gmap-show-rent"></div>
+    </div>
+    </div>
+  </div>
+  <div class="unit5 col-md-5 col-sm-5 col-xs-5">
+    <div class="m-panel pad-50">
+      <h3 class="lead margin-zerob">
+        <strong>
+          <span class="show-pitch-name"><%= t ".pitch_info" %></span>
+        </strong>
+      </h3>
+      <div class="a-divider--fit"></div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <span class="show-pitch-name"><%= @rent.mini_pitch.full_name %></span>
+        </h3>
+        </p>
+      </div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <%= t ".pitch_owner" %>
+          <%= @rent.mini_pitch.user.name %> - <%= @rent.mini_pitch.user.phone %>
+        </h3>
+        </p>
+      </div>
+      <div class="a-divider--fit"></div>
+      <h3 class="lead margin-zerob">
+        <strong>
+          <span class="show-pitch-name"><%= t ".rent_info" %></span>
+        </strong>
+      </h3>
+      <div class="a-divider--fit"></div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <%= t ".time" %>
+          <%= l @rent.start_hour, format: :short_time %>-
+          <%= l @rent.end_hour, format: :short_time %>
+        </h3>
+        </p>
+      </div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <%= t ".date" %><%= l @rent.date, format: :date %>
+        </h3>
+        </p>
+      </div>
+
+      <div class="a-divider--fit mar-bottom-30"></div>
+      <div class="">
+        <h4><%= t(".note", time: @rent.mini_pitch.time_auto_reject.to_s(:time)) %></h4>
+      </div>
+      <div class="a-divider--fit"></div>
+      <div class="aligner-jsc wp100 h40">
+        <p class="lead eb-orange mar-bottom-0">
+        <h3>
+          <%= t ".create_match" %>
+          <%= link_to t(".create"), "#", class: "btn btn-primary",
+            data: {toggle: "modal", target: "#new-match-modal"} %>
+        </h3>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @rent.mini_pitch.address.present? %>
+  <%= hidden_field_tag "lat", @rent.mini_pitch.address.latitude %>
+  <%= hidden_field_tag "lng", @rent.mini_pitch.address.longitude %>
+<% end %>
+<%= render "shared/new_match_modal" %>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var latt = Number($('#lat').val());
+  var lngt = Number($('#lng').val());
+  var center = {
+    lat: latt,
+    lng: lngt
+  }
+  var gmap_mini_picth = document.getElementById('gmap-show-rent');
+  map = new google.maps.Map(gmap_mini_picth, {
+    zoom: 13,
+    center: center
+  });
+  marker = new google.maps.Marker({
+    map: map,
+    position: center
+  });
+});
+</script>

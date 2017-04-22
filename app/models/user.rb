@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :own_pitches, class_name: "Pitch", foreign_key: :owner_id
   has_many :comments, dependent: :destroy
   has_many :events, dependent: :destroy
-  has_many :user_matches, dependent: :destroy
+  has_many :match_users, dependent: :destroy
   has_many :matches, through: :user_matchs, dependent: :destroy
   has_many :vip_customers, dependent: :destroy
   has_many :rents, dependent: :destroy

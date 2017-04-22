@@ -436,6 +436,9 @@ en:
         btn_search: Filter
       shop:
         shop: Shop
+  date:
+    formats:
+      date: '%d-%m-%y'
   date_format: '%d/%m/%Y'
   delete: Delete
   delete_domain: Deleting user from this domain successfully
@@ -659,6 +662,24 @@ en:
     view_all_domains: view all domains
   manual_help_forder: Help
   many_user: ' account can not be updated and '
+  matches:
+    show:
+      actions: Action
+      avatar: Avatar
+      current_quantity: 'Current quantity: '
+      date: 'Date: '
+      join: Join
+      match_info: Match information
+      match_owner: 'Owner: '
+      max_quantity: 'Max quantity: '
+      member: Participants
+      name: Name
+      number: No.
+      phone: Phone number
+      pitch_info: Pitch information
+      pitch_owner: 'Owner: '
+      quantity: Number of registered
+      time: 'Time: '
   members: Members
   mini_pitches:
     index:
@@ -792,6 +813,15 @@ en:
   public_domain: The public domain
   rejected_products: products rejected
   remote_domain_manager: 'have remote you from the list manager of domain:'
+  rents:
+    show:
+      create_match: 'Do you want to make a match? '
+      date: 'Date: '
+      note: Please arrive %{time} minutes earlier to receive pitch
+      pitch_info: Pitch Information
+      pitch_owner: 'Owner: '
+      rent_info: Rent Infomation
+      time: 'Time: '
   request_have_been_delete: The request have been deleted
   request_join_domain: ' already joined the domain: '
   request_shop:
@@ -839,8 +869,28 @@ en:
       comment_box: Comments box
       comment_button: Comment
       comment_placeholder_text: Type your comment here...
+    join_match_modal:
+      cancel: Cancel
+      info: Join this match
+      join: Join
+      quantity: Number of registrations
+    new_match_modal:
+      cancel: Cancel
+      create: Create
+      info: Create match
+      max_quantity: 'Max quantity: '
+      quantity: 'Current quantity: '
     pitch_status_label:
       pitch_not_activate: Pitch not active
+    rent_modal:
+      cancel: Cancel
+      confirm: Confirm
+      date: 'Date: '
+      end_hour: 'End hour: '
+      info: Rent Information
+      mini_pitch: 'Pitch: '
+      note: Please come %{time} minutes early
+      statr_hour: "Statr hour: \n"
   shop: Shops
   shop_accept: Shop accept
   shop_accept_request: Status of Shop

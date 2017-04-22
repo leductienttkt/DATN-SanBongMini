@@ -1,0 +1,18 @@
+<% @users.each_with_index do |user, index| %>
+  <tr>
+    <td><%= increase_one index %></td>
+    <td><%= user.name %></td>
+    <td>
+      <div class="search-user-image">
+        <%= image_tag user.avatar.url, class: "thumbnail" %>
+      </div>
+    </td>
+    <td><%= user.phone %></td>
+    <td>
+      <%= match_user_quantity @match, user %>
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+<% end %>

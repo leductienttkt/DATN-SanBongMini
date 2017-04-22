@@ -19,3 +19,6 @@ fr:
     xing: Xing
 social_share_button:
   has_mini_pitches: '#'
+  rents:
+    show:
+      pitch_info: Pitch Information

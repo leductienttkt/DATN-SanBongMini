@@ -36,6 +36,7 @@
       <div class="check-result-text"></div>
       <%= link_to t(".rent"), "#", class: "btn btn-primary rent-btn",
         data: {toggle: "modal", target: "#rent-modal"} %>
+      <a class="btn btn-primary view-match-btn"><%= t(".view") %></a>
     </div>
     <div class="a-divider--hidden"></div>
     <div class="share-product">
@@ -135,7 +136,7 @@
   <%= hidden_field_tag "lat", @mini_pitch.address.latitude %>
   <%= hidden_field_tag "lng", @mini_pitch.address.longitude %>
 <% end %>
-<%= render "rent_modal" %>
+<%= render "shared/rent_modal" %>
 
 <script type="text/javascript">
 $(document).ready(function(){

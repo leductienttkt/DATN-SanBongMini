@@ -432,6 +432,9 @@ vi:
         btn_search: Lọc
       shop:
         shop: Cửa hàng
+  date:
+    formats:
+      date: '%d-%m-%y'
   date_format: '%d/%m/%Y'
   datetime:
     distance_in_words:
@@ -690,6 +693,24 @@ vi:
     view_all_domains: Tất cả miền
   manual_help_forder: Hướng dẫn sử dụng
   many_user: ' tài khoản thêm không thành công và '
+  matches:
+    show:
+      actions: Hành động
+      avatar: Ảnh đại diện
+      current_quantity: 'Số lượng hiện tại: '
+      date: 'Ngày: '
+      join: Tham gia
+      match_info: Thông tin trận đấu
+      match_owner: 'Chủ trận: '
+      max_quantity: 'Số lượng tối đa: '
+      member: Người tham gia
+      name: Tên
+      number: STT
+      phone: Số điện thoại
+      pitch_info: Thông tin sân bóng
+      pitch_owner: 'Chủ sân: '
+      quantity: Số lượng đăng kí
+      time: 'Thời gian: '
   members: Thành viên
   mini_pitches:
     index:
@@ -823,6 +844,15 @@ vi:
   public_domain: Miền công khai
   rejected_products: sản phẩm đã từ chối
   remote_domain_manager: 'vừa xóa bạn ra khỏi danh sách quản lí của miền:'
+  rents:
+    show:
+      create_match: 'Bạn có muốn tạo một trận đấu? '
+      date: 'Ngày: '
+      note: Vui lòng đến trước %{time} để nhận sân
+      pitch_info: Thông tin sân bóng
+      pitch_owner: 'Chủ sân: '
+      rent_info: Thông tin thuê sân
+      time: Thời gian
   request_have_been_delete: Yêu cầu đã bị xóa
   request_join_domain: ' vừa tham gia vào miền: '
   request_shop:
@@ -870,8 +900,28 @@ vi:
       comment_box: Khung bình luận
       comment_button: Bình luận
       comment_placeholder_text: Bình luận ở đây...
+    join_match_modal:
+      cancel: Hủy
+      info: Tham gia trận đấu
+      join: Tham gia
+      quantity: Số lượng đăng kí
+    new_match_modal:
+      cancel: Hủy
+      create: Tạo
+      info: Tạo trận đấu
+      max_quantity: 'Số lượng tối đa: '
+      quantity: 'Số lượng hiện có: '
     pitch_status_label:
       pitch_not_activate: Sân chưa kích hoạt
+    rent_modal:
+      cancel: Hủy
+      confirm: Xác nhận
+      date: 'Ngày: '
+      end_hour: 'Giờ kết thúc: '
+      info: Thông tin thuê sân
+      mini_pitch: 'Sân: '
+      note: Vui lòng đến trước %{time} phút
+      statr_hour: 'Giờ bắt đầu: '
   shop: Cửa hàng
   shop_accept: Đơn hàng
   shop_accept_request: Trạng thái của cửa hàng

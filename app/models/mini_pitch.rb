@@ -19,10 +19,15 @@ class MiniPitch < ApplicationRecord
   delegate :name, to: :pitch, prefix: :pitch, allow_nil: true
   delegate :avatar, to: :pitch, prefix: :pitch, allow_nil: true
   delegate :details, to: :address, prefix: :address, allow_nil: true
+  delegate :time_auto_reject, to: :pitch, allow_nil: true
 
   scope :by_date_newest, ->{order created_at: :desc}
   scope :by_active, ->{where status: :active}
   scope :of_ids, -> ids {where id: ids}
+
+  def full_name
+    pitch_name + " - " + name
+  end
 
   private
   def image_size

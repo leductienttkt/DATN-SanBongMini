@@ -14,3 +14,44 @@
     padding: 10px 20px 10px 20px;
   }
 }
+
+.rent_mini_pitch-modal {
+	font-size: 20px;
+  max-width: 400px;
+
+  .rent-mini-pitch-start {
+    color: red;
+  }
+
+  .rent-mini-pitch-end {
+    color: red;
+  }
+
+  .rent-mini-pitch-date {
+    color: red;
+  }
+  .rent-mini-pitch-name {
+    color: green;
+  }
+
+  .confirm_order {
+    padding-left: 40px;
+  }
+
+  i {
+    padding-left: 20px;
+  }
+}
+
+.gmap-show-rent {
+  min-height: 465px;
+}
+
+.gmap-show-match {
+  min-height: 400px;
+}
+
+.join-match-btn {
+  float: right;
+  font-size: 15px;
+}

@@ -5,18 +5,22 @@ class CheckMiniPitchesController < ApplicationController
     if check_params_search params
       search_result = MiniPitch.of_ids(Rent.by_mini_pitch(@mini_pitch.id)
         .mini_pitch_in_rent params)
-      if search_result.any?
+      @matches = Match.of_ids_rent(Rent.by_mini_pitch(@mini_pitch.id)
+        .ids_for_match params)
+      if search_result.any? && !@matches.any?
         render_json "San khong trong", 100
+      elsif @matches.any?
+        render_json "Co 1 tran dau", 101, @matches.first.id
       else
-        render_json "San trong", 101
+        render_json "San trong", 102
       end
     end
   end
 
   private
-  def render_json message, status
-  	respond_to do |format|
-      format.json{render json: {flash: message, status: status}}
+  def render_json message, status, id = nil
+    respond_to do |format|
+      format.json{render json: {flash: message, status: status, id: id}}
     end
   end
 

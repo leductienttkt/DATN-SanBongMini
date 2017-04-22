@@ -21,7 +21,8 @@ namespace :db do
           email: "nara-#{n+1}@love.com",
           password: "123456",
           password_confirmation: "123456",
-          status: 1
+          status: 1,
+          phone: "01234200394"
         )
       end
 
@@ -58,7 +59,7 @@ namespace :db do
         Rent.create!(
           start_hour: "07:00:00",
           end_hour: "10:00:00",
-          date: "20-04-2017",
+          date: "25-04-2017",
           user_id: t+1,
           mini_pitch_id: t+1
         )

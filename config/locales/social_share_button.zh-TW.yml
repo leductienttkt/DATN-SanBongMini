@@ -1,4 +1,7 @@
 social_share_button:
+  matches:
+    show:
+      number: NO.
   pitches:
     show:
       number_mini_pitch: 'Number mini pitches: '
