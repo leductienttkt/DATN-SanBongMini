@@ -207,11 +207,11 @@ en:
   com-email: hr_team@framgia.com
   com-infor: Copyright 2016 Framgia, Inc. All rights reserved.
   common:
-    admin_title: Admin Framgia Orders
+    admin_title: Admin Nara Football
     all_products: All products
     all_shops: All shops
     back_button: Back
-    base_title: Framgia Food and Drink Order
+    base_title: Nara Football
     btn_add_to_favorite: Add to Favorite
     btn_cancel: Cancel
     btn_ok: Ok
@@ -389,6 +389,41 @@ en:
         product_name: 'Product: '
         quantity: Quantity
         total: Total
+    rent_managers:
+      index:
+        accepted: Accepted
+        end: End time
+        end_date: 'End date: '
+        excel: Export to excel
+        index: No.
+        mini: Mini pitch
+        name: Renter
+        no_rents: No information!
+        phone: Phone number
+        rejected: Rejected
+        start: Start time
+        start_date: 'Start date: '
+        title: Rent history
+        total: Total
+      rent:
+        end: 'End:'
+        mini: 'Mini pitch: '
+        rent_on: 'Rent on: '
+        start: 'Start: '
+    rents:
+      index:
+        search: Search by name or phone number
+        title: List rents
+      pitch_rents:
+        accept: Accept
+        date: 'Date: '
+        end: 'End time: '
+        mini: 'Mini pitch: '
+        reject: 'Reject
+
+          Reject'
+        rent_on: 'Rent on: '
+        start: 'Start time: '
     shop_managers:
       index:
         actions: Actions
@@ -784,6 +819,7 @@ en:
   owners_shop_avatar: 'Avatar:'
   owners_shop_cover_image: 'Cover image of the shop:'
   password: 'password: '
+  phone: 'Phone number: '
   phone-num: 84-4-3795-5417
   pictures:
     error_message: Image should be less than %{max_size}MB
@@ -798,10 +834,16 @@ en:
     search_item:
       mini_pitches: '%{num} mini pitches'
     show:
+      btn_search: Search
+      date: 'Date:'
+      end_hour: 'End hour: '
       minutes: ' (minutes)'
       number_mini_pitch: 'Number mini pitches: '
       our_address: 'Address: '
       pitch_name: 'Pitch name:  '
+      pitch_type: 'Pitch type:'
+      search_mini_pitch: "Search mini pitch: \n"
+      start_hour: 'Start hour:'
       time_auto_reject: Time auto reject
   price_message: 'The total of your order: '
   product:
@@ -854,6 +896,23 @@ en:
   save_domain_successfully: Domain is saved successfully
   save_product_domain_successfully: Product domain is saved successfully
   save_shop_domain_successfully: Shop domain is saved successfully
+  search_mini_pitches:
+    available_mini_pitches:
+      has_free_mini_pitch: There are %{num} available mini pitches
+      no_free_mini_pitch: No available mini pitch in this time
+      rent: Rent
+      rent_time_text: 'Time: '
+      split: ' - '
+      type: 'Type: {type}'
+      view_button: View
+    mini_pitch_has_match:
+      has_match: There are %{num} matches in this time
+      no_free_mini_pitch: Has no match in this time
+      rent_time_text: 'Time: '
+      split: ' - '
+      type: 'Type: %{type}'
+      view_button: View
+      view_match: Match
   search_placeholder: Search by name or address
   searches:
     index:
@@ -890,6 +949,7 @@ en:
       info: Rent Information
       mini_pitch: 'Pitch: '
       note: Please come %{time} minutes early
+      phone: 'Phone number: '
       statr_hour: "Statr hour: \n"
   shop: Shops
   shop_accept: Shop accept

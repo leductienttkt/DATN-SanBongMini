@@ -3,9 +3,11 @@ class CheckMiniPitchesController < ApplicationController
 
   def index
     if check_params_search params
-      search_result = MiniPitch.of_ids(Rent.by_mini_pitch(@mini_pitch.id)
+      search_result = MiniPitch.of_ids(Rent.not_is_rejected
+        .by_mini_pitch(@mini_pitch.id)
         .mini_pitch_in_rent params)
-      @matches = Match.of_ids_rent(Rent.by_mini_pitch(@mini_pitch.id)
+      @matches = Match.of_ids_rent(Rent.not_is_rejected
+        .by_mini_pitch(@mini_pitch.id)
         .ids_for_match params)
       if search_result.any? && !@matches.any?
         render_json "San khong trong", 100

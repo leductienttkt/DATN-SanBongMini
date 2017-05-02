@@ -69,17 +69,21 @@ ActiveRecord::Schema.define(version: 20170408024902) do
   end
 
   create_table "match_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "match_id"
-    t.integer "user_id"
-    t.integer "quantity", default: 1
+    t.integer  "match_id"
+    t.integer  "user_id"
+    t.integer  "quantity",   default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["match_id"], name: "index_match_users_on_match_id", using: :btree
     t.index ["user_id"], name: "index_match_users_on_user_id", using: :btree
   end
 
   create_table "matches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "available_quantity"
-    t.integer "max_quantity"
-    t.integer "rent_id"
+    t.integer  "available_quantity"
+    t.integer  "max_quantity"
+    t.integer  "rent_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["rent_id"], name: "index_matches_on_rent_id", using: :btree
   end
 
@@ -117,20 +121,25 @@ ActiveRecord::Schema.define(version: 20170408024902) do
   end
 
   create_table "promotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date    "start_date"
-    t.date    "end_date"
-    t.text    "content",    limit: 65535
-    t.integer "pitch_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "content",    limit: 65535
+    t.integer  "pitch_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["pitch_id"], name: "index_promotions_on_pitch_id", using: :btree
   end
 
   create_table "rents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.time    "start_hour"
-    t.time    "end_hour"
-    t.date    "date"
-    t.integer "status",        default: 0
-    t.integer "mini_pitch_id"
-    t.integer "user_id"
+    t.time     "start_hour"
+    t.time     "end_hour"
+    t.date     "date"
+    t.string   "phone"
+    t.integer  "status",        default: 0
+    t.integer  "mini_pitch_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["mini_pitch_id"], name: "index_rents_on_mini_pitch_id", using: :btree
     t.index ["user_id"], name: "index_rents_on_user_id", using: :btree
   end
@@ -158,9 +167,11 @@ ActiveRecord::Schema.define(version: 20170408024902) do
   end
 
   create_table "vip_customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "quantity", default: 1
-    t.integer "user_id"
-    t.integer "pitch_id"
+    t.integer  "quantity",   default: 1
+    t.integer  "user_id"
+    t.integer  "pitch_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["pitch_id"], name: "index_vip_customers_on_pitch_id", using: :btree
     t.index ["user_id"], name: "index_vip_customers_on_user_id", using: :btree
   end

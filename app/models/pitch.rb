@@ -27,6 +27,10 @@ class Pitch < ApplicationRecord
 
   accepts_nested_attributes_for :address, allow_destroy: true
 
+  def is_owner_by? user
+    self.owner == user
+  end
+
   private
 
   def image_size

@@ -25,8 +25,18 @@ class MiniPitch < ApplicationRecord
   scope :by_active, ->{where status: :active}
   scope :of_ids, -> ids {where id: ids}
 
+  scope :by_pitch, -> id {where  pitch_id: id}
+
   def full_name
     pitch_name + " - " + name
+  end
+
+  def get_start_hour
+    self.start_hour.to_s(:time)
+  end
+
+  def get_end_hour
+    self.end_hour.to_s(:time)
   end
 
   private

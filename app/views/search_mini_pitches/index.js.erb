@@ -1,0 +1,6 @@
+<% if @status.present? %>
+  $.growl.error({message: '<%= @message %>'});
+<% else %>
+  $('.pitch-mini-pitch').html('<%= j render "available_mini_pitches", mini_pitches: @free_pitches %>');
+  $('.pitch-mini-has-match').html('<%= j render "mini_pitch_has_match", matches: @matches %>');
+<% end %>

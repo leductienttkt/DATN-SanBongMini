@@ -1,0 +1,72 @@
+<div class="container">
+  <h2 class="row_h2">
+    <%= t ".title" %> - <%= @pitch.name %>
+  </h2>
+  <div class="panel panel-default">
+    <div class="search_between panel_search">
+      <div class="row text-center">
+        <input class="pitch-id" type="hidden" value="<%= @pitch.id %>">
+        <div class="col-sm-2 col-xs-3 col-md-2 margin my-margin">
+          <span class="label-span">
+            <%= t(".start_date") %>
+          </span>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-2">
+          <%= text_field_tag :start_date, params[:start_date],
+            class: "form-control picth-datepicker rent-history rent-history-start" %>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 margin my-margin">
+          <span class="label-span">
+          <%= t(".end_date") %>
+          </span>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-2">
+          <%= text_field_tag :end_date, params[:end_date],
+            class: "form-control picth-datepicker rent-history rent-history-end" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a data-toggle="tab" href="#done"><%= t ".accepted" %></a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#reject"><%= t ".rejected" %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="done" class="tab-pane fade in active">
+      <div class="well">
+        <div class="panel-group">
+          <% if @rents_accepted.present? %>
+            <div class="rents-accepted">
+              <%= render "rent", rents: @rents_accepted, label: "success" %>
+            </div>
+          <% else %>
+            <span class="text-danger"><%= t ".no_rents" %></span>
+          <% end %>
+          <h4 class="download-rent-history">
+            <%= link_to t(".excel"), dashboard_pitch_rent_managers_path(
+              @pitch.id, start_date: @params[:start_date],
+              end_date: @params[:end_date], format: "xls")  %>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div id="reject" class="tab-pane fade">
+      <div class="well">
+        <div class="panel-group">
+          <% if @rents_rejected.present? %>
+            <div class="rents-rejected">
+              <%= render "rent", rents: @rents_rejected, label: "danger" %>
+            </div>
+          <% else %>
+            <span class="text-danger"><%= t ".no_rents" %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,8 +33,11 @@ Rails.application.routes.draw do
     root "statistics#index", path: "/"
     resources :pitches do
       resources :mini_pitches
+      resources :rents
+      resources :rent_managers
     end
     resources :statistics
+
   end
 
   resources :pitches
@@ -47,6 +50,7 @@ Rails.application.routes.draw do
   resources :rents
   resources :matches
   resources :match_users
+  resources :search_mini_pitches
 
 
 

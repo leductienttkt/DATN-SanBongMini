@@ -11,9 +11,7 @@ class MatchUsersController < ApplicationController
     if @match_user.save
       avail = @match_user.match.available_quantity - @match_user.quantity
       @match_user.match.update(available_quantity: avail)
-      @users = @match_user.match.users
       @match = @match_user.match
-      flash[:success] = "aaaa"
       respond_to do |format|
         format.js
       end

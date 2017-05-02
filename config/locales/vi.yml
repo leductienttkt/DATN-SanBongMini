@@ -208,7 +208,7 @@ vi:
     all_products: Tất cả sản phẩm
     all_shops: Tất cả cửa hàng
     back_button: Quay lại
-    base_title: Framgia Food And Drink Order
+    base_title: Sân bóng mini - Nara
     btn_add_to_favorite: Thêm vào ưa thích
     btn_cancel: Bỏ qua
     btn_ok: Đồng ý
@@ -361,7 +361,7 @@ vi:
         pitch_owner: Chủ sân
         time_auto_reject: 'Thời gian tự động từ chối:  '
         view_history_orders: aaaa
-        view_history_rent: Xem lịch sữ thuê
+        view_history_rent: Xem lịch sử thuê
         view_rent_list: Xem danh sách thuê
     products:
       edit:
@@ -385,6 +385,39 @@ vi:
         product_name: 'Sản phẩm: '
         quantity: Số lượng
         total: Tổng cộng
+    rent_managers:
+      index:
+        accepted: Đã chấp nhận
+        end: Giờ kết thúc
+        end_date: 'Ngày kết thúc: '
+        excel: Xuất file excel
+        index: Stt
+        mini: Sân mini
+        name: Người thuê
+        no_rents: Không có thông tin!
+        phone: Số điện thoại
+        rejected: Đã từ chối
+        start: Giờ bắt đầu
+        start_date: 'Ngày bắt đầu: '
+        title: Lịch sử thuê sân
+        total: Tổng cộng
+      rent:
+        end: 'Kết thúc: '
+        mini: 'Sân mini: '
+        rent_on: 'Thuê lúc: '
+        start: 'Bắt đầu: '
+    rents:
+      index:
+        search: Tìm kiếm theo tên hoặc số điện thoại
+        title: Danh sách thuê sân
+      pitch_rents:
+        accept: Chấp nhận
+        date: 'Ngày: '
+        end: 'Kết thúc: '
+        mini: 'Sân mini: '
+        reject: Từ chối
+        rent_on: 'Thuê lúc: '
+        start: 'Bắt đầu: '
     shop_managers:
       index:
         actions: Hành động
@@ -815,6 +848,7 @@ vi:
   owners_shop_avatar: 'Ảnh đại diện:'
   owners_shop_cover_image: 'Ảnh bìa của shop:'
   password: 'mật khẩu: '
+  phone: 'Số điện thoại: '
   phone-num: 84-4-3795-5417
   pictures:
     error_message: Hình ảnh phải nhỏ hơn %{max_size}MB
@@ -829,10 +863,16 @@ vi:
     search_item:
       mini_pitches: '%{num} sân mini'
     show:
+      btn_search: Tìm kiếm
+      date: 'Ngày:'
+      end_hour: 'Thời gian kết thúc: '
       minutes: ' (phút)'
       number_mini_pitch: 'Số lượng sân mini: '
       our_address: 'Địa chỉ: '
       pitch_name: 'Tên sân bóng: '
+      pitch_type: 'Loại sân:'
+      search_mini_pitch: 'Tìm sân: '
+      start_hour: 'Thời gian bắt đầu:'
       time_auto_reject: 'Thời gian tự động hủy: '
   price_message: 'Tổng giá đơn hàng của bạn: '
   product:
@@ -885,6 +925,23 @@ vi:
   save_domain_successfully: Miền được lưu thành công
   save_product_domain_successfully: Miền của sản phẩm được lưu thành công
   save_shop_domain_successfully: Miền của cửa hàng được lưu thành công
+  search_mini_pitches:
+    available_mini_pitches:
+      has_free_mini_pitch: Có %{num} sân trống
+      no_free_mini_pitch: Không có sân trống trong thời gian này
+      rent: Thuê
+      rent_time_text: 'Thời gian: '
+      split: ' - '
+      type: 'loại sân: {type}'
+      view_button: Xem
+    mini_pitch_has_match:
+      has_match: Có %{num} trận đấu vào thời gian này
+      no_free_mini_pitch: Không có trận đấu nào trong thời gian này
+      rent_time_text: 'Thời gian: '
+      split: ' - '
+      type: 'Loại sân: %{type}'
+      view_button: Xem
+      view_match: Trận đấu
   search_placeholder: Tìm kiếm theo tên hoặc địa chỉ
   searches:
     index:
@@ -921,6 +978,7 @@ vi:
       info: Thông tin thuê sân
       mini_pitch: 'Sân: '
       note: Vui lòng đến trước %{time} phút
+      phone: 'Số điện thoại: '
       statr_hour: 'Giờ bắt đầu: '
   shop: Cửa hàng
   shop_accept: Đơn hàng

@@ -1,5 +1,4 @@
 class MiniPitchesController < ApplicationController
-  before_action :authenticate_user!
   
   def index
     @mini_pitches = MiniPitch.all.includes(:pitch).active.page(params[:page])

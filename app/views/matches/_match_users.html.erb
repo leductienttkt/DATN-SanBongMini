@@ -1,15 +1,15 @@
-<% @users.each_with_index do |user, index| %>
+<% @match.match_users.each_with_index do |match_user, index| %>
   <tr>
     <td><%= increase_one index %></td>
-    <td><%= user.name %></td>
+    <td><%= match_user.user.name %></td>
     <td>
       <div class="search-user-image">
-        <%= image_tag user.avatar.url, class: "thumbnail" %>
+        <%= image_tag match_user.user.avatar.url, class: "thumbnail" %>
       </div>
     </td>
-    <td><%= user.phone %></td>
+    <td><%= match_user.user.phone %></td>
     <td>
-      <%= match_user_quantity @match, user %>
+      <%= match_user.quantity %>
     </td>
     <td>
       

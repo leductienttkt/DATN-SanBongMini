@@ -32,10 +32,10 @@
             </h4>
             <h4>
               <%= link_to t(".view_rent_list"),
-                "dashboard_shop_orders_path(@shop.id)",
+                dashboard_pitch_rents_path(@pitch.id),
                 class: "btn btn-theme width_btn" %>
               <%= link_to t(".view_history_rent"),
-                "dashboard_shop_order_managers_path(@shop.id)",
+                dashboard_pitch_rent_managers_path(@pitch.id),
                 class: "btn btn-theme" %>
             </h4>
           </div>

@@ -1,0 +1,71 @@
+<% if matches.any? %>
+  <div class="col-md-12"><%= t(".has_match", num: matches.size) %></div>
+  <% matches.each do |match| %>
+    <div class="product_item_wrapper col-md-3 col-sm-3
+      col-xs-6 margin-top-5-bot-5 item-produc-shop">
+      <div class="product_content_area">
+        <div class="image_product">
+          <%= link_to mini_pitch_path(match.rent.mini_pitch) do %>
+            <%= image_tag match.rent.mini_pitch.image.url,
+              class: "image-shop height-27375" %>
+          <% end %>
+          <h3>
+            <%= t ".rent_time_text" %>
+            <%= l match.rent.mini_pitch.start_hour, format: :short_time %>
+            <%= t ".split" %>
+            <%= l match.rent.mini_pitch.end_hour, format: :short_time %>
+          </h3>
+        </div>
+      </div>
+      <div class="padding-10">
+        <div class="description_area row">
+          <div class="col-md-4"> 
+            <%= link_to pitch_path(match.rent.mini_pitch.pitch) do %>
+            <span class="picth-avatar-mini">
+              <% if match.rent.mini_pitch.pitch_avatar.nil? %>
+                <%= image_tag "default_shop_avatar" %>
+              <% else %>
+                <%= image_tag match.rent.mini_pitch.pitch_avatar.url,
+                  class:"image-home" %>
+              <% end %>
+            </span>
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <div>
+              <strong>
+                <%= link_to truncate(match.rent.mini_pitch.pitch_name,
+                  length: Settings.max_shop_name),
+                  pitch_path(match.rent.mini_pitch.pitch),
+                  class: "tooltips", title: match.rent.mini_pitch.pitch_name %>
+              </strong>
+            </div>
+            <div class="product_text">
+              <strong><%= match.rent.mini_pitch.name %></strong>
+            </div>
+            <div class="product_text">
+              <strong><%= t(".type", type: match.rent.mini_pitch.pitch_type) %></strong>
+            </div>
+            <div class="product_text  height-50">
+              <strong><%= format_price match.rent.mini_pitch.price %></strong>
+            </div>
+          </div>
+        </div>
+        <div class="interaction_area text-center">
+          <%= link_to mini_pitch_path(match.rent.mini_pitch), 
+            class: "btn btn-default btn_add_favorite" do %>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <%= t ".view_button" %>
+          <% end %>
+          <%= link_to match_path(match), 
+            class: "btn btn-danger btn_add_favorite" do %>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <%= t ".view_match" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= t ".no_free_mini_pitch" %>
+<% end %>

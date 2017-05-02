@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w(dashboard/statistics.js)
 Rails.application.config.assets.precompile += %w(index.css)
 Rails.application.config.assets.precompile += %w(map.js)
+Rails.application.config.assets.precompile += %w( pitch.js rent.js)

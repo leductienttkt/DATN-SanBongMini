@@ -4,6 +4,8 @@ class CreateMatches < ActiveRecord::Migration[5.0]
       t.integer :available_quantity
       t.integer :max_quantity
       t.references :rent, foreign_key: true
+
+      t.timestamps
     end
   end
 end

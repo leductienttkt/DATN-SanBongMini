@@ -28,14 +28,13 @@
       <div class="col-md-3 check-mini-pitch">
         <%= link_to t(".btn_check"), "#",
           class: "btn btn-primary" %>
-      </div>
-      
+      </div>  
     </div>
 
     <div class="form-check-result text-center">
       <div class="check-result-text"></div>
       <%= link_to t(".rent"), "#", class: "btn btn-primary rent-btn",
-        data: {toggle: "modal", target: "#rent-modal"} %>
+        data: {toggle: "modal", target: ".rent-modal"} %>
       <a class="btn btn-primary view-match-btn"><%= t(".view") %></a>
     </div>
     <div class="a-divider--hidden"></div>
@@ -136,7 +135,7 @@
   <%= hidden_field_tag "lat", @mini_pitch.address.latitude %>
   <%= hidden_field_tag "lng", @mini_pitch.address.longitude %>
 <% end %>
-<%= render "shared/rent_modal" %>
+<%= render "shared/rent_modal", mini_pitch: @mini_pitch %>
 
 <script type="text/javascript">
 $(document).ready(function(){

@@ -44,18 +44,34 @@ $(document).ready(function() {
     return false;
   });
 
+  $('.rent-modal').on('show.bs.modal', function () {
+   $('.rent-mini-pitch-start').html($('#start_hour').val());
+   $('.rent-mini-pitch-end').html($('#end_hour').val());
+   $('.rent-mini-pitch-date').html($('#date').val());
+  });
+
   $('.rent-mini-pitch-btn').on('click', function(){
     var start_hour = $('#start_hour').val();
     var end_hour = $('#end_hour').val();
     var date = $('#date').val();
-    var mini_pitch_id = $('#mini_pitch_id').val();
+    var mini_pitch_id = this.dataset.id;
+    var phone = '';
+    if ($('.rent-phone-' + mini_pitch_id).length) {
+      phone = $('.rent-phone-'+mini_pitch_id).val();
+      console.log(phone);
+      if (!phone) {
+        $.growl.danger({message: "Nhap sdt vo!"});
+        return;
+      }
+    }
+
     rent = {start_hour: start_hour, end_hour: end_hour, date: date,
-        mini_pitch_id: mini_pitch_id}
+      mini_pitch_id: mini_pitch_id}
 
     $.ajax({
       url: '/rents/',
       method: "POST",
-      data: {rent: rent},
+      data: {rent: rent, phone: phone},
       success: function(data) {
         $.growl.notice({message: data['message']});
         window.location.href = '/rents/' + data.id;
@@ -66,12 +82,6 @@ $(document).ready(function() {
       }
     });
     return false;
-  });
-
-  $('#rent-modal').on('show.bs.modal', function () {
-   $('.rent-mini-pitch-start').html($('#start_hour').val())
-   $('.rent-mini-pitch-end').html($('#end_hour').val())
-   $('.rent-mini-pitch-date').html($('#date').val())
   });
 
   $('.new-match-btn').on('click', function(){
@@ -127,4 +137,56 @@ $(document).ready(function() {
     }
     return false;
   });
+
+  $('.search-mini-pitch').on('click', function(){
+    
+    var start_hour = $('#start_hour').val();
+    var end_hour = $('#end_hour').val();
+    var date = $('#date').val();
+    var pitch_type = $('#pitch_type').val();
+    var pitch_id = $('#pitch_id').val();
+
+    if (!start_hour || !end_hour || !date){
+      $.growl.warning({message: "Nhap cho du te"});
+      return false;
+    }
+    $.ajax({
+      url: '/search_mini_pitches/', 
+      data: {start_hour: start_hour, end_hour: end_hour, date: date,
+        pitch_type: pitch_type, pitch_id: pitch_id}, 
+      success: function(data) {
+       
+      },
+      error: function(error) {
+       
+      }
+    });
+    return false;
+  });
+
+  $('.rent-history').on('change', function(){
+    var start_date = $('.rent-history-start').val();
+    var end_date = $('.rent-history-end').val();
+    var pitch_id = $('.pitch-id').val();
+
+    $.ajax({
+      url: '/dashboard/pitches/' + pitch_id + '/rent_managers',
+      data: {start_date: start_date, end_date: end_date, pitch_id: pitch_id}
+    });
+    return false;
+  });
+
+  $('#rent_search').on('keyup', function() {
+  
+    pitch_id = $('#pitch_id').val();
+
+    $.ajax({
+      type: 'GET',
+      url : '/dashboard/pitches/' + pitch_id + '/rents/',
+      data: {
+        pitch_id: pitch_id, rent_search: $(this).val()
+      }
+    });
+  });
+
 });

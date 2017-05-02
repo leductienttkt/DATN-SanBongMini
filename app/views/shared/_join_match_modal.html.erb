@@ -8,7 +8,9 @@
       <div class="modal-body">
         <div class="fade in well confirm_order">
             <%= hidden_field_tag "match_id", @match.id %>
-            <%= hidden_field_tag "available_quantity", @match.available_quantity %>
+            <div class="hidden_available_quantity">
+              <%= hidden_field_tag "available_quantity", @match.available_quantity %>
+            </div>
              <div class="form-group">
               <%= t ".quantity" %>
               <%= number_field_tag :quantity, nil, min: 1,

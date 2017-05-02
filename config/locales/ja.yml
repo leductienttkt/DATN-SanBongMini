@@ -360,7 +360,7 @@ ja:
         pitch_managers: Người quản lý
         pitch_owner: Chủ sân
         time_auto_reject: 'Thời gian tự động từ chối: '
-        view_history_rent: Xem lịch sữ thuê
+        view_history_rent: Xem lịch sử thuê
         view_rent_list: Xem danh sách thuê
     products:
       edit:
@@ -384,6 +384,39 @@ ja:
         product_name: 'プロダクト: '
         quantity: 数量
         total: 合計
+    rent_managers:
+      index:
+        accepted: Accepted
+        end: End time
+        end_date: 'End date: '
+        excel: Export to excel
+        index: No.
+        mini: Mini pitch
+        name: Renter
+        no_rents: No information!
+        phone: Phone number
+        rejected: Rejected
+        start: Start time
+        start_date: 'Start date: '
+        title: Rent history
+        total: Total
+      rent:
+        end: 'End: '
+        mini: 'Mini pitch: '
+        rent_on: 'Rent on: '
+        start: 'Start: '
+    rents:
+      index:
+        search: Search by name or phone number
+        title: List rents
+      pitch_rents:
+        accept: Accept
+        date: 'Date: '
+        end: 'End time: '
+        mini: 'Mini pitch: '
+        reject: Reject
+        rent_on: 'Rent on: '
+        start: 'Start time: '
     shop_managers:
       index:
         actions: アクト
@@ -782,6 +815,7 @@ ja:
   owners_shop_avatar: 'アバター:'
   owners_shop_cover_image: ショップの表紙画像：
   password: 'password: '
+  phone: 'Phone number: '
   phone-num: 84-4-3795-5417
   pictures:
     error_message: '写真 %{max_size}MB 未満でなければなりません '
@@ -796,10 +830,16 @@ ja:
     search_item:
       mini_pitches: '%{num} sân mini'
     show:
+      btn_search: Search
+      date: 'Date:'
+      end_hour: 'End hour: '
       minutes: ' (phút)'
       number_mini_pitch: 'Số lượng sân mini: '
       our_address: 'Địa chỉ: '
       pitch_name: 'Tên sân bóng: '
+      pitch_type: 'Pitch type:'
+      search_mini_pitch: 'Search mini pitch: '
+      start_hour: 'Start hour:'
       time_auto_reject: 'Thời gian tự động hủy: '
   price_message: '合計: '
   product:
@@ -852,6 +892,23 @@ ja:
   save_domain_successfully: 正常に保存
   save_product_domain_successfully: ' 正常に保存'
   save_shop_domain_successfully: 正常に保存
+  search_mini_pitches:
+    available_mini_pitches:
+      has_free_mini_pitch: There are %{num} available mini pitches
+      no_free_mini_pitch: No available mini pitch in this time
+      rent: Rent
+      rent_time_text: 'Time: '
+      split: ' - '
+      type: 'Type: {type}'
+      view_button: View
+    mini_pitch_has_match:
+      has_match: There are %{num} matches in this time
+      no_free_mini_pitch: Has no match in this time
+      rent_time_text: 'Time: '
+      split: ' - '
+      type: 'Type: %{type}'
+      view_button: View
+      view_match: Match
   search_placeholder: Tìm kiếm theo tên hoặc địa chỉ
   searches:
     index:
@@ -888,6 +945,7 @@ ja:
       info: Rent Information
       mini_pitch: 'Pitch: '
       note: Please come %{time} minutes early
+      phone: 'Phone number: '
       statr_hour: "Start hour: \nStart hour"
   shop: 店
   shop_accept: 店が受け入れる

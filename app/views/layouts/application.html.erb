@@ -9,11 +9,7 @@
     <%= action_cable_meta_tag %>
   </head>
   <body class="scroll-horizontal">
-    <% if user_signed_in? %>
-      <%= render "layouts/header" %>
-    <% else %>
-      <%= render "layouts/header_index" %>
-    <% end %>
+    <%= render "layouts/header" %>
     <div class="container home-body">
       <div class="flash-messages">
         <%= render "layouts/messages" %>

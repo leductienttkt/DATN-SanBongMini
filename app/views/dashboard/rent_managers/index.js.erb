@@ -1,0 +1,3 @@
+$('.rents-rejected').html('<%= j render "rent", rents: @rents_rejected, label: "danger" %>');
+$('.rents-accepted').html('<%= j render "rent", rents: @rents_accepted, label: "success" %>');
+$('.download-rent-history').html('<%= link_to t(".excel"), dashboard_pitch_rent_managers_path(@pitch.id, start_date: @params[:start_date], end_date: @params[:end_date], format: "xls") %>')

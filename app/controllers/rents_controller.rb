@@ -11,7 +11,12 @@ class RentsController < ApplicationController
   end
 
   def create
-    @rent = current_user.rents.create rent_params
+    if user_signed_in?
+      @rent = current_user.rents.create rent_params.merge!(phone: current_user.phone)
+      @rent.status = :accepted if @rent.pitch_owner_by?(current_user)
+    else
+      @rent = Rent.create rent_params.merge!(user_id: 1, phone: params[:phone])
+    end
     if @rent.save
       respond_to do |format|
         format.json{render json: {message: t(".rent_success"), id: @rent.id}}

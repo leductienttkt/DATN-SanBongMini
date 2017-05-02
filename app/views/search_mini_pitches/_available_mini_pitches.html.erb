@@ -1,0 +1,112 @@
+<% if mini_pitches.any? %>
+  <div class="col-md-12"><%= t(".has_free_mini_pitch", num: mini_pitches.size) %></div>
+  <% mini_pitches.each do |mini_pitch| %>
+    <div class="product_item_wrapper col-md-3 col-sm-3
+      col-xs-6 margin-top-5-bot-5 item-produc-shop">
+      <div class="product_content_area">
+        <div class="image_product">
+          <%= link_to mini_pitch_path(mini_pitch) do %>
+            <%= image_tag mini_pitch.image.url, class: "image-shop height-27375" %>
+          <% end %>
+          <h3>
+            <%= t ".rent_time_text" %>
+            <%= l mini_pitch.start_hour, format: :short_time %>
+            <%= t ".split" %>
+            <%= l mini_pitch.end_hour, format: :short_time %>
+          </h3>
+        </div>
+      </div>
+      <div class="padding-10">
+        <div class="description_area row">
+          <div class="col-md-4"> 
+            <%= link_to pitch_path(mini_pitch.pitch) do %>
+            <span class="picth-avatar-mini">
+              <% if mini_pitch.pitch_avatar.nil? %>
+                <%= image_tag "default_shop_avatar" %>
+              <% else %>
+                <%= image_tag mini_pitch.pitch_avatar.url, class:"image-home" %>
+              <% end %>
+            </span>
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <div>
+              <strong>
+                <%= link_to truncate(mini_pitch.pitch_name,
+                  length: Settings.max_shop_name),
+                  pitch_path(mini_pitch.pitch),
+                  class: "tooltips", title: mini_pitch.pitch_name %>
+              </strong>
+            </div>
+            <div class="product_text">
+              <strong><%= mini_pitch.name %></strong>
+            </div>
+            <div class="product_text">
+              <strong><%= t(".type", type: mini_pitch.pitch_type) %></strong>
+            </div>
+            <div class="product_text  height-50">
+              <strong><%= format_price mini_pitch.price %></strong>
+            </div>
+          </div>
+        </div>
+        <div class="interaction_area text-center">
+          <%= link_to mini_pitch_path(mini_pitch), 
+            class: "btn btn-default btn_add_favorite" do %>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <%= t ".view_button" %>
+          <% end %>
+          <% if @params[:start_hour] >= mini_pitch.get_start_hour &&
+            @params[:end_hour] <= mini_pitch.get_end_hour %>
+            <%= link_to t(".rent"), "#", class: "btn btn-primary rent-btn",
+              data: {toggle: "modal", target: "#rent-modal-#{mini_pitch.id}"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render "shared/rent_modal", mini_pitch: mini_pitch %>
+    
+  <% end %>
+<% else %>
+  <%= t ".no_free_mini_pitch" %>
+<% end %>
+
+<script type="text/javascript">
+   $('.rent-modal').on('show.bs.modal', function () {
+    $('.rent-mini-pitch-start').html($('#start_hour').val());
+    $('.rent-mini-pitch-end').html($('#end_hour').val());
+    $('.rent-mini-pitch-date').html($('#date').val());
+  });
+
+  $('.rent-mini-pitch-btn').on('click', function(){
+    var start_hour = $('#start_hour').val();
+    var end_hour = $('#end_hour').val();
+    var date = $('#date').val();
+    var mini_pitch_id = this.dataset.id;
+    var phone = '';
+    if ($('.rent-phone-' + mini_pitch_id).length) {
+      phone = $('.rent-phone-' + mini_pitch_id).val();
+      console.log(phone);
+      if (!phone) {
+        $.growl.error({message: "Nhap sdt vo!"});
+        return;
+      }
+    }
+    rent = {start_hour: start_hour, end_hour: end_hour, date: date,
+      mini_pitch_id: mini_pitch_id}
+
+    $.ajax({
+      url: '/rents/',
+      method: "POST",
+      data: {rent: rent, phone: phone},
+      success: function(data) {
+        $.growl.notice({message: data['message']});
+        window.location.href = '/rents/' + data.id;
+      },
+      error: function(error) {
+        $.growl.error({message: error});
+        window.reload();
+      }
+    });
+    return false;
+  });
+</script>

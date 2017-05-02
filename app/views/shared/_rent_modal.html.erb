@@ -1,4 +1,4 @@
-<div id="rent-modal" class="modal fade" role="dialog">
+<div id="rent-modal-<%= mini_pitch.id %>" class="modal fade rent-modal" role="dialog">
   <div class="modal-dialog rent_mini_pitch-modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,22 +8,30 @@
       <div class="modal-body">
         <div class="fade in well confirm_order">
           <div><%= t ".mini_pitch" %>
-            <i class="rent-mini-pitch-name"><%= @mini_pitch.full_name %></i>
+            <i class="rent-mini-pitch-name"><%= mini_pitch.full_name %></i>
           </div>
           <div><%= t ".statr_hour" %><i class="rent-mini-pitch-start"></i></div>
           <div><%= t ".end_hour" %><i class="rent-mini-pitch-end"></i></div>
           <div><%= t ".date" %><i class="rent-mini-pitch-date"></i></div>
-          <div><%= t(".note", time: @mini_pitch.time_auto_reject.to_s(:time)) %></div>
+          <% unless user_signed_in? %>
+            <div class="form-group">
+              <%= t ".phone" %>
+              <%= text_field_tag :rent_phone, params[:rent_phone],
+                required: true,
+                class: "rent-phone-#{mini_pitch.id}" %>
+            </div>
+          <% end %>
+          <div><%= t(".note", time: mini_pitch.time_auto_reject.to_s(:time)) %></div>
         </div>
       </div>
       <div class="modal-footer text-center">
         <%= link_to t(".confirm"), "#",
-            class: "btn btn_add_to_cart btn-add rent-mini-pitch-btn" %>
+            class: "btn btn_add_to_cart btn-add rent-mini-pitch-btn",
+            data: {id: mini_pitch.id} %>
         <button type="button" class="btn btn-default" data-dismiss="modal">
           <%= t ".cancel" %>
         </butto>
       </div>
     </div>
-
   </div>
 </div>

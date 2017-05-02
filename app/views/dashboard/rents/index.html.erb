@@ -1,0 +1,15 @@
+<h2 class="row_h2">
+  <%= t ".title" %> - <%= @pitch.name %>
+</h2>
+<div class="">
+  <%= hidden_field_tag :pitch_id, @pitch.id %>
+  <div class="form-group">
+    <%= text_field_tag :rent_search, params[:rent_search],
+      placeholder: t(".search"), class: "form-control" %> 
+  </div>
+</div>
+<div class="well">
+  <div class="tab-content list-rent">  
+    <%= render "pitch_rents" %>
+  </div>
+</div>

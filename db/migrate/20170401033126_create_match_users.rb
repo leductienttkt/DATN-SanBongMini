@@ -4,6 +4,8 @@ class CreateMatchUsers < ActiveRecord::Migration[5.0]
       t.references :match, foreign_key: true
       t.references :user, foreign_key: true
       t.integer :quantity, default: 1
+
+      t.timestamps
     end
   end
 end

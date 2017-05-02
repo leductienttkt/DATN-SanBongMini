@@ -163,36 +163,7 @@ $(document).ready(function() {
       });
     });
   });
-
-  $('.single-action').on('click', function() {
-    var classes = ['label-info', 'label-warning', 'label-danger', 'label-primary'];
-    var actions = ['pending', 'accepted', 'rejected', 'done'];
-    action = $(this).val();
-    parent = $(this).parent().parent();
-    itemId =  parent.children()[0].value;
-    var shopId = $('#shop-id').val();
-    $.ajax({
-      type: 'PUT',
-      url : '/dashboard/shops/' + shopId + '/order_products/' + itemId,
-      dataType: 'json',
-      data: {
-        order_product: {
-          status: action
-        }
-      },
-      success: function(data) {
-        var klass = '.order-product-status-' + itemId + ' span';
-        $(klass).text(action);
-        $('#status-order-'+ itemId).prop('selectedIndex', actions.indexOf(action));
-        var currentClass = $(klass).attr('class').split(' ')[1];
-        $(klass).removeClass(currentClass).addClass(classes[actions.indexOf(action)]);
-      },
-      error: function(error_message) {
-        Console.log('error: ' + error_message);
-      }
-    });
-  });
-});
+}); 
 
 $(document).on('click', '.step2', function() {
   $('#stars').removeClass('btn-primary').addClass('btn-default');

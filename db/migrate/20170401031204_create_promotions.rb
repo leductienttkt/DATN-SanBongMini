@@ -5,6 +5,8 @@ class CreatePromotions < ActiveRecord::Migration[5.0]
       t.date :end_date
       t.text :content
       t.references :pitch, foreign_key: true
+
+      t.timestamps
       
     end
   end

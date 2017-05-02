@@ -1,6 +1,5 @@
 class PitchesController < ApplicationController
   before_action :load_pitch, only: [:show, :update]
-  before_action :authenticate_user!
 
   def index
     @pitches = Pitch.all.page(params[:page])

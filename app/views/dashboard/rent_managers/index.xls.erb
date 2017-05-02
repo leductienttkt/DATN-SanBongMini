@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="<%= t ".title" %>">
+    <Table>
+      <Row>
+        <Cell><Data></Data></Cell>
+        <Cell><Data></Data></Cell>
+        <Cell><Data></Data></Cell>
+        <Cell><Data></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".title" %></Data></Cell>
+      </Row>
+    </Table>
+    <% @rents_accepted.each do |hash_rents| %>
+      <Table>
+        <Row>
+          <Cell><Data ss:Type="String"><%= hash_rents.first %></Data></Cell>
+        </Row>
+        <Row>
+          <Cell><Data></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".index" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".name" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".phone" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".start" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".end" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".mini" %></Data></Cell>
+        </Row>
+        <% rents = hash_rents.last %>
+        <% rents.each_with_index do |rent, index| %>
+          <Row>
+            <Cell><Data></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= increase_one index %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= rent.user.name %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= rent.user.phone %></Data></Cell>
+            <Cell><Data ss:Type="String">
+              <%= rent.start_hour.to_s(:time) %>
+            </Data></Cell>
+            <Cell><Data ss:Type="String">
+              <%= rent.end_hour.to_s(:time) %>
+            </Data></Cell>
+            <Cell><Data ss:Type="String"><%= rent.mini_pitch.name %></Data></Cell>
+          </Row>
+        <% end %>
+        <Row>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t ".total" %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= rents.size %></Data></Cell>
+        </Row>
+      </Table>
+    <% end %>
+  </Worksheet>
+</Workbook>

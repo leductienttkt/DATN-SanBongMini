@@ -3,4 +3,5 @@ $('#join-match-modal').modal('hide');
 $('.max-quantity').html('<%= @match.max_quantity %>');
 $('.current-quantity')
   .html('<%= @match.max_quantity - @match.available_quantity %>');
-$.growl.notice({message: '<%= flash[:success] %>'});
+$.growl.notice({message: I18n.t(".join_match_success")});
+$('.hidden_available_quantity').html('<%= hidden_field_tag "available_quantity", @match.available_quantity %>')

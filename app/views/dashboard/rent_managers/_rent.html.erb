@@ -1,0 +1,59 @@
+<% rents.each do |key, rent_by_day| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="order-status-2 orders">
+        <span class="pull-left">
+          <strong><%= key %></strong>
+        </span>
+      </div>
+    </div>
+  </div>
+  <% rent_by_day.each do |rent| %>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="order-status-<%= rent.id %> orders">
+              <input class="pitch-id" type="hidden" value="<%= @pitch.id %>">
+              <span id="status-<%= rent.id %>" value="<%= rent.status %>">
+                <span class="label label-<%= label %>"><%=t("all_status.#{rent.status}") %>
+                 </span>
+              </span>
+              <span class="pull-right">
+                <%= t ".rent_on" %><%= l rent.created_at, format: :long %>
+              </span>
+            </div>
+          </div>
+        </div>
+         
+        <div class="panel-body col-md-12 col-sm-12">
+          <div class="col-md-offset-1 col-md-1 col-xs-offset-1 col-xs-1">
+            <div class="search-user-image">
+              <%= image_tag rent.user.avatar.url, class: "thumbnail" %>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-4 text-center rent-info">
+            <div><b><%= rent.user.name %></b></div>
+            <span><i><%= rent.user.phone %></i></span>
+          </div>
+          <div class="col-md-3 col-xs-3 rent-info">
+            <div>
+              <strong><%= t ".start" %></strong>
+              <i><%= l rent.start_hour, format: :short_time %></i>
+            </div>
+            <div>
+              <strong><%= t ".end" %></strong>
+              <i><%= l rent.end_hour, format: :short_time %></i>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-3 rent-info">
+            <div>
+              <strong><%= t ".mini" %></strong>
+              <i><%= rent.mini_pitch.name %></i>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  <% end %>
+<% end %>
