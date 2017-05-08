@@ -23,7 +23,7 @@ class User < ApplicationRecord
   VALID_NAME_REGEX = /\A^[\p{L}\s'.-]+\z/
   
   validates :name, presence: true, format: {with: VALID_NAME_REGEX}
-  validate :image_size
+  #validate :image_size
 
   scope :by_date_newest, ->{order created_at: :desc}
   scope :by_active, ->{where status: active}

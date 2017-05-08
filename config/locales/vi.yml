@@ -1043,9 +1043,20 @@ vi:
       subject: 'Yêu cầu tạo cửa hàng: "%{name}"'
   user_order_products: 'Bạn đã gửi đơn hàng '
   users:
+    sessions:
+      login_form:
+        email: Email
+        login: Đăng nhập
+        password: Mật khẩu
+      new:
+        sign_in: Đăng nhập
     shared:
       links:
         facebook: Facebook
+        forgot_pasword: Quên mật khẩu?
+        log_in: Đăng nhập
+        login_via: 'Đăng nhập bằng: '
+        sign_up: Đăng kí
     show:
       chatwork: Chatwork id
       create_at: Tham gia ngày

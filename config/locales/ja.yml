@@ -1009,9 +1009,20 @@ ja:
       subject: '"%{name}" 店 を作成が必要です'
   user_order_products: あなたが注文を正常に送信しています
   users:
+    sessions:
+      login_form:
+        email: Email
+        login: Sign in
+        password: Password
+      new:
+        sign_in: Sign in
     shared:
       links:
         facebook: Facebook
+        forgot_pasword: Forgot your password?
+        log_in: Sign in
+        login_via: 'Sign in via: '
+        sign_up: Sign up
     show:
       chatwork: Chatwork id
       create_at: 参加日

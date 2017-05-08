@@ -1013,9 +1013,20 @@ en:
       subject: 'Shop requested: "%{name}"'
   user_order_products: You have successfully submitted orders
   users:
+    sessions:
+      login_form:
+        email: Email
+        login: Sign in
+        password: Password
+      new:
+        sign_in: Sign in
     shared:
       links:
         facebook: Facebook
+        forgot_pasword: Forgot your password?
+        log_in: Sign in
+        login_via: 'Sign in via: '
+        sign_up: Sign up
     show:
       chatwork: Chatwork id
       create_at: Joined at

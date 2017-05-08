@@ -59,6 +59,7 @@ gem "validates_timeliness"
 gem "geocoder"
 gem "gmaps4rails"
 gem "underscore-rails"
+gem "bootstrap-social-rails"
 
 
 group :development, :test do
