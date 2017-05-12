@@ -17,7 +17,7 @@
           <%= format_price mini_pitch.price %>
         </div>
       </div>
-      <%= mini_pitch.address_details %>
+      <%= truncate(mini_pitch.address_details, length: 30) %>
     </div>
     <div class="clearfix"></div>
   <% end %>

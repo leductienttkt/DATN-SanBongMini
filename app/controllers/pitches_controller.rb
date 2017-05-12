@@ -16,7 +16,7 @@ class PitchesController < ApplicationController
     if Pitch.exists? params[:id]
       @pitch = Pitch.find params[:id]
     else
-      flash[:danger] = t "flash.danger.load_pitch"
+      flash[:danger] = t "controllers.not_found_pitch"
       redirect_to root_path
     end
   end

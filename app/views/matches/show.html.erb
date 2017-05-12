@@ -39,10 +39,12 @@
         <strong>
           <span class="show-pitch-name"><%= t ".match_info" %></span>
 
-          <%= link_to t(".join"), "#",
-            class: "btn btn_view_all btn-danger join-match-btn",
-            data: {toggle: "modal", target: "#join-match-modal"} %>
+          <% if user_signed_in? && available_rent(@rent) %>
 
+            <%= link_to t(".join"), "#",
+              class: "btn btn_view_all btn-danger join-match-btn",
+              data: {toggle: "modal", target: "#join-match-modal"} %>
+          <% end %>
         </strong>
       </h3>
       <div class="a-divider--fit"></div>
@@ -66,7 +68,7 @@
       <div class="aligner-jsc wp100 h40">
         <p class="lead eb-orange mar-bottom-0">
         <h3>
-          <%= t ".date" %><%= l @rent.date, format: :date %>
+          <%= t ".date" %><%= l @rent.date, format: :long %>
         </h3>
         </p>
       </div>

@@ -1,5 +1,4 @@
 $('#match-users').html('<%= j render "matches/match_users" %>');
-$('#join-match-modal').modal('hide');
 $('.max-quantity').html('<%= @match.max_quantity %>');
 $('.current-quantity')
   .html('<%= @match.max_quantity - @match.available_quantity %>');

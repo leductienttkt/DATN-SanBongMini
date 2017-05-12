@@ -1,0 +1,38 @@
+<% promotions.each do |promotion| %>
+  <div class="panel-group rent-done-action">
+    <div class="panel panel-default">
+      <div class="panel panel-default">
+        <div class="panel-body col-md-12 col-sm-12">
+          <span class="col-md-3 col-sm-3 col-xs-3">
+            <div><%= t ".from" %><%= l promotion.start_date,
+              format: :long%></div>
+            <div><%= t ".to" %><%= l promotion.end_date,
+              format: :long%></div>
+          </span>
+          <div class="col-md-7 col-sm-7 col-xs-7">
+            <%= promotion.content %>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <%= link_to t(".edit"), "#",
+              class: "btn btn_view_all btn-warning",
+              data: {toggle: "modal",
+              target: ".promotion-#{promotion.id}"} %>   
+            <%= link_to t(".delete"),
+              [:dashboard, @pitch, promotion], method: :delete,
+              remote: true, data: {confirm: t(".delete_confirm")},
+              class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "new_promotion_modal", pitch: @pitch,
+    promotion: promotion %>
+<% end %>
+
+<script type="text/javascript">
+  $('.picth-datepicker').datetimepicker({
+    timepicker: false,
+    format: 'd-m-Y'
+  });
+</script>

@@ -13,7 +13,7 @@ class Dashboard::PitchesController < BaseDashboardController
     if @pitch.save
       redirect_to dashboard_pitches_path
     else
-      flash[:danger] = t "flash.danger.dashboard.updated_pitch"
+      flash[:danger] = t "controllers.faild"
       render :new
     end
   end
@@ -26,9 +26,9 @@ class Dashboard::PitchesController < BaseDashboardController
       if compare_time_order @start_hour, @end_hour
         @mini_pitches.update_all status: :active, start_hour: @start_hour,
           end_hour: @end_hour
-        flash.now[:success] = t "dashboard.pitchs.show.update_success"
+        flash.now[:success] = t "controllers.success"
       else
-        flash.now[:danger] = t "dashboard.pitchs.show.update_faild"
+        flash.now[:danger] = t "controllers.faild"
       end
     end
   end
@@ -43,14 +43,14 @@ class Dashboard::PitchesController < BaseDashboardController
 
   def update
     if !params[:pitch].present?
-      flash[:danger] = t "choose_picture"
+      flash[:danger] = t "controllers.choose_picture"
       redirect_to dashboard_pitch_path
     else
       if @pitch.update_attributes pitch_params
-        flash[:success] = t "flash.success.dashboard.updated_pitch"
+        flash[:success] = t "controllers.success"
         redirect_to request.referrer
       else
-        flash[:danger] = t "flash.danger.dashboard.updated_pitch"
+        flash[:danger] = t "controllers.faild"
         render :edit
       end
     end
@@ -72,7 +72,7 @@ class Dashboard::PitchesController < BaseDashboardController
     if Pitch.exists? params[:id]
       @pitch = Pitch.find params[:id]
     else
-      flash[:danger] = t "flash.danger.load_pitch"
+      flash[:danger] = t "controllers.not_found_pitch"
       redirect_to root_path
     end
   end

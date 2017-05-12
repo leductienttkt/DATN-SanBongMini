@@ -1,0 +1,43 @@
+<div id="new-promotion-modal" class="modal fade
+  promotion-<%= promotion.id %>" role="dialog">
+  <div class="modal-dialog rent_mini_pitch-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center"><%= t ".info" %></h3>
+      </div>
+      <%= simple_form_for [:dashboard, pitch, promotion],
+        remote: true do |f| %>
+        <div class="modal-body">
+          <div class="fade in well confirm_order">
+            <div class="form-group">
+              <%= t ".from" %>
+              <%= f.text_field :start_date,
+                class: "form-control picth-datepicker" %>
+            </div>
+
+            <div class="form-group">
+              <%= t ".to" %>
+              <%= f.text_field :end_date,
+                class: "form-control picth-datepicker" %>
+            </div>
+
+            <div class="form-group">
+              <%= t ".content" %>
+              <%= f.text_area :content,
+                class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <%= f.submit t(".ok"),
+            class: "btn btn-primary space-top-submit" %>
+          <button type="button" class="btn btn-default"
+            data-dismiss="modal">
+          <%= t ".cancel" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

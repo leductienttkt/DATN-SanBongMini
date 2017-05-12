@@ -30,15 +30,14 @@ class Dashboard::RentManagersController < ApplicationController
 
   private
   def load_pitch
-
     if Pitch.exists? params[:pitch_id]
       @pitch = Pitch.find params[:pitch_id]
       unless @pitch.is_owner_by? current_user
-        flash[:danger] = t "flash.danger.load_shop"
+        flash[:danger] = t "controllers.not_allow"
         redirect_to dashboard_pitches_path
       end
     else
-      flash[:danger] = t "flash.danger.load_shop"
+      flash[:danger] = t "controllers.not_found_pitch"
       redirect_to dashboard_pitches_path
     end
   end

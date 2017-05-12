@@ -1,0 +1,10 @@
+<% if @error.present? %>
+  $.growl.error({title: I18n.t("growl.title.error"),
+  	message: I18n.t("controllers.faild")});
+<% else %>
+  $.growl.notice({title: I18n.t("growl.title.notice"),
+  	message: I18n.t("controllers.success")});
+  $('.opening-promotions').html('<%= j render "promotion", promotions: @opening_promotions %>');
+  $('#new-promotion-modal').modal('hide');
+  $('.closed-promotions').html('<%= j render "promotion", promotions: @closed_promotions %>');
+<% end %>

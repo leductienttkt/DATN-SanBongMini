@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 class="row_h2">
+    <%= t ".title" %>
+  </h2>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a data-toggle="tab" href="#pending"><%= t ".pending" %></a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#accepted"><%= t ".accepted" %></a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#rejected"><%= t ".rejected" %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="pending" class="tab-pane fade in active">
+      <div class="well">
+        <div class="panel-group">
+          <% if @pending_rents.present? %>
+            <div class="rents-accepted">
+              <%= render "rent", rents: @pending_rents,
+                label: "success" %>
+            </div>
+          <% else %>
+            <span class="text-danger"><%= t ".no_rents" %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div id="accepted" class="tab-pane fade">
+      <div class="well">
+        <div class="panel-group">
+          <% if @accepted_rents.present? %>
+            <div class="rents-rejected">
+              <%= render "rent", rents: @accepted_rents,
+                label: "success" %>
+            </div>
+          <% else %>
+            <span class="text-danger"><%= t ".no_rents" %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div id="rejected" class="tab-pane fade">
+      <div class="well">
+        <div class="panel-group">
+          <% if @rejected_rents.present? %>
+            <div class="rents-rejected">
+              <%= render "rent", rents: @rejected_rents,
+                label: "danger" %>
+            </div>
+          <% else %>
+            <span class="text-danger"><%= t ".no_rents" %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

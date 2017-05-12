@@ -12,7 +12,12 @@
       <%= match_user.quantity %>
     </td>
     <td>
-      
+      <% if (@rent.user == current_user) || 
+        (match_user.user == current_user) %>
+        <%= link_to t(".delete"), match_user, method: :delete,
+          remote: true, data: {confirm: t(".delete_confirm")},
+          class: "btn btn-danger" %>
+      <% end %>
     </td>
   </tr>
 <% end %>

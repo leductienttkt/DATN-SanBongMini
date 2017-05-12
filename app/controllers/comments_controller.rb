@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build comment_params
     if @comment.save
-      flash[:success] = t "flash.success_message"
+      flash[:success] = t "controllers.success"
     else
-      flash[:danger] = t "flash.danger_message"
+      flash[:danger] = t "controllers.faild"
     end
     redirect_to @commentable
   end
@@ -16,9 +16,9 @@ class CommentsController < ApplicationController
   def destroy
     @commentable = @comment.commentable
     if @comment.destroy
-      flash[:success] = t "flash.success_message"
+      flash[:success] = t "controllers.success"
     else
-      flash[:danger] = t "flash.danger_message"
+      flash[:danger] = t "controllers.faild"
     end
     redirect_to @commentable
   end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   def load_comment
     @comment =  Comment.find_by id: params[:id]
     unless @comment
-      flash[:danger] = t "flash.danger_message"
+      flash[:danger] = t "controllers.not_found_comment"
       redirect_back
     end
   end
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
         return @commentable = $1.classify.constantize.find(value)
       end
     end
-    flash[:danger] = t "flash.danger_message"
+    flash[:danger] = t "controllers.faild"
     redirect_back
   end
 end

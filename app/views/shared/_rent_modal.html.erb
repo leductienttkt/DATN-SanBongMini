@@ -13,7 +13,7 @@
           <div><%= t ".statr_hour" %><i class="rent-mini-pitch-start"></i></div>
           <div><%= t ".end_hour" %><i class="rent-mini-pitch-end"></i></div>
           <div><%= t ".date" %><i class="rent-mini-pitch-date"></i></div>
-          <% unless user_signed_in? %>
+          <% unless user_signed_in? && current_user.phone.present? %>
             <div class="form-group">
               <%= t ".phone" %>
               <%= text_field_tag :rent_phone, params[:rent_phone],

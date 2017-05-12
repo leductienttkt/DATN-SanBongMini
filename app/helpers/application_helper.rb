@@ -54,23 +54,11 @@ module ApplicationHelper
       "unread"
     end
   end
-
-  def detail_price cart
-    @cart_price = 0
-    cart.each do |item|
-      @cart_price += item.total_price
-    end
-    @cart_price
-  end
-
+  
   def selected_lang
     session[:locale]
   end
-
-  def check_domain_status domain
-    domain.professed?
-  end
-
+  
   def select_lang
     case selected_lang.to_s
     when Settings.languages.vietnamese.type
@@ -80,53 +68,5 @@ module ApplicationHelper
     else
       Settings.languages.english.image
     end
-  end
-
-  def number_product_in_category_by_domain category, domain
-    products = if @domain.present?
-      domain.products.by_category category
-    else
-      category.products
-    end
-    products.size
-  end
-
-  def domain_icon domain
-    domain.professed? ? Settings.domain.professed : Settings.domain.secret
-  end
-
-  def display_domain_status value
-    case value
-    when Domain.statuses[:professed]
-      html = ""
-      html += "<i class=\"glyphicon glyphicon-globe\"></i>"
-      html += "<span>#{t "professed"}</span>"
-    when Domain.statuses[:secret]
-      html = ""
-      html += "<i class=\"glyphicon glyphicon-lock\"></i>"
-      html += "<span>#{t "secret"}</span>"
-    end
-  end
-
-  def status_request_shop request_shop
-    case
-    when request_shop.pending?
-      change_status request_shop, "label-warning"
-    when request_shop.rejected?
-      change_status request_shop, "label-danger"
-    when request_shop.approved?
-      change_status request_shop, "label-success"
-    else
-      change_status request_shop, "label-info"
-    end
-  end
-
-  def change_status request_shop, label_class
-    content_tag :span, t("all_status.#{request_shop.status}"),
-      class: "label #{label_class}"
-  end
-
-  def domain_status
-    Domain.statuses.keys.select{|status| status != Domain.statuses.keys[2]}
   end
 end

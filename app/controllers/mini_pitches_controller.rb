@@ -15,7 +15,7 @@ class MiniPitchesController < ApplicationController
       @comment = @mini_pitch.comments.build
       @comments = @mini_pitch.comments.newest.includes :user
     else
-      flash[:danger] = t "product.not_product"
+      flash[:danger] = t "controllers.not_found_mini_pitch"
       redirect_to mini_pitches_path
     end
   end

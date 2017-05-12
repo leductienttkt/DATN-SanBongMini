@@ -1,20 +1,11 @@
 vi:
   Janpanese: 日本語
-  a_order: Một đơn hàng
   about: Chi tiết
-  about_label: Về công ty Framgia Việt Nam
   accept_all: Xác nhận tất cả
-  account_created: Tài khoản của bạn ở ứng dụng Framgia order vừa được tạo
+  account_created: Tài khoản của bạn ở ứng dụng F-Nara vừa được tạo
   account_info: Thông tin tài khoản
   active_shop_request: 'Một cửa hàng của bạn vừa được đồng ý: '
   add: Thêm
-  add_cart_succes: Cập nhật giỏ hàng thành công
-  add_domain: Thêm người dùng vào miền thành công
-  add_domain_manager: 'vừa cho bạn trở thành người quản lí của miền:'
-  add_join_domain: 'Bạn vừa được thêm vào miền: '
-  add_order: Thêm đơn hàng
-  add_product_failed: Không thể thêm sản phẩm vào miền này
-  add_shop_domain_success: Thêm cửa hàng vào miền thành công
   added: Đã thêm
   admin:
     categories:
@@ -60,19 +51,6 @@ vi:
         number: STT
         pitch: Sân
         price: Gía
-    orders:
-      index:
-        close: Đóng
-        coupon_name: Phiếu mua hàng
-        created_at: Tạo lúc
-        end_at: Kết thúc lúc
-        notes: Ghi chú
-        page_title: Quản lý đơn hàng
-        shop_name: Cửa hàng
-        status: Trạng thái
-        title: Danh sách đơn hàng
-        user_order: Đơn hàng của khách
-        view: Xem
     pitches:
       index:
         actions: Hành động
@@ -88,32 +66,6 @@ vi:
         owner: Chủ sân
         set_button: Thiết lập
         status: Trạng thái
-    shop_requests:
-      index:
-        approve: Chấp nhận
-        approve_confirm: Bạn có cho phép %{user} mở cửa hàng %{shop} ?
-        avatar: Ảnh đại diện
-        cover_image: Ảnh bìa
-        description: Mô tả
-        name: Tên cửa hàng
-        owner: Chủ cửa hàng
-        page_title: Quản lý yêu cầu tạo cửa hàng
-        reject: Từ chối
-        reject_confirm: Bạn có từ chối %{user} mở cửa hàng %{shop} ?
-        requested_at: Yêu cầu lúc
-        status: Trạng thái
-        title: Danh sách yêu cầu
-        update_shop_request_failed: Có lỗi xảy ra với %{shop} trạng thái %{status}
-        update_shop_request_success: Cửa hàng %{shop} đang %{status}
-    shops:
-      index:
-        actions: Hành động
-        avatar: Ảnh đại diện
-        description: Mô tả
-        name: Tên cửa hàng
-        owner: Chủ cửa hàng
-        status: Trạng thái
-        title: Tất cả cửa hàng
     users:
       edit:
         title: Chỉnh sửa
@@ -155,77 +107,19 @@ vi:
     professed: Công khai
     rejected: Đã từ chối
     secret: Bí mật
-  api:
-    error_categories_not_found: Không tìm thấy Phân Loại!
-    error_domains_not_found: Miền không tìm thấy!
-    error_list_shop_by_domain_not_found: Không tìm thấy danh sách cửa hàng!
-    error_orders_list_not_found: ' Không tìm thấy danh sách đặt hàng!'
-    error_password_wrong: Mật khẩu không đúng!
-    error_products_not_found: Không tìm thấy sản phẩm!
-    error_user_not_found: Không tìm thấy người dùng!
-    error_user_token_not_found: Mã xác nhận của người dùng không tìm thấy!
-    logout: Đăng xuất thành công!
-    success: OK
-  back_btn_domain_help: Quay về
-  back_to_top: Quay về đầu trang
-  blocked_shop_request: 'Yêu cầu cửa hàng: '
-  blog: Blog
   btn_search: Tìm kiếm
   by: ' của '
-  can_not_add_account: Không thể thêm tài khoản này vào miền
-  can_not_add_product: Không thể thêm sản phẩm này vào miền
-  can_not_add_shop: Không thể thêm cửa hàng này vào miền
-  can_not_find_user: Không tìm thấy người dùng
-  can_not_load_domain: Không tìm thấy miền tương ứng
-  can_not_load_shop: Không tìm thấy cửa hàng
   cancel: Hủy
-  cant_not_find_shop: Không thể tìm thấy tài khoản với email này
-  cart:
-    add: Thêm
-    add_to_card: Thêm
-    btn_view_product: Xem sản phẩm
-    delete: Xóa
-    not_product: Giỏ hàng trống. Vui lòng đặt hàng !
-    order_time_text: 'Thời gian:'
-    price: Đơn giá
-    quantity: Số lượng
-    sub: Bớt
-    view_cart_all: Xem tất cả
-    view_product: 'Xem sản phẩm tại đây '
-    vnd: ' VND'
-    your_cart: Giỏ hàng của bạn
-  change-avatar: Lưu
-  change_shop: Bạn vừa thay đổi quyền quản lí của cửa hàng
-  change_shop_owner: Thay đổi quản lí
-  choose_domain: Chọn miền
-  choose_picture: Bạn cần chọn một ảnh để đổi ảnh đại diện cho của hàng
-  com-add: Tầng 13 tòa nhà Keangnam Landmark, Lô E6, Đường Phạm Hùng, Từ Liêm Nam, Hà Nội, Việt Nam
-  com-detail: Framgia Việt Nam là công ty 100% vốn đầu tư Nhật Bản, chuyên xây dựng những ứng dụng trên điện thoại, game, các ứng dụng xã hội và các ứng dụng trên nền Web.
-  com-email: hr_team@framgia.com
-  com-infor: Copyright 2016 Framgia, Inc. All rights reserved.
   common:
     admin_title: Quản trị
-    all_products: Tất cả sản phẩm
-    all_shops: Tất cả cửa hàng
     back_button: Quay lại
     base_title: Sân bóng mini - Nara
     btn_add_to_favorite: Thêm vào ưa thích
     btn_cancel: Bỏ qua
     btn_ok: Đồng ý
-    btn_order_now: Đặt hàng ngay
     btn_request: Yêu cầu
     btn_view_all: Xem tất cả
-    btn_your_shops: Cửa hàng của bạn
     categories: Phân loại
-    category:
-      all: Tất cả
-      bread: Bánh mì
-      drink: Đồ uống
-      others: Khác
-      rice: Cơm
-      service: Dịch vụ
-      snack: Đồ ăn nhanh
-    chania: Chania
     create_button: Tạo
     delete_button: Xóa
     delete_confirm: Bạn chắc chứ?
@@ -235,27 +129,44 @@ vi:
     no_notifications: Không có thông báo nào!
     notifications: Thông báo
     number: STT
-    owner_of: chủ cửa hàng
     previous: Trước đó
-    product_number: '%{number} sản phẩm'
     save_button: Lưu thay đổi
     set_button: Thiết lập
     shop_managers: Quản lý
     submit_button: Xác nhận
     tags: Thẻ
     toggle_navigation: Toggle navigation
-    top_products: Sản phẩm nổi bật
-    top_shops: Cửa hàng nổi bật
     view_button: Xem
-    your_orders: Đơn hàng của bạn
-  company: Framgia Vietnam
   confirm: Bạn chắc chứ?
-  confirm_order: Xác nhận đặt hàng
-  congrat_domain_help: Bạn đã sẵng sàng sử dụng Forder!
   contact: Liên lạc
   contact_index: Liên lạc
   continue: Tiếp tục
-  create_domain: Tạo miền
+  controllers:
+    accepted: Đã chấp nhận!
+    choose_picture: Bạn phải chọn avatar cho sân bóng!
+    error_close: Ngoài giờ hoạt động!
+    error_date: Ngày không hợp lệ!
+    error_end_start: Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!
+    error_hour: Thời gian không hợp lệ!
+    existing_users_pitches: Người dùng có sở hữu sân bóng
+    faild: Không thành công!
+    faild_deleted_user: Xóa người dùng không thành công!
+    faild_updated_user: Cập nhật thông tin người dùng không thành công!
+    has_match: Có 1 trận đấu trong thời gian trên!
+    not_allow: Không cho phép!
+    not_found_comment: Không tìm thấy bình luận!
+    not_found_match: Không tìm thấy trận đấu!
+    not_found_match_user: Không tìm thấy người tham gia trận!
+    not_found_mini_pitch: Không tìm thấy sân mini!
+    not_found_pitch: Không tìm thấy sân!
+    not_found_rent: Không tìm thấy thông tin thuê sân!
+    pitch_free: Sân trống, bạn có thể thuê!
+    pitch_not_free: Sân bóng này không còn trống!
+    rejected: Đã từ chối!
+    success: Thành công!
+    success_created_user: Tạo người dùng thành công!
+    success_deleted_user: Xóa người dùng thành công!
+    success_updated_user: Cập nhật thông tin người dùng thành công!
   create_order: Gửi đi
   csv: CSV
   current_month: Tháng hiện tại
@@ -274,8 +185,10 @@ vi:
         end_hour: Giờ kết thúc
         image: Hình ảnh
         name: Tên
-        price: Gía
+        price: Giá
         start_hour: Giờ bắt đầu
+        status: Trạng thái
+        type: 'Loại sân: '
       mini_pitch:
         delete_button: Xóa
         delete_confirm: Bạn chắc chứ?
@@ -284,39 +197,6 @@ vi:
         create_button: Tạo
         mini_pitch: Sân mini
         title: Tạo mới sân mini
-    order:
-      Date: Ngày
-      Name: Tên
-      btn_search: Tìm kiếm
-      confirm: Xác nhận
-      created_at: Ngày
-      detail_order: Chi tiết
-      id: ID
-      status: Trạng thái
-      title: Danh sách đặt hàng
-      total_pay: Tổng cộng
-      user_name: Người dùng
-      view_history_orders: Lịch sử
-      view_order_list: Danh sách đặt hàng
-    order_managers:
-      index:
-        btn_search: Lọc
-        done_orders: Đơn hàng thành công
-        not_products: Không có sản phẩm nào
-        reject_orders: Đơn hàng bị từ chối
-        title: Quản lý đơn hàng
-    orders:
-      form:
-        end_at_note: Thiết lập thời gian tự động đóng đơn hàng
-        end_date: Ngày kết thúc
-        note: Ghi chú
-      index:
-        end_date: Ngày kết thúc
-        new_order: tạo Đơn hàng
-        note: Ghi chú
-        order: Tạo đơn hàng
-      orders_statistics:
-        not_products_accepted: Chưa có sản phẩm nào được chấp nhận
     pitches:
       edit:
         pitch: Sân bóng
@@ -359,32 +239,31 @@ vi:
         number_mini_pitch: 'Số lượng sân mini: '
         pitch_managers: Người quản lý
         pitch_owner: Chủ sân
+        promotion: Khuyến mãi
         time_auto_reject: 'Thời gian tự động từ chối:  '
         view_history_orders: aaaa
         view_history_rent: Xem lịch sử thuê
         view_rent_list: Xem danh sách thuê
-    products:
-      edit:
-        product: Sản phẩm
-        title: Chỉnh sửa
-      form:
-        product_description: Mô tả
-        product_name: Tên
-        product_price: Giá
+    promotions:
       index:
+        closed: Đã đóng
+        create: Tạo mới
+        no_promotions: Không có khuyến mãi nào
+        opening: Đang mở
+        title: Khuyến mãi
+      new_promotion_modal:
+        cancel: Hủy
+        content: 'Nội dung:'
+        from: 'Từ ngày: '
+        info: Khuyến mãi
+        ok: Xong
+        to: 'Đến ngày: '
+      promotion:
         delete: Xóa
-        empty_list: Chưa có sản phẩm nào, vui lòng tạo mới
-        new_button: Tạo mới sản phẩm
-      new:
-        product: Sản phẩm
-        title: Thêm mới sản phẩm
-      not_found: Không tìm thấy sản phẩm
-      show:
-        name: Tên
-        price: Giá
-        product_name: 'Sản phẩm: '
-        quantity: Số lượng
-        total: Tổng cộng
+        delete_confirm: Bạn chắc chứ?
+        edit: Sửa
+        from: 'Từ ngày: '
+        to: 'Đến ngày: '
     rent_managers:
       index:
         accepted: Đã chấp nhận
@@ -418,42 +297,6 @@ vi:
         reject: Từ chối
         rent_on: 'Thuê lúc: '
         start: 'Bắt đầu: '
-    shop_managers:
-      index:
-        actions: Hành động
-        active: kích hoạt
-        avatar: Ảnh đại diện
-        blocked: khóa
-        chatwork: Chatwork id
-        description: Mô tả
-        email: Email
-        name: Tên người dùng
-        show_avatar: Hiển thị ảnh đại diện
-        title: Quản lý tất cả
-    shops:
-      edit:
-        title: Chỉnh sửa cửa hàng
-      form:
-        shop_description: Mô tả
-        shop_name: Tên
-      new:
-        title: Yêu cầu tạo cửa hàng
-      products:
-        actions: Hành động
-        image: Hình ảnh
-        name: Tên
-        price: Giá
-        status: Trạng thái
-      show:
-        edit: 'Chỉnh sửa '
-        edit_all_time: Cập nhật thời gian đặt hàng
-        end_time: 'Kết thúc lúc: '
-        has_products: Sản phẩm
-        no_product: Cửa hàng chưa có sản phẩm nào
-        start_time: 'Băt đầu lúc: '
-        update_all: Cập nhật tất cả
-        update_faild: Cập nhật thất bại
-        update_success: Cập nhật thành công
     statistics:
       index:
         tittle: Thống kê đơn hàng
@@ -506,9 +349,7 @@ vi:
         one: 1 giây
         other: '%{count} giây'
   delete: Xóa
-  delete_domain: Xóa người dùng khỏi miền thành công
   deleted: đã xóa
-  deleted_user_order_shop: Một đơn hàng đã bị tự động xóa vì quá thời gian
   description: Mô tả
   devise:
     user:
@@ -518,19 +359,8 @@ vi:
       sign_up: Đăng ký
       update_info: Cập nhật thông tin
   document: Tài liệu sử dụng
-  domain: Miền
-  domain_manager_header: Quản lý miền
-  domain_manager_notification: 'Có một thành viên vừa tham gia vào miền '
   done: Xong
-  done_products: sản phẩm đã đặt
   download: 'Tải về: '
-  draft:
-    description: The atmosphere in Chania has a touch of Florence and Venice.
-    shop_desc: NEM CHUA RÁN, BÁNH MỲ, MỲ TÔM , NÂU ĐÁ LẮC (MỖI ĐƠN TRÊN 50K- TẶNG NGAY 1 KEM TRÀNG TIỀN LẠNH OR FAMI LẠNH)
-    shop_name: Ly Trish
-    user_name: Hoàng Đức
-  edit_member: Danh sách thành viên
-  edit_shop: Cửa hàng
   edit_user:
     avatar: Ảnh đại diện
     current_password: Mật khẩu hiện tại
@@ -550,70 +380,17 @@ vi:
   facebook: Facebook
   failed_to_read_file: Không thể đọc được file tài khoản
   faq: Faq
-  feature:
-    order: Đặt hàng
-    search: Tìm kiếm sản phẩm
-    shop: Tạo và quản lí cửa hàng
-    title: Tính năng
-  feature_index: Tính năng
-  feed_back: Gởi phản hồi
-  finished_domain_help: Kết thúc!
-  flash:
-    danger:
-      admin:
-        created_category: Tạo mới thất bại. Vui lòng thử lại!
-        created_shop: Yêu cầu tạo cửa hàng thất bại!
-        deleted_category: Xóa thất bại!
-        deleted_user: Xóa không thành công!
-        existing_users_shops: Người dùng bạn xóa hiện tại đang chứa shops
-        updated_category: Cập nhật thất bại. Vui lòng thử lại!
-        updated_user: Cập nhật thất bại!
-      create_domain: Bạn phải tạo một miền
-      dashboard:
-        add_product_failed: Không thể thêm sản phẩm vào miền này
-        create_product: Tạo mới thất bại. Vui lòng thử lại!
-        create_request: Yêu cầu thất bại!
-        delete_product: Xóa không thành công!
-        edit_product: Có lỗi xảy ra trong quá trình thay đổi!
-        order_product: Sản phẩm đã được đặt hàng
-        update_product: 'Lỗi: Cập nhật thất bại!'
-        updated_shop: 'Lỗi: Cập nhật thất bại!'
-      load_items: Không tìm thấy sản phẩm
-      load_order: 'Không thể tìm thấy đơn hàng. Vui lòng chọn lại! '
-      load_shop: Không tìm thấy cửa hàng!
-    danger_message: Thất bại!
-    success:
-      admin:
-        created_category: Thêm thành công!
-        created_shop: Yêu cầu tạo cửa hàng thành công!
-        created_user: Thêm thành công !
-        deleted_category: Xóa thành công!
-        deleted_user: Đã xóa người dùng!
-        updated_category: Cập nhật thành công!
-        updated_user: Cập nhật thành công!
-      create_order: Đơn hàng được tạo thành công!
-      dashboard:
-        create_product: Sản phẩm đã được thêm!
-        create_request: Yêu cầu đã được thêm!
-        delete_product: Sản phẩm đã được xóa!
-        edit_product: Sản phẩm cập nhật thành công!
-        update_product: Sản phẩm cập nhật thành công!
-        updated_shop: Lưu cửa hàng thành công
-      update_order: Đơn hàng cập nhật thành công!
-    success_message: Thành công!
-    warning:
-      admin:
-        deleted_category: Có sản phẩm bên trong. Không thể xóa!
-  forder_index_intro: Đây là một trang web đặt món ăn chuyên nghiệp để biết thêm chi tiết vui lòng đọc hướng dẫn sử dụng
-  framgia_label: Framgia
-  framgia_user_feedback_context: Tôi đã sử dụng Forder để đặt món ăn từ những ngày đầu và rất tin tưởng vào Forder, tôi cảm thấy hài lòng vì mọi sản phẩm được đặt ở đây đều đảm bảo về chất lượng sản phẩm cũng như uy tín, thời gian giao hàng rất đúng hẹn, tôi sẽ còn tiếp tục sử dụng Forder trong tương lai và sẽ giới thiệu Forder cho bạn bè cùng sử dụng.
-  framgia_user_feedback_index: 'Nhận xét của khách hàng: '
-  framgia_user_job_feedback: Nhân viên văn phòng
-  framgia_user_name_feedback: ' - Nguyễn Lợi'
   google_oauth2: Google
+  growl:
+    fill_all_field: Vui lòng nhập đầy đủ các thông tin!
+    invalid_quantity: Số lượng không hợp lệ!
+    number_phone: Vui lòng nhập số điện thoại của bạn!
+    title:
+      danger: Cảnh báp!
+      error: Lỗi!
+      notice: Thông báo!
+      warning: Cảnh báo!
   has_mini_pitches: Có %{num} sân mini
-  have_no_order: Không tìm thấy kết quả nào!
-  hdsd_url: https://drive.google.com/file/d/0Bw0Y2BhwI-7xXzBFOU0tWjlQSjg/view
   header:
     account: Tài khoản
     logout: Đăng xuất
@@ -631,31 +408,16 @@ vi:
   image_index: Hình ảnh
   import: Thêm
   import_success: ' tài khoản thêm thành công '
-  index:
-    intro_order:
-      context: Bạn có thể đặt cho mình các sản phẩm một cách dễ dàng, luôn nhận được thông báo mỗi khi đơn hàng có sự thay đổi
-      title: Đặt hàng thuận tiện, nhanh chóng
-    intro_search:
-      context: Với F-order, bạn có thể dễ dàng tìm kiếm những món ăn, đồ uống ngon, chất lượng theo từng miền
-      title: Tìm kiếm dễ dàng
-    intro_shop:
-      context: F-order sẽ là nơi lý tưởng để đưa các sản phẩm của bạn đến với tất cả mọi người, chỉ một vài bước đơn giản là bạn đã có thể làm chủ một cửa hàng của riêng mình
-      title: Tạo và quản lý shop dễ dàng
   information: Bạn cần được kích hoạt tài khoản trước khi làm bất cứ điều gì
-  into_domain: ' vào miền: '
-  into_domain_request: ' yêu cầu vào miền: '
-  introduce_domain_help: Giới thiệu
-  join_domain: Tham gia
-  join_domain_success: Bạn đã tham gia miền thành công
   language: 'Ngôn ngữ: '
   layouts:
     admin_lte_2:
-      footer: Framgia Orders. @2016@
+      footer: Nara Football. @2017@
     admin_lte_2_header:
       log_out: Đăng xuất
-      logo_medium: Framgia
+      logo_medium: Nara
       logo_mini: F
-      logo_order: Orders
+      logo_order: Football
       member_since: Tham gia %{time}
       profile: Trang cá nhân
     admin_lte_2_login:
@@ -678,6 +440,7 @@ vi:
     header:
       account: Tài khoản
       base_title: Nara Football 2017
+      history: ' Lịch sử'
       logout: Đăng xuất
       no_notifications: Không có thông báo nào!
       notifications: Thông báo
@@ -687,7 +450,7 @@ vi:
       report_abuse: Báo cáo
       search_placeholder: Tìm kiếm theo tên hoặc địa chỉ
       settings: Cài đặt
-  leave_domain_success: Bạn đã rời khỏi miền thành công
+      sign_in: Đăng nhập
   livesearch:
     add: Thêm
     added: Đã thêm
@@ -699,34 +462,17 @@ vi:
     search_all: Tất cả
     search_placeholder: Tìm kiếm cửa hàng và sản phẩm...
     see_more: Xem tất cả %{num} kết quả cho "%{name}"
-    shop_owner: '%{status} Cửa hàng - %{name}'
-    shop_owner_text: 'Chủ:'
-    shop_products: '%{number} sản phẩm'
     user_search_placeholder: Nhập tài khoản hoặc email để thêm...
-  load_order: Không tìm thấy đơn hàng!
   log_in:
     email: Email
     lb: Đăng nhập
     password: Mật khẩu
     remember: Ghi nhớ đăng nhâp
-  manage_domain:
-    add_manager_faild: Thêm quản lý miền thất bại
-    add_manager_successfully: Thêm quản lý miền thành công
-    add_member: Thêm thành viên
-    delete_shop: Xóa
-    edit_member: '%{num} Thành viên'
-    edit_shop: '%{num} Cửa hàng'
-    leave: Rời
-    manage: Quản lý
-    personal: Cá nhân
-    remove: Hủy quản lý
-    remove_manager_successfully: Hủy quản lý miền thành công
-    shop: Quản lý cửa hàng
-    user: Quản lý thành viên
-    view_all_domains: Tất cả miền
-  manual_help_forder: Hướng dẫn sử dụng
   many_user: ' tài khoản thêm không thành công và '
   matches:
+    match_users:
+      delete: Hủy
+      delete_confirm: Bạn chắc chứ?
     show:
       actions: Hành động
       avatar: Ảnh đại diện
@@ -760,26 +506,13 @@ vi:
       date: Ngày
       end_hour: Giờ kết thúc
       mini_pitch_number: '%{num} sân mini'
+      rent: Thuê
       rent_time: 'Thời gian: '
       start_hour: Giờ bắt đầu
       type: 'Loại sân: %{type}'
+      view: Xem
   minutes: ' (phút)'
-  new_domain:
-    name: Tên
-    status: Trạng thái
-  new_product:
-    category: Thể loại
-    description: Mô tả
-    end_hour: Giờ kết thúc
-    image: Hình ảnh
-    name: Tên
-    price: Giá
-    start_hour: Giờ bắt đầu
-    status: 'Trạng thái '
-    tag: Nhãn
-  next_btn_domain_help: Kế tiếp
   not_accept: ' không được chấp nhận'
-  not_accept_to_domain: ' của bạn không được chấp nhận vào miền: '
   not_find: Không tìm thấy
   notification:
     ago: trước
@@ -790,63 +523,6 @@ vi:
     shop: đã được thay đổi trạng thái thành
     status: vừa
   number_product: 'Số lượng sản phẩm: '
-  oder:
-    add-all: Đặt tất cả
-    all_product_will_be_order: Tất cả sản phẩm của bạn sẽ được gửi đi, bạn có muốn tiếp tục không?
-    allthing_deleted: Tất cả sản phẩm của bạn đã bị xóa vì quá thời gian đặt
-    btn_cancel_oder: Hủy
-    btn_confirm_oder: Xác nhận đơn hàng
-    btn_make_oder: Tạo đơn hàng
-    btn_oder: Đặt đơn hàng này
-    category: Thể loại
-    confirm: Bạn chắc chứ ?
-    continue: ', bạn có muốn tiếp tục không?'
-    create_order: Tạo mới đơn hàng
-    deleted: Xóa thành công
-    has_order_deleted: 'Có '
-    id: id
-    image: Hình ảnh
-    name: Tên
-    not_delete: Không xóa được
-    not_oder: Không có đơn hàng nào
-    not_product_in_cart: Không có sản phẩm nào trong giỏ hàng
-    price: Đơn giá
-    product_deleted: ' sản phẩm của bạn bị xóa vì quá thời gian đặt, bạn có muốn tiếp tục không?'
-    quantity: Số lượng
-    something_deleted: Có một số sản phẩm của bạn đã bị xóa vì quá thời gian đặt
-    status: 'Trạng thái:'
-    success: Đặt hàng thành công !
-    total: 'Tổng cộng:'
-  of: ' của '
-  order: Đơn hàng
-  order_confirm_accept: ' đã được xác nhận: '
-  order_day: Ngày đặt hàng
-  order_deleted: đã bị xóa
-  order_mailer:
-    subject: Trạng thái đơn hàng
-    title: 'Xem trạng thái sản phẩm vừa được đặt hàng '
-  order_of: Đơn hàng của
-  order_open_blank: Không có đơn hàng nào đang mở!
-  order_open_present: Danh sách đơn hàng đang mở.
-  order_product: 'Đơn hàng đã được xác nhận: '
-  order_statistics:
-    accept: Chấp nhận
-    back: Quay lại
-    continue: Tiếp tục
-    detail: Chi tiết
-    done: Hoàn thành
-    id: ID
-    name: Tên sản phẩm
-    price: Đơn giá
-    quantity: Số lượng
-    reject: Từ chối
-    step1: 'Bước 1: Kiểm tra đơn hàng'
-    step2: 'Bước 2: Đóng đơn hàng'
-    total_price: 'Tổng cộng: '
-  order_success: ' thành công'
-  owner_active_shop_request: 'Bạn vừa thêm cửa hàng '
-  owners_shop_avatar: 'Ảnh đại diện:'
-  owners_shop_cover_image: 'Ảnh bìa của shop:'
   password: 'mật khẩu: '
   phone: 'Số điện thoại: '
   phone-num: 84-4-3795-5417
@@ -874,17 +550,22 @@ vi:
       search_mini_pitch: 'Tìm sân: '
       start_hour: 'Thời gian bắt đầu:'
       time_auto_reject: 'Thời gian tự động hủy: '
-  price_message: 'Tổng giá đơn hàng của bạn: '
-  product:
-    name: Tên sản phẩm
-    not_product: Chưa có sản phẩm nào
-    price: Đơn giá
-  products: Sản phẩm
-  professed: Công khai
-  public_domain: Miền công khai
-  rejected_products: sản phẩm đã từ chối
-  remote_domain_manager: 'vừa xóa bạn ra khỏi danh sách quản lí của miền:'
   rents:
+    index:
+      accepted: Đã chấp nhận
+      no_rents: Không có thông tin!
+      pending: Đang đợi
+      rejected: Đã từ chối
+      title: Các hoạt động của bạn
+    rent:
+      create_match: Tạo trận
+      date: 'Ngày: '
+      end: 'Giờ kết thúc: '
+      mini: 'Sân: '
+      rent_detail: Chi tiết
+      rent_on: 'Thuê lúc: '
+      start: 'Giờ bắt đầu: '
+      view_match: Xem trận
     show:
       create_match: 'Bạn có muốn tạo một trận đấu? '
       date: 'Ngày: '
@@ -894,37 +575,12 @@ vi:
       rent_info: Thông tin thuê sân
       time: Thời gian
   request_have_been_delete: Yêu cầu đã bị xóa
-  request_join_domain: ' vừa tham gia vào miền: '
-  request_shop:
-    already: Đã thuộc miền
-    approve: Chấp nhận
-    can_not_find_request: Không tìm thấy yêu cầu
-    can_not_find_shop: Không tìm thấy cửa hàng
-    cancel: Hủy
-    domain: Yêu cầu thêm cửa hàng vào miền
-    domain_name: Tên miền
-    faild: Xác nhận yêu cầu thất bại!
-    lb: Thêm cửa hàng
-    manage_shop: Quản lý cửa hàng
-    page_title: Quản lý yêu cầu thêm cửa hàng vào miền
-    pending: Đang chờ
-    reject: Từ chối
-    request_to_domain: Yêu cầu
-    shop_name: Tên cửa hàng
-    status: Trạng thái
-    success: Xác nhận yêu cầu thành công!
-    title: Danh sách yêu cầu
-    user_name: Tên chủ cửa hàng
   request_status:
     active: ' của bạn đã được kích hoạt'
     blocked: ' của bạn đã bị khóa'
     closed: ' của bạn đã bị đóng'
     pending: ' của bạn đang đợi kích hoạt'
     rejected: ' của bạn đã bị từ chối'
-  save_domain_not_successfully: Miền được lưu KHÔNG thành công
-  save_domain_successfully: Miền được lưu thành công
-  save_product_domain_successfully: Miền của sản phẩm được lưu thành công
-  save_shop_domain_successfully: Miền của cửa hàng được lưu thành công
   search_mini_pitches:
     available_mini_pitches:
       has_free_mini_pitch: Có %{num} sân trống
@@ -980,47 +636,8 @@ vi:
       note: Vui lòng đến trước %{time} phút
       phone: 'Số điện thoại: '
       statr_hour: 'Giờ bắt đầu: '
-  shop: Cửa hàng
-  shop_accept: Đơn hàng
-  shop_accept_request: Trạng thái của cửa hàng
-  shop_name: 'Tên cửa hàng: '
-  shop_name_error: Tên shop lỗi!
-  shop_not_activate: Shop không hoạt động!
-  shop_order_products: đã được phê duyệt
-  shop_owner: 'Chủ cửa hàng: '
-  shop_request: 'Cửa hàng '
-  shop_request_message: Cửa hàng "%{shop_name}" mà bạn yêu cầu đang ở trạng thái chờ, bạn cần đợi admin kích hoạt để sử dụng
-  shop_request_to_domain_owner: ' của bạn vừa được đồng ý vào miền: '
-  shop_request_to_domain_owner_shop: 'Cửa hàng '
-  shop_subject: Yêu cầu tạo cửa hàng mới
-  shops:
-    form:
-      shop_description: Mô tả
-      shop_name: Tên cửa hàng
-    new:
-      create_shop: Tạo cửa hàng mới
-      shop: Cửa hàng
-      submit_button: Lưu
-      title: Gửi yêu cầu tạo cửa hàng mới
-    show:
-      no_product: Cửa hàng này chưa có sản phẩm nào
-      products: Sản phẩm
-  something_failed: Gặp vấn đề khi thêm cửa hàng và sản phẩm
   split: ' -'
   start: Từ ngày
-  status:
-    shops:
-      active: đã kích hoạt
-      blocked: đã khóa
-      closed: đã đóng
-      pending: đang chờ
-      rejected: đã từ chối
-  step_one_domain_help: Bước 1
-  step_one_help_forder: Tham gia vào miền công khai hoặc miền riêng tư mà bạn là thành viên. Và bạn có thể tự tạo, quản lý miền của chính mình
-  step_three_domain_help: Bước 3
-  step_three_help_forder: Bạn có thể đặt hàng, quản lí đơn hàng, quản lí cửa hàng theo từng miền riêng biệt
-  step_two_domain_help: Bước 2
-  step_two_help_forder: Thực hiện thao tác đặt hàng các món ăn theo miền, theo cửa hàng. Hoặc bạn có thể tự tạo cửa hàng cho riêng mình và quản lí chúng
   submit: Xác nhận
   time:
     formats:
@@ -1071,8 +688,6 @@ vi:
       last: Cuối
       next: Tiếp theo
       previous: Trước
-  warning_firefox: Trang web không hiển thị tốt trên Trình duyệt Firefox. Vui lòng sử dụng Chrome để có trải nghiệm tốt nhất. Xin lỗi vì sự bất tiện này!
   year: Năm
   you: Bạn
   you_can: Bạn có thể sử dụng email và mật khẩu dưới đâu để đăng nhập
-  your_shop: Cửa hàng của bạn

@@ -1,22 +1,19 @@
-<% @rents.each do |rent| %>
+<% rents.each do |rent| %>
   <div class="panel-group rent-done-action-<%= rent.id %>">
     <div class="panel panel-default">
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="order-status-<%= rent.id %> orders">
-            <input class="pitch-id" type="hidden" value="<%= @pitch.id %>">
             <span id="status-<%= rent.id %>" value="<%= rent.status %>">
-              <%= content_tag :span, t("all_status.#{rent.status}"),
-              class: "label label-info" %>
+              <span class="label label-<%= label %>">
+                <%=t("all_status.#{rent.status}") %>
+              </span>
             </span>
-            <button class= "btn btn-primary handle-rent" value= "accepted" 
-              data-id="<%= rent.id %>">
-              <%= t ".accept"%>
-            </button>       
-            <button class= "btn btn-danger handle-rent" value="rejected" 
-              data-id="<%= rent.id %>">
-              <%= t ".reject"%>
-            </button>
+            <%= link_to t(".rent_detail"), rent, class: "btn btn-warning" %>
+            <% if rent.match.present? %>
+              <%= link_to t(".view_match"), rent.match,
+                class: "btn btn-info" %>
+            <% end %>
             <span class="pull-right">
               <%= t ".rent_on" %><%= l rent.created_at, format: :long %>
             </span>
@@ -27,12 +24,13 @@
       <div class="panel-body col-md-12 col-sm-12">
         <div class="col-md-offset-1 col-md-1 col-xs-offset-1 col-xs-1">
           <div class="search-user-image">
-            <%= image_tag rent.user.avatar.url, class: "thumbnail" %>
+            <%= image_tag rent.mini_pitch.user.avatar.url,
+              class: "thumbnail" %>
           </div>
         </div>
         <div class="col-md-4 col-xs-4 text-center rent-info">
-          <div><b><%= rent.user_name %></b></div>
-          <span><i><%= rent.phone %></i></span>
+          <div><b><%= rent.mini_pitch.user.name %></b></div>
+          <span><i><%= rent.mini_pitch.user.phone %></i></span>
         </div>
         <div class="col-md-3 col-xs-3 rent-info">
           <div>
@@ -52,38 +50,10 @@
           <div>
             <strong><%= t ".mini" %></strong>
             <i><%= rent.mini_pitch.name %></i>
+            <div><%= rent.mini_pitch.address_details %></div>
           </div>
         </div>
       </div> 
     </div>
   </div>
 <% end %>
-
-<script type="text/javascript">
-  $('.handle-rent').on('click', function() {
-    id = this.dataset.id;
-    action = $(this).val();
-    pitch_id = $('.pitch-id').val();
-    $.ajax({
-      type: 'PUT',
-      url : '/dashboard/pitches/' + pitch_id + '/rents/' + id,
-      dataType: 'json',
-      data: {
-        status: action,
-        pitch_id: pitch_id
-      },
-      success: function(data) {
-        if (data.status === 100) {
-          $.growl.notice({message: data.message});
-        }
-        else {
-          $.growl.warning({message: data.message});
-        }
-        $('.rent-done-action-'+ data.id).remove();
-      },
-      error: function(error_message) {
-        console.log('error: ' + error_message);
-      }
-    });
-  });
-</script>

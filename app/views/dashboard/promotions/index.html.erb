@@ -1,0 +1,52 @@
+<div class="block-shop-header clearfix">
+  <div>
+  <h2 class="section_title margin_right_15px row_h2">
+    <div class="btn_view_all_wrapper pull-right">
+      <%= link_to t(".create"), "#",
+        class: "btn btn_view_all btn-warning",
+        data: {toggle: "modal", target: "#new-promotion-modal"} %>
+    </div>
+    <%= t ".title" %>
+  </h2>
+  <%= render "new_promotion_modal", pitch: @pitch,
+    promotion: @pitch.promotions.new %>
+  </div>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a data-toggle="tab" href="#open"><%= t ".opening" %></a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#close"><%= t ".closed" %></a>
+    </li>
+  </ul>
+</div>
+<div class="tab-content">
+  <div id="open" class="tab-pane fade in active">
+    <div class="well">
+      <div class="panel-group">
+        <% if @opening_promotions.present? %>
+          <div class="opening-promotions">
+            <%= render "promotion",
+              promotions: @opening_promotions %>
+          </div>
+        <% else %>
+          <span class="text-danger"><%= t ".no_promotions" %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="close" class="tab-pane fade in">
+    <div class="well">
+      <div class="panel-group">
+        <% if @closed_promotions.present? %>
+          <div class="closed-promotions">
+            <%= render "promotion",
+              promotions: @closed_promotions %>
+          </div>
+        <% else %>
+          <span class="text-danger"><%= t ".no_promotions" %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

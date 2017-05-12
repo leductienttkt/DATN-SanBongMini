@@ -450,7 +450,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   geocoder
   gmaps4rails
-  i18n-js (>= 3.0.0.rc11)
+  i18n-js
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks

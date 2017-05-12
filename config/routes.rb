@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :domain do
-    get "user_domains/new"
-  end
-
-  namespace :domain do
-    get "domain_users/new"
-  end
-
-  namespace :domain do
-    get "domains/new"
-  end
-
   get "set_language/update"
   post "/rate" => "rater#create", :as => "rate"
   devise_for :admins, path: "admin",
@@ -35,6 +23,7 @@ Rails.application.routes.draw do
       resources :mini_pitches
       resources :rents
       resources :rent_managers
+      resources :promotions
     end
     resources :statistics
 

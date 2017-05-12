@@ -23,17 +23,17 @@ class Dashboard::MiniPitchesController < BaseDashboardController
   def create
     @mini_pitch = @pitch.mini_pitches.new mini_pitch_params
     if @mini_pitch.save
-      flash[:success] = t "flash.success.dashboard.create_mini_pitch"
+      flash[:success] = t "controllers.success"
       redirect_to @mini_pitch
     else
-      flash[:danger] = t "flash.danger.dashboard.create_mini_pitch"
+      flash[:danger] = t "controllers.faild"
       render :new
     end
   end
 
   def update
     if @mini_pitch.update_attributes mini_pitch_params
-      flash[:success] = t "flash.success.dashboard.edit_mini_pitch"
+      flash[:success] = t "controllers.success"
       respond_to do |format|
         format.json do
           render json: {status: @mini_pitch.status}
@@ -43,14 +43,14 @@ class Dashboard::MiniPitchesController < BaseDashboardController
         end
       end
     else
-      flash[:danger] = t "flash.danger.dashboard.edit_mini_pitch"
+      flash[:danger] = t "controllers.faild"
       render :edit
     end
   end
 
   def destroy
     if @mini_pitch.destroy
-      flash[:success] = t "flash.success.dashboard.delete_mini_pitch"
+      flash[:success] = t "controllers.success"
       redirect_to dashboard_pitch_path(@pitch)
     end
   end
@@ -60,21 +60,21 @@ class Dashboard::MiniPitchesController < BaseDashboardController
     if Pitch.exists? params[:pitch_id]
       @pitch = Pitch.find params[:pitch_id]
     else
-      flash[:danger] = t "flash.danger.load_pitch"
+      flash[:danger] = t "controllers.not_found_pitch"
       redirect_to dashboard_pitch_path
     end
   end
 
   def mini_pitch_params
     params.require(:mini_pitch).permit :id, :name, :description, :price,
-      :user_id, :image, :status, :tag_list, :start_hour, :end_hour
+      :user_id, :pitch_type, :image, :status, :tag_list, :start_hour, :end_hour
   end
 
   def load_mini_pitch
     if MiniPitch.exists? params[:id]
       @mini_pitch = @pitch.mini_pitches.find params[:id]
     else
-      flash[:danger] = t "flash.danger.dashboard.mini_pitch.not_found"
+      flash[:danger] = t "controllers.not_found_mini_pitch"
       redirect_to dashboard_pitch_mini_pitches_path
     end
   end

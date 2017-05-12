@@ -10,7 +10,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <%= pitch.address_details %>
+          <%= truncate(pitch.address_details, length: 30) %>
         </div>
         <div class="col-md-4">
           <%= link_to "" do %>

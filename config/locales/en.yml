@@ -1,20 +1,11 @@
 en:
   Janpanese: 日本語
-  a_order: A order
   about: About
-  about_label: About Framgia Viet Nam
   accept_all: Accept All
-  account_created: Your account in the Framgia order website has been created
+  account_created: Your account in the F-Nara website has been created
   account_info: Account information
   active_shop_request: 'Your shop request have been accepted to join: '
   add: Add
-  add_cart_succes: Update cart order successfully
-  add_domain: Adding user into this domain successfully
-  add_domain_manager: 'have made you become the manager of domain:'
-  add_join_domain: ' have been added to domain: '
-  add_order: Add order
-  add_product_failed: Can not add this product into domain
-  add_shop_domain_success: Accepting shop to domain successfully
   added: Added
   admin:
     categories:
@@ -60,19 +51,6 @@ en:
         number: 'No'
         pitch: Pitch
         price: Price
-    orders:
-      index:
-        close: Close
-        coupon_name: Coupon
-        created_at: Created at
-        end_at: End at
-        notes: Notes
-        page_title: Manage Orders
-        shop_name: Shop
-        status: Status
-        title: List Orders
-        user_order: User Order
-        view: View
     pitches:
       index:
         actions: Action
@@ -88,32 +66,6 @@ en:
         owner: Owner
         set_button: Set
         status: Status
-    shop_requests:
-      index:
-        approve: Approve
-        approve_confirm: Are you sure approve %{user} to open shop %{shop} ?
-        avatar: Avatar
-        cover_image: Cover image
-        description: Description
-        name: Shop Name
-        owner: Shop Owner
-        page_title: Manage Shop Requests
-        reject: Reject
-        reject_confirm: Are you sure reject %{user} to open shop %{shop} ?
-        requested_at: Requested at
-        status: Status
-        title: List Shop Requests
-        update_shop_request_failed: Has error with %{shop} when %{status}
-        update_shop_request_success: Shop %{shop} is %{status}
-    shops:
-      index:
-        actions: Actions
-        avatar: Avatar
-        description: Description
-        name: Shop Name
-        owner: Shop Owner
-        status: Status
-        title: All Shops
     users:
       edit:
         title: Edit user
@@ -158,77 +110,16 @@ en:
     professed: Professed
     rejected: Rejected
     secret: Secret
-  api:
-    error_categories_not_found: Categories not found!
-    error_domains_not_found: Domain not found!
-    error_list_shop_by_domain_not_found: Shops listing not found!
-    error_orders_list_not_found: Orders list not found!
-    error_password_wrong: Wrong password!
-    error_products_not_found: Products not found!
-    error_user_not_found: User not found!
-    error_user_token_not_found: User's token not found!
-    logout: Log out success!
-    success: Succes
-  back_btn_domain_help: Back
-  back_to_top: Scroll to Top
-  blocked_shop_request: 'Your shop request: '
-  blog: Blog
-  btn_search: Search
-  by: ' of '
-  can_not_add_account: Can not add this accont to domain
-  can_not_add_product: Can not add this product to domain
-  can_not_add_shop: Can not add this shop to domain
-  can_not_find_user: Can not find the user
-  can_not_load_domain: Can not load domain
-  can_not_load_shop: Can not find shop
-  cancel: Cancel
-  cant_not_find_shop: Can not find user by this email
-  cart:
-    add: Add
-    add_to_card: Add to cart
-    btn_view_product: View product
-    delete: Delete
-    not_product: Your Cart have't product, Please order product !
-    order_time_text: 'Order time:'
-    price: Price
-    quantity: Quantity
-    sub: Sub
-    view_cart_all: View all
-    view_product: 'View products at here '
-    vnd: ' VND'
-    your_cart: Your Cart!
-  change-avatar: Save
-  change_shop: You have changed the shop's admin
-  change_shop_owner: Change the shop owner
-  choose_domain: Choose domain
-  choose_picture: You have to choose any picture to change your shop's avatar
-  com-add: 13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem, Ha Noi, Viet Nam
-  com-detail: Framgia Vietnam is a company 100% Japan funded specializing in design, development applications such as mobile phone software, games, social and website applications.
-  com-email: hr_team@framgia.com
-  com-infor: Copyright 2016 Framgia, Inc. All rights reserved.
   common:
     admin_title: Admin Nara Football
-    all_products: All products
-    all_shops: All shops
     back_button: Back
     base_title: Nara Football
     btn_add_to_favorite: Add to Favorite
     btn_cancel: Cancel
     btn_ok: Ok
-    btn_order_now: Order now
     btn_request: Request
     btn_view_all: VIEW ALL
-    btn_your_shops: Your shops
     categories: Categories
-    category:
-      all: All
-      bread: Bread
-      drink: Drink
-      others: Others
-      rice: Rice
-      service: Service
-      snack: Snack
-    chania: Chania
     create_button: Create
     delete_button: Delete
     delete_confirm: Are you sure you want to delete? This action cannot be undone!
@@ -237,34 +128,45 @@ en:
     next: Next
     no_notifications: There is no notification now!
     notifications: Notifications
-    number: Numbers
-    owner_of: 'owner of shop '
     previous: Previous
-    product_number: '%{number} products'
     save_button: Save changes
     set_button: Set
-    shop_managers: Managers
     submit_button: Submit
     tags: Tags
     toggle_navigation: Toggle navigation
-    top_products: Top Products
-    top_shops: Top Shops
-    view_button: View
-    your_orders: Your orders
-  company: Framgia Vietnam
-  confirm: Are you sure?
-  confirm_order: Confirm order
-  congrat_domain_help: You are ready to use Forder!
   contact: Contact
   contact_index: Contact
   continue: Continue
-  create_domain: Create domain
-  create_order: Create new order
+  controllers:
+    accepted: Accepted
+    choose_picture: You have to choose any picture to change your pitch's avatar
+    error_close: Outside opening hours!
+    error_date: Invalid date!
+    error_end_start: Start time must be less than end time!
+    error_hour: Invalid time!
+    existing_users_pitches: Current users are contained pitches
+    faild: Failed!
+    faild_deleted_user: Delete user failed!
+    faild_updated_user: Update user's information failed!
+    has_match: This mini pitch has a match in that time
+    not_allow: Not allow!
+    not_found_comment: Not found comment!
+    not_found_match: Not found match
+    not_found_match_user: Not found match's user
+    not_found_mini_pitch: Not found mini pitch!
+    not_found_pitch: Not found pitch!
+    not_found_rent: Not found rent
+    pitch_free: This mini pitch is available!
+    pitch_not_free: This mini pitch is not available!
+    rejected: Rejected
+    success: Success!
+    success_created_user: Created user successfully!
+    success_deleted_user: Delete user successfully!
+    success_updated_user: Update user's information successfully!
   csv: CSV
   current_month: Current Month
   current_week: Current week
   current_year: Current Year
-  dada_not_found: User deleted request
   dashboard:
     mini_pitches:
       edit:
@@ -280,6 +182,8 @@ en:
         name_error": Name error
         price: Price
         start_hour: Start hour
+        status: Status
+        type: 'Mini pitch type:'
       mini_pitch:
         delete_button: Delete
         delete_confirm: Are you sure?
@@ -288,39 +192,6 @@ en:
         create_button: Create
         mini_pitch: Mini Pitch
         title: New mini pitch
-    order:
-      Date: Date
-      Name: Name
-      btn_search: Search
-      confirm: Confirm
-      created_at: Date
-      detail_order: Detail
-      id: ID
-      status: Status
-      title: List Orders
-      total_pay: Total Pay
-      user_name: User
-      view_history_orders: View History Orders
-      view_order_list: View List Order
-    order_managers:
-      index:
-        btn_search: Filter
-        done_orders: Done Orders
-        not_products: Not has any products
-        reject_orders: Reject Orders
-        title: Orders Manager
-    orders:
-      form:
-        end_at_note: Set end time for auto close order
-        end_date: End date
-        note: Note
-      index:
-        end_date: End date
-        new_order: create Order
-        note: Note
-        order: Create order
-      orders_statistics:
-        not_products_accepted: Not has any products accepted
     pitches:
       edit:
         pitch: Pitch
@@ -363,32 +234,31 @@ en:
         number_mini_pitch: 'Number mini pitch: '
         pitch_managers: Pitch Managers
         pitch_owner: Pitch's owner
+        promotion: Promotion
         time_auto_reject: 'Time auto reject: '
         view_history_orders: aaaaaa
         view_history_rent: View history rent
         view_rent_list: View list rents
-    products:
-      edit:
-        product: Product
-        title: Edit
-      form:
-        product_description: Description
-        product_name: Name
-        product_price: Price
+    promotions:
       index:
-        delete: Detete
-        empty_list: You don't have any product! Let's add new product now!
-        new_button: Add new product
-      new:
-        product: Product
-        title: New product
-      not_found: Product not found
-      show:
-        name: Name
-        price: Price
-        product_name: 'Product: '
-        quantity: Quantity
-        total: Total
+        closed: Closed
+        create: Create
+        no_promotions: No promotions
+        opening: Opening
+        title: Promotion
+      new_promotion_modal:
+        cancel: Cancel
+        content: 'Content:'
+        from: 'Form: '
+        info: Promotion
+        ok: OK
+        to: 'To: '
+      promotion:
+        delete: Delete
+        delete_confirm: Are you sure?
+        edit: Edit
+        from: 'From: '
+        to: 'To: '
     rent_managers:
       index:
         accepted: Accepted
@@ -419,47 +289,9 @@ en:
         date: 'Date: '
         end: 'End time: '
         mini: 'Mini pitch: '
-        reject: 'Reject
-
-          Reject'
+        reject: Reject
         rent_on: 'Rent on: '
         start: 'Start time: '
-    shop_managers:
-      index:
-        actions: Actions
-        active: active
-        avatar: Avatar
-        blocked: blocked
-        chatwork: Chatwork id
-        description: Description
-        email: Email
-        name: User's name
-        show_avatar: Show avatar
-        title: All managers
-    shops:
-      edit:
-        title: Edit shop
-      form:
-        shop_description: Description
-        shop_name: Name
-      new:
-        title: Request shop
-      products:
-        actions: Actions
-        image: Image
-        name: Name
-        price: Price
-        status: Status
-      show:
-        edit: Edit shop
-        edit_all_time: Edit time order for all product
-        end_time: 'End time: '
-        has_products: Products
-        no_product: This shop has not any products.
-        start_time: 'Start time: '
-        update_all: Update All
-        update_faild: Update time order for all product failed
-        update_success: Update time order for all product successfully
     statistics:
       index:
         tittle: Statistics order
@@ -475,11 +307,6 @@ en:
     formats:
       date: '%d-%m-%y'
   date_format: '%d/%m/%Y'
-  delete: Delete
-  delete_domain: Deleting user from this domain successfully
-  deleted: deleted
-  deleted_user_order_shop: Your order have been auto deleted
-  description: Description
   devise:
     user:
       forgot_password: Forgot Password
@@ -487,20 +314,6 @@ en:
       sign_out: Sign out
       sign_up: Sign up
       update_info: Update Information
-  document: Using document
-  domain: Domain
-  domain_manager_header: Domain management
-  domain_manager_notification: 'There are the new member to domain '
-  done: Done
-  done_products: products ordered
-  download: 'Download: '
-  draft:
-    description: The atmosphere in Chania has a touch of Florence and Venice.
-    shop_desc: NEM CHUA RÁN, BÁNH MỲ, MỲ TÔM , NÂU ĐÁ LẮC (MỖI ĐƠN TRÊN 50K- TẶNG NGAY 1 KEM TRÀNG TIỀN LẠNH OR FAMI LẠNH)
-    shop_name: Ly Trish
-    user_name: Hoàng Đức
-  edit_member: Member
-  edit_shop: Edit shops
   edit_user:
     avatar: Avatar
     current_password: Current password
@@ -512,7 +325,6 @@ en:
   email: 'email: '
   end: End date
   english: English
-  enter_email: Enter the new shop owner email
   enter_user_email: Search User
   error_message_time: Start date should be before end date
   excel: Excel
@@ -550,7 +362,7 @@ en:
       load_items: Cannot find order items
       load_order: 'Cannot find order. plz choose order! '
       load_shop: Cannot find shop!
-    danger_message: Failed!
+    faild_message: Failed!
     success:
       admin:
         created_category: Created category successfully!
@@ -573,16 +385,17 @@ en:
     warning:
       admin:
         deleted_category: Cannot delete because this category has products!
-  forder_index_intro: This is a website professional food order for more details please read the user manual
-  framgia_label: Framgia
-  framgia_user_feedback_context: I used to order food Forder from the early days and very confident on Forder, I felt satisfied that all products placed here will ensure on product quality and reputation, on time delivery is on time, I will continue Forder continue using in the future and will recommend to friends and Forder use.
-  framgia_user_feedback_index: 'Review of the customer: '
-  framgia_user_job_feedback: Officer
-  framgia_user_name_feedback: ' - NguyenLoi'
   google_oauth2: Google
+  growl:
+    fill_all_field: Please fill in all field!
+    invalid_quantity: Invalid quantity!
+    number_phone: Please give your number phone!
+    title:
+      danger: Danger!
+      error: Error!
+      notice: Notice!
+      warning: Warning!
   has_mini_pitches: has %{num} mini pitches
-  have_no_order: Have no order rerult for search request
-  hdsd_url: https://drive.google.com/file/d/0Bw0Y2BhwI-7xXzBFOU0tWjlQSjg/view
   header:
     account: Account
     logout: Logout
@@ -600,31 +413,16 @@ en:
   image_index: Picture
   import: Import
   import_success: ' account be updated successfully '
-  index:
-    intro_order:
-      context: You can order products easily, always get a notification every time order status change
-      title: Convenient and fast order
-    intro_search:
-      context: With F-order, you can easily search for delicious and quality food or drinks of each domain
-      title: Easy search
-    intro_shop:
-      context: F-order will be the perfect place to introduce your products to everyone, just a few simple steps that you can have your own store
-      title: Create and manager your shop easily
   information: You have to be the active user to do anything
-  into_domain: ' to domain: '
-  into_domain_request: ' domain request: '
-  introduce_domain_help: Introduce
-  join_domain: Join in domain
-  join_domain_success: You joined the domain successfully
   language: 'Language: '
   layouts:
     admin_lte_2:
-      footer: Framgia Orders. @2016@
+      footer: Nara Football. @2017@
     admin_lte_2_header:
       log_out: Signout
-      logo_medium: Framgia
+      logo_medium: F-Nara
       logo_mini: F
-      logo_order: Orders
+      logo_order: Football
       member_since: Joined %{time}
       profile: Profile
     admin_lte_2_login:
@@ -647,17 +445,17 @@ en:
     header:
       account: Account
       base_title: Nara Football 2017
+      history: ' History'
       logout: Log out
       no_notifications: There is no notification now!
-      notifications: '
-
-        Notifications'
+      notifications: Notifications
       pitch_manager: Manage Pitches
       pitch_statistic: Pitch statistic
       read_all: Mark all as read
       report_abuse: Report
       search_placeholder: Search by name or address
       settings: Settings
+      sign_in: Sign in
   leave_domain_success: You left the domain successfully
   livesearch:
     add: Add
@@ -680,24 +478,12 @@ en:
     lb: Log in
     password: Password
     remember: Remember me
-  manage_domain:
-    add_manager_faild: Domain manager is saved failed
-    add_manager_successfully: Domain manager is saved successfully
-    add_member: Add members
-    delete_shop: Delete
-    edit_member: '%{num} Members'
-    edit_shop: '%{num} Shops'
-    leave: leave
-    manage: Set Manager
-    personal: Personal
-    remove: Remove Manager
-    remove_manager_successfully: Domain manager is removed successfully
-    shop: Manage shops
-    user: Manage members
-    view_all_domains: view all domains
   manual_help_forder: Help
   many_user: ' account can not be updated and '
   matches:
+    match_users:
+      delete: Delete
+      delete_confirm: Are you sure?
     show:
       actions: Action
       avatar: Avatar
@@ -731,23 +517,15 @@ en:
       date: Date
       end_hour: End hour
       mini_pitch_number: '%{num} mini pitches'
+      rent: Rent
       rent_time: 'Rent time: '
       start_hour: Start hour
       type: 'Type: %{type}'
+      view: View
   minutes: ' (minutes)'
   new_domain:
     name: Name
     status: Status
-  new_product:
-    category: Thể loại
-    description: Mô tả
-    end_hour: Giờ kết thúc
-    image: Hình ảnh
-    name: Tên
-    price: Giá
-    start_hour: Giờ bắt đầu
-    status: 'Trạng thái '
-    tag: Nhãn
   next_btn_domain_help: Next
   not_accept: ' not accept'
   not_accept_to_domain: ' not accepted into domain: '
@@ -760,64 +538,7 @@ en:
     read_all: Mark all as read
     shop: has just changed status
     status: has just
-  number_product: 'Products: '
-  oder:
-    add-all: Order all
-    all_product_will_be_order: All of your product will be sent, would you like to continue?
-    allthing_deleted: All of your product have been deleted because time-expired
-    btn_cancel_oder: Cancel
-    btn_confirm_oder: Confirm Order
-    btn_make_oder: Make Oder
-    btn_oder: Order this cart
-    category: Category
-    confirm: You sure ?
-    continue: ', would you like to continue?'
-    create_order: Create Order
-    deleted: Delete successfully
-    has_order_deleted: 'Having '
-    id: ID
-    image: Image
-    name: Name
-    not_delete: Not delete
-    not_oder: Have not Oder
-    not_product_in_cart: Have not products in cart
-    price: Price
-    product_deleted: ' your product have been deleted because time-expired, would you like to continue?'
-    quantity: Quantity
-    something_deleted: There are many your product have been deleted because time-expired
-    status: 'Status:'
-    success: Order successfully !
-    total: 'Total:'
   of: ' of '
-  order: Order
-  order_confirm_accept: ' has been confirmed: '
-  order_day: Order day
-  order_deleted: have been deleted
-  order_mailer:
-    subject: Status order request shop
-    title: 'View your product order status '
-  order_of: Order's
-  order_open_blank: Don't have any order open!
-  order_open_present: List order open.
-  order_product: 'The order has been confirmed: '
-  order_statistics:
-    accept: Accept
-    back: Back
-    continue: Continue
-    detail: Detail
-    done: Done
-    id: ID
-    name: Productname
-    price: Price
-    quantity: Quantity
-    reject: Reject
-    step1: 'Step 1: Check Order'
-    step2: 'Step 2: Close Order'
-    total_price: 'Total price: '
-  order_success: ' success'
-  owner_active_shop_request: 'Have added the shop '
-  owners_shop_avatar: 'Avatar:'
-  owners_shop_cover_image: 'Cover image of the shop:'
   password: 'password: '
   phone: 'Phone number: '
   phone-num: 84-4-3795-5417
@@ -846,16 +567,23 @@ en:
       start_hour: 'Start hour:'
       time_auto_reject: Time auto reject
   price_message: 'The total of your order: '
-  product:
-    name: Product Name
-    not_product: Have not product
-    price: Price
-  products: Products
   professed: Professed
-  public_domain: The public domain
-  rejected_products: products rejected
-  remote_domain_manager: 'have remote you from the list manager of domain:'
   rents:
+    index:
+      accepted: Accepted
+      no_rents: No infomation!
+      pending: Pending
+      rejected: Rejected
+      title: Your activities
+    rent:
+      create_match: Create match
+      date: 'Date: '
+      end: 'End hour: '
+      mini: 'Pitch: '
+      rent_detail: Detail
+      rent_on: 'Rent on: '
+      start: 'Start hour: '
+      view_match: View match
     show:
       create_match: 'Do you want to make a match? '
       date: 'Date: '
@@ -865,37 +593,12 @@ en:
       rent_info: Rent Infomation
       time: 'Time: '
   request_have_been_delete: The request have been deleted
-  request_join_domain: ' already joined the domain: '
-  request_shop:
-    already: Already in domain
-    approve: Approve
-    can_not_find_request: Can not find request
-    can_not_find_shop: Can not find shop
-    cancel: Cancel
-    domain: Request Shop to Domain
-    domain_name: Domain name
-    faild: Handle request failed!
-    lb: request shops
-    manage_shop: Manage shop
-    page_title: Manage Request Shop to Domain
-    pending: Pending
-    reject: Reject
-    request_to_domain: Request
-    shop_name: Shop name
-    status: Status
-    success: Handle request successfully!
-    title: List Requests
-    user_name: Shop's owner name
   request_status:
     active: ' has been activated'
     blocked: ' has been blocked'
     closed: ' has been closed'
     pending: ' was expected for activate'
     rejected: ' has been rejected'
-  save_domain_not_successfully: Domain is NOT saved
-  save_domain_successfully: Domain is saved successfully
-  save_product_domain_successfully: Product domain is saved successfully
-  save_shop_domain_successfully: Shop domain is saved successfully
   search_mini_pitches:
     available_mini_pitches:
       has_free_mini_pitch: There are %{num} available mini pitches
@@ -951,46 +654,6 @@ en:
       note: Please come %{time} minutes early
       phone: 'Phone number: '
       statr_hour: "Statr hour: \n"
-  shop: Shops
-  shop_accept: Shop accept
-  shop_accept_request: Status of Shop
-  shop_name: 'Shop name: '
-  shop_not_activate: Shop does not work!
-  shop_order_products: have been accepted
-  shop_owner: 'Shop owner: '
-  shop_request: 'List request shop: '
-  shop_request_message: 'Your shop have been created with status: pending, you should wait admin to confirm it to use'
-  shop_request_to_domain_owner: ' has just been accepted into the domain: '
-  shop_request_to_domain_owner_shop: 'Your shop '
-  shop_subject: New shop request
-  shops:
-    form:
-      shop_description: Description
-      shop_name: Shop name
-    new:
-      create_shop: Create Shop
-      shop: Shop
-      submit_button: Save
-      title: Request create new shop
-    show:
-      no_product: This shop has not any products.
-      products: Products
-  something_failed: Having something wrong when add the account's shops and products
-  split: ' -'
-  start: Start date
-  status:
-    shops:
-      active: actived
-      blocked: blocked
-      closed: closed
-      pending: pending
-      rejected: rejected
-  step_one_domain_help: Step 1
-  step_one_help_forder: Please select a domain public to join
-  step_three_domain_help: Step 3
-  step_three_help_forder: Access to the shop in the domain to order your favorite food or drink
-  step_two_domain_help: Step 2
-  step_two_help_forder: Click the button when you have domain join in the public domain
   submit: Submit
   time:
     formats:
@@ -1041,8 +704,3 @@ en:
       last: Last
       next: Next
       previous: Previous
-  warning_firefox: The site does not display well on Firefox Browser. Please use Chrome to get the best experience. Sorry for the inconvenience!
-  year: Year
-  you: You
-  you_can: You can use the email and password bellow to sign in
-  your_shop: Your Shops

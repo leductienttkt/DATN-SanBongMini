@@ -3,7 +3,7 @@
     <div class="container media-margin-header-bar">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">
-          <%= image_tag "logo.png", alt: t(".base_title")  %>
+          <%= image_tag "logo1.png", alt: t(".base_title")  %>
         </a>
         <button type="button" class="navbar-toggle" data-toggle="collapse"
           data-target="#Navbar-header-page">
@@ -18,7 +18,7 @@
           class: "search-form navbar-form navbar-left dropdown" do %>
           <div class="form-group">
             <%= text_field_tag :search, params[:search],
-              class: "form-control search dropdown-toggle",
+              class: "form-control search dropdown-toggle aaa",
               placeholder: t(".search_placeholder"),
               "data-toggle": "dropdown", "aria-hidden": :true,
               autocomplete: :off, required: true, id: "live-search-form" %>
@@ -31,7 +31,7 @@
             <i class="fa fa-search"></i>
           <% end %>
         <% end %>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
           <li class="block-notification-dropdown dropdown event ">
             <a href="#" id="notifications-dropdown" class="dropdown-toggle"
             data-toggle="dropdown">
@@ -79,18 +79,27 @@
               </li>
             </ul>
           </li>
+          <li>
+            <% unless user_signed_in? %>
+              <%= link_to content_tag(:span, "",
+                class: "glyphicon glyphicon-user"),
+                new_user_session_path %>
+            <% else %>
+              <%= link_to content_tag(:span, "",
+                class: "glyphicon glyphicon-list"), 
+                rents_path %>
+            <% end %>
+          </li>
           <% if user_signed_in? %>
             <li class="nav navbar-user dropdown">
               <a href="#" id="basic-nav-dropdown" data-toggle="dropdown"
-              class="dropdown-toggle" role="button"
-              title="<%= current_user.name %>">
+              class="dropdown-toggle" role="button">
                 <div>
                   <span class="user-avatar">
                     <%= image_tag current_user.avatar.url %>
                   </span>
                   <span class="user-title">
-                    <%= truncate(current_user.name,
-                      length: Settings.max_user_name) %>
+                    <%= current_user.name %>
                     <b class="caret"></b>
                   </span>
                 </div>

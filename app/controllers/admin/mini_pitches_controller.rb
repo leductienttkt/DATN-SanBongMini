@@ -7,18 +7,18 @@ class Admin::MiniPitchesController < AdminController
 
   def update
     if @mini_pitch.update_attributes mini_pitch_params
-      flash[:success] = t "flash.success_message"
+      flash[:success] = t "controllers.success"
     else
-      flash[:danger] = t "flash.danger_message"
+      flash[:danger] = t "controllers.faild"
     end
     redirect_to admin_mini_pitches_path
   end
 
   def destroy
     if @mini_pitch.destroy
-      flash[:success] = t "flash.success_message"
+      flash[:success] = t "controllers.success"
     else
-      flash[:danger] = t "flash.danger_message"
+      flash[:danger] = t "controllers.faild"
     end
     redirect_to admin_mini_pitches_path
   end

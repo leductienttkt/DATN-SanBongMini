@@ -24,8 +24,8 @@ class MiniPitch < ApplicationRecord
   scope :by_date_newest, ->{order created_at: :desc}
   scope :by_active, ->{where status: :active}
   scope :of_ids, -> ids {where id: ids}
-
-  scope :by_pitch, -> id {where  pitch_id: id}
+  scope :by_type, -> type{where pitch_type: type}  
+  scope :by_pitch, -> id {where pitch_id: id}
 
   def full_name
     pitch_name + " - " + name

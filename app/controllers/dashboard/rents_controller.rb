@@ -15,9 +15,9 @@ class Dashboard::RentsController < BaseDashboardController
   def update
     if @rent.update_attributes status: params[:status]
       if params[:status] == "rejected"
-        render_json "tuchoi", 101, @rent.id
+        render_json t("controllers.rejected"), 101, @rent.id
       else
-        render_json "chapnhan", 100, @rent.id
+        render_json t("controllers.accepted"), 100, @rent.id
       end
     end
   end
@@ -25,6 +25,7 @@ class Dashboard::RentsController < BaseDashboardController
 
   def load_pitch
     @pitch = Pitch.find_by id: params[:pitch_id]
+    redirect_to(root_path) unless @pitch
   end
 
   def load_rent

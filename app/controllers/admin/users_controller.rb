@@ -17,7 +17,7 @@ class Admin::UsersController < AdminController
     @user = User.new newuser_params
     @user.authentication_token = Devise.friendly_token
     if @user.save
-      flash[:success] = t "flash.success.admin.created_user"
+      flash[:success] = t "controllers.success_created_user"
       redirect_to admin_users_path
     else
       render :new
@@ -30,7 +30,7 @@ class Admin::UsersController < AdminController
       redirect_to :back
     else
       if @user.update_attributes user_params
-        flash[:success] = t "flash.success.admin.updated_user"
+        flash[:success] = t "controllers.success_updated_user"
         respond_to do |format|
           format.json do
             render json: {status: @user.status}
@@ -38,7 +38,7 @@ class Admin::UsersController < AdminController
           format.html {redirect_to admin_users_path}
         end
       else
-        flash[:danger] = t "flash.danger.admin.updated_user"
+        flash[:danger] = t "controllers.faild_updated_user"
         render :edit
       end
     end
@@ -46,12 +46,12 @@ class Admin::UsersController < AdminController
 
   def destroy
     if @user.pitches.present?
-      flash[:danger] = t "flash.danger.admin.existing_users_shops"
+      flash[:danger] = t "controllers.existing_users_pitches"
     else
       if @user.destroy
-        flash[:success] = t "flash.success.admin.deleted_user"
+        flash[:success] = t "controllers.success_deleted_user"
       else
-        flash[:danger] = t "flash.danger.admin.deleted_user"
+        flash[:danger] = t "controllers.faild_deleted_user"
       end
     end
     redirect_to admin_users_path

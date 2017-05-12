@@ -22,7 +22,7 @@ class MatchesController < ApplicationController
         @match.update(available_quantity: avail)
       end
       respond_to do |format|
-        format.json{render json: {message: t(".new_match_success"), id: @match.id}}
+        format.json{render json: {message: t("controllers.success"), id: @match.id}}
       end
     end
   end
@@ -43,7 +43,7 @@ class MatchesController < ApplicationController
     if Match.exists? params[:id]
       @match = Match.find params[:id]
     else
-      flash[:danger] = t ".load_match"
+      flash[:danger] = t "controllers.not_found_match"
       redirect_to root_path
     end
   end

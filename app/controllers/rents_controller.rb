@@ -2,6 +2,9 @@ class RentsController < ApplicationController
   before_action :load_rent, only: [:show]
 
   def index
+    @pending_rents = current_user.rents.pending
+    @accepted_rents = current_user.rents.accepted
+    @rejected_rents = current_user.rents.rejected
   end
 
   def show
@@ -12,6 +15,9 @@ class RentsController < ApplicationController
 
   def create
     if user_signed_in?
+      unless current_user.phone.present?
+        current_user.update_attributes phone: params[:phone]
+      end
       @rent = current_user.rents.create rent_params.merge!(phone: current_user.phone)
       @rent.status = :accepted if @rent.pitch_owner_by?(current_user)
     else
@@ -19,7 +25,7 @@ class RentsController < ApplicationController
     end
     if @rent.save
       respond_to do |format|
-        format.json{render json: {message: t(".rent_success"), id: @rent.id}}
+        format.json{render json: {message: t("controllers.success"), id: @rent.id}}
       end
     end
   end
@@ -40,7 +46,7 @@ class RentsController < ApplicationController
     if Rent.exists? params[:id]
       @rent = Rent.find params[:id]
     else
-      flash[:danger] = t "flash.danger.load_pitch"
+      flash[:danger] = t "controllers.not_found_rent"
       redirect_to root_path
     end
   end

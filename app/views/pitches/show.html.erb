@@ -63,10 +63,9 @@
         placeholder: t(".date") %>
     </div>
      <div class="col-md-2">
-      <label for="pitch_type"><%= t(".pitch_type") %></label> 
-      <%= text_field_tag :pitch_type, params[:pitch_type],
-        class: "form-control picth-datepicker",
-        placeholder: t(".pitch_type") %>
+      <label for="pitch_type"><%= t(".pitch_type") %></label>
+      <%= select_tag :pitch_type, options_for_select([5,7,11 ], 5), class: "form-control"  %>
+     
     </div>
     <div class="col-md-2 search-mini-pitch">
       <%= link_to t(".btn_search"), "#",

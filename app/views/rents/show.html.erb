@@ -63,7 +63,8 @@
         <h4><%= t(".note", time: @rent.mini_pitch.time_auto_reject.to_s(:time)) %></h4>
       </div>
       <div class="a-divider--fit"></div>
-      <% if @rent.pitch_owner_by? current_user %>
+      <% if @rent.rented_by?(current_user) && @rent.match.nil? && 
+        available_rent(@rent) %>
         <div class="aligner-jsc wp100 h40">
           <p class="lead eb-orange mar-bottom-0">
           <h3>
@@ -73,8 +74,8 @@
           </h3>
           </p>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

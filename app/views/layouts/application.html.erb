@@ -7,6 +7,10 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": true %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= javascript_tag do %>
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    <% end %>
   </head>
   <body class="scroll-horizontal">
     <%= render "layouts/header" %>
@@ -16,6 +20,7 @@
       </div>
       <%= yield %>
     </div>
+    <%= render "layouts/footer" %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7-ht9HI1-6uL2zI8D6GZYc98lZ2MVbeQ&&libraries=places"></script>
   </body>
   <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>

@@ -54,4 +54,16 @@ class Rent < ApplicationRecord
     self.mini_pitch.user == user
   end
 
+  def rented_by? user
+    self.user == user
+  end
+
+  def get_start_hour
+    self.start_hour.to_s(:time)
+  end
+
+  def get_end_hour
+    self.end_hour.to_s(:time)
+  end
+
 end

@@ -10,6 +10,7 @@ $(document).ready(function() {
   
   $('.rent-btn').hide();
   $('.view-match-btn').hide();
+
   $('.check-mini-pitch').on('click', function(){
     $('.rent-btn').hide();
     $('.view-match-btn').hide();
@@ -19,28 +20,29 @@ $(document).ready(function() {
     var mini_pitch_id = $('#mini_pitch_id').val();
 
     if (!start_hour || !end_hour || !date){
-      $('.form-check-result').html('<h3>' + "Nhap cho du te"+ '</h3');
-      return false;
+      $('.check-result-text').html('<h3>' + I18n.t("growl.fill_all_field") + '</h3');
     }
-    $.ajax({
-      url: '/check_mini_pitches/', 
-      data: {start_hour: start_hour, end_hour: end_hour, date: date,
-        mini_pitch_id: mini_pitch_id}, 
-      success: function(data) {
-        $('.check-result-text').html('<h3>' + data.flash + '</h3>');
-        if(data.status === 102) {
-          $('.rent-btn').show();
-        }
+    else {
+      $.ajax({
+        url: '/check_mini_pitches/', 
+        data: {start_hour: start_hour, end_hour: end_hour, date: date,
+          mini_pitch_id: mini_pitch_id}, 
+        success: function(data) {
+          $('.check-result-text').html('<h3>' + data.flash + '</h3>');
+          if(data.status === 102) {
+            $('.rent-btn').show();
+          }
 
-        if(data.status === 101) {
-          $('.view-match-btn').show();
-          $('.view-match-btn').attr('href', '/matches/' + data.id);
+          if(data.status === 101) {
+            $('.view-match-btn').show();
+            $('.view-match-btn').attr('href', '/matches/' + data.id);
+          }
+        },
+        error: function(error) {
+          $('.form-check-result').html('<h3>' + error + '</h3');
         }
-      },
-      error: function(error) {
-        $('.form-check-result').html('<h3>' + error + '</h3');
-      }
-    });
+      });
+    }
     return false;
   });
 
@@ -60,7 +62,8 @@ $(document).ready(function() {
       phone = $('.rent-phone-'+mini_pitch_id).val();
       console.log(phone);
       if (!phone) {
-        $.growl.danger({message: "Nhap sdt vo!"});
+        $.growl.danger({title: I18n.t("growl.title.danger"),
+          message: I18n.t("growl.number_phone")});
         return;
       }
     }
@@ -73,11 +76,13 @@ $(document).ready(function() {
       method: "POST",
       data: {rent: rent, phone: phone},
       success: function(data) {
-        $.growl.notice({message: data['message']});
+        $.growl.notice({title: I18n.t("growl.title.notice"),
+          message: data['message']});
         window.location.href = '/rents/' + data.id;
       },
       error: function(error) {
-        $.growl.error({message: error});
+        $.growl.error({title: I18n.t("growl.title.error"),
+          message: error});
         window.reload();
       }
     });
@@ -90,10 +95,10 @@ $(document).ready(function() {
     var quantity = $('#quantity').val();
 
     if (Number(max_quantity) <= 0 || Number(quantity) > Number(max_quantity)) {
-      $.growl.notice({message: "So luong ko hop le"});
+      $.growl.notice({title: I18n.t("growl.title.notice"),
+        message: I18n.t("growl.invalid_quantity")});
     }
     else {
-    
       match = {rent_id: rent_id, max_quantity: max_quantity}
 
       $.ajax({
@@ -102,10 +107,12 @@ $(document).ready(function() {
         data: {match: match, quantity: quantity},
         success: function(data) {
           window.location.href = '/matches/' + data.id;
-          $.growl.notice({message: data['message']});
+          $.growl.notice({title: I18n.t("growl.title.notice"),
+            message: data['message']});
         },
         error: function(error) {
-          $.growl.error({message: error});
+          $.growl.error({title: I18n.t("growl.title.error"),
+            message: error});
           window.reload();
         }
       });
@@ -119,7 +126,8 @@ $(document).ready(function() {
     var quantity = $('#quantity').val();
 
     if (Number(quantity) <= 0 || Number(quantity) > Number(available)) {
-      $.growl.notice({message: "So luong ko hop le"});
+      $.growl.danger({title: I18n.t("growl.title.danger"),
+        message: I18n.t("growl.invalid_quantity")});
     }
     else {
     
@@ -130,7 +138,8 @@ $(document).ready(function() {
         method: "POST",
         data: {match_user: match_user},
         error: function(error) {
-          $.growl.error({message: error});
+          $.growl.error({title: I18n.t("growl.title.error"),
+            message: error});
           window.reload();
         }
       });
@@ -139,7 +148,6 @@ $(document).ready(function() {
   });
 
   $('.search-mini-pitch').on('click', function(){
-    
     var start_hour = $('#start_hour').val();
     var end_hour = $('#end_hour').val();
     var date = $('#date').val();
@@ -147,7 +155,8 @@ $(document).ready(function() {
     var pitch_id = $('#pitch_id').val();
 
     if (!start_hour || !end_hour || !date){
-      $.growl.warning({message: "Nhap cho du te"});
+      $.growl.warning({title: I18n.t("growl.title.warning"),
+        message: I18n.t("growl.fill_all_field")});
       return false;
     }
     $.ajax({
