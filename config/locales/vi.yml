@@ -144,6 +144,7 @@ vi:
   controllers:
     accepted: Đã chấp nhận!
     choose_picture: Bạn phải chọn avatar cho sân bóng!
+    destroy_match_user: Có một người đã rời khỏi trận đấu của bạn
     error_close: Ngoài giờ hoạt động!
     error_date: Ngày không hợp lệ!
     error_end_start: Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!
@@ -153,6 +154,8 @@ vi:
     faild_deleted_user: Xóa người dùng không thành công!
     faild_updated_user: Cập nhật thông tin người dùng không thành công!
     has_match: Có 1 trận đấu trong thời gian trên!
+    new_match_user: '%{name} đã tham gia trận đấu của bạn'
+    new_rent: Bạn có một yêu cầu thuê sân từ %{name}
     not_allow: Không cho phép!
     not_found_comment: Không tìm thấy bình luận!
     not_found_match: Không tìm thấy trận đấu!
@@ -163,6 +166,7 @@ vi:
     pitch_free: Sân trống, bạn có thể thuê!
     pitch_not_free: Sân bóng này không còn trống!
     rejected: Đã từ chối!
+    rent_handle: Yêu cầu thuê sân của bạn %{status}
     success: Thành công!
     success_created_user: Tạo người dùng thành công!
     success_deleted_user: Xóa người dùng thành công!
@@ -193,6 +197,8 @@ vi:
         delete_button: Xóa
         delete_confirm: Bạn chắc chứ?
         edit_button: Sửa
+        split: ' - '
+        time_text: 'Giờ hoạt động: '
       new:
         create_button: Tạo
         mini_pitch: Sân mini
@@ -451,6 +457,7 @@ vi:
       search_placeholder: Tìm kiếm theo tên hoặc địa chỉ
       settings: Cài đặt
       sign_in: Đăng nhập
+      view_all: Xem tất cả thông báo
   livesearch:
     add: Thêm
     added: Đã thêm
@@ -550,6 +557,31 @@ vi:
       search_mini_pitch: 'Tìm sân: '
       start_hour: 'Thời gian bắt đầu:'
       time_auto_reject: 'Thời gian tự động hủy: '
+  rent_handle_mailer:
+    send_rent_info:
+      address: Địa chỉ
+      date: Ngày
+      details: 'Chi tiết:'
+      end_hour: Giờ kết thúc
+      hello: Xin chào %{name},
+      name: Chủ sân
+      phone: SĐT
+      picth: Sân
+      request_handle: Yêu cầu của bạn vừa được
+      start_hour: Giờ bắt đầu
+      subject: '[F-Nara] Một yêu cầu thuê sân của bạn vừa được xử lí'
+  rent_mailer:
+    send_rent_info:
+      date: Ngày
+      details: 'Chi tiết:'
+      end_hour: Giờ kết thúc
+      have_a_request: Bạn có một yêu cầu thuê sân!
+      hello: Xin chào %{name},
+      name: Tên
+      phone: SĐT
+      picth: Sân
+      start_hour: Giờ bắt đầu
+      subject: '[F-Nara] Bạn có một yêu cầu thuê sân!'
   rents:
     index:
       accepted: Đã chấp nhận
@@ -588,7 +620,7 @@ vi:
       rent: Thuê
       rent_time_text: 'Thời gian: '
       split: ' - '
-      type: 'loại sân: {type}'
+      type: 'loại sân: %{type}'
       view_button: Xem
     mini_pitch_has_match:
       has_match: Có %{num} trận đấu vào thời gian này

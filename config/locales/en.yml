@@ -140,6 +140,7 @@ en:
   controllers:
     accepted: Accepted
     choose_picture: You have to choose any picture to change your pitch's avatar
+    destroy_match_user: Some one has left your match
     error_close: Outside opening hours!
     error_date: Invalid date!
     error_end_start: Start time must be less than end time!
@@ -149,6 +150,8 @@ en:
     faild_deleted_user: Delete user failed!
     faild_updated_user: Update user's information failed!
     has_match: This mini pitch has a match in that time
+    new_match_user: '%{name} has joined your match'
+    new_rent: You have a rent request form %{name}
     not_allow: Not allow!
     not_found_comment: Not found comment!
     not_found_match: Not found match
@@ -159,6 +162,7 @@ en:
     pitch_free: This mini pitch is available!
     pitch_not_free: This mini pitch is not available!
     rejected: Rejected
+    rent_handle: You request has been %{status}
     success: Success!
     success_created_user: Created user successfully!
     success_deleted_user: Delete user successfully!
@@ -188,6 +192,8 @@ en:
         delete_button: Delete
         delete_confirm: Are you sure?
         edit_button: Edit
+        split: ' - '
+        time_text: 'Open time: '
       new:
         create_button: Create
         mini_pitch: Mini Pitch
@@ -456,6 +462,7 @@ en:
       search_placeholder: Search by name or address
       settings: Settings
       sign_in: Sign in
+      view_all: View All
   leave_domain_success: You left the domain successfully
   livesearch:
     add: Add
@@ -568,6 +575,19 @@ en:
       time_auto_reject: Time auto reject
   price_message: 'The total of your order: '
   professed: Professed
+  rent_mailer:
+    send_rent_info:
+      address: Address
+      date: Date
+      details: 'Details:'
+      end_hour: End hour
+      hello: Hello %{name},
+      name: Pitch owner
+      phone: Phone
+      picth: Pitch
+      request_handel: Your request has been
+      start_hour: Start hour
+      subject: '[F-Nara] Your request has been handeled!'
   rents:
     index:
       accepted: Accepted
@@ -606,7 +626,7 @@ en:
       rent: Rent
       rent_time_text: 'Time: '
       split: ' - '
-      type: 'Type: {type}'
+      type: 'Type: %{type}'
       view_button: View
     mini_pitch_has_match:
       has_match: There are %{num} matches in this time

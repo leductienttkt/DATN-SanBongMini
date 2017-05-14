@@ -24,6 +24,19 @@ class RentsController < ApplicationController
       @rent = Rent.create rent_params.merge!(user_id: 1, phone: params[:phone])
     end
     if @rent.save
+      if user_signed_in?
+        unless @rent.pitch_owner_by?(current_user)
+          RentMailer.send_rent_info(@rent).deliver_later
+          Event.create message: :new_rent,
+            user_id: @rent.mini_pitch.user.id, eventable_id: @rent.mini_pitch.pitch.id,
+            eventable_type: Pitch.name, eventitem_id: @rent.id
+        end
+      else
+        RentMailer.send_rent_info(@rent).deliver_later
+        Event.create message: :new_rent,
+          user_id: @rent.mini_pitch.user.id, eventable_id: @rent.mini_pitch.pitch.id,
+          eventable_type: Pitch.name, eventitem_id: @rent.id
+      end
       respond_to do |format|
         format.json{render json: {message: t("controllers.success"), id: @rent.id}}
       end

@@ -16,7 +16,15 @@ class MatchUsersController < ApplicationController
     else 
       @match_user.quantity += params[:match_user][:quantity].to_i
     end
-    if @match_user.save
+    if @match_user.save 
+      if user_signed_in?
+        unless @match_user.match.rent.user == current_user
+          #RentMailer.send_rent_info(@rent).deliver_later
+          Event.create message: "new_match_user",
+            user_id: @match_user.match.rent.user.id, eventable_id: @match_user.id,
+            eventable_type: MatchUser.name, eventitem_id: @match_user.id
+        end
+      end
       avail = @match_user.match.available_quantity - params[:match_user][:quantity].to_i
       @match_user.match.update(available_quantity: avail)
       @match = @match_user.match
@@ -34,7 +42,16 @@ class MatchUsersController < ApplicationController
     @match = @match_user.match
     num = @match_user.quantity
     if @match_user.destroy
-      avail = @match.available_quantity - num
+      Event.destroy_all "eventable_id = #{@match_user.id} && eventable_type = '#{MatchUser.name}'"
+      if user_signed_in?
+        unless @match.rent.user == current_user
+          #RentMailer.send_rent_info(@rent).deliver_later
+          Event.create message: "destroy_match_user",
+            user_id: @match.rent.user.id, eventable_id: @match.id,
+            eventable_type: Match.name, eventitem_id: @match.id
+        end
+      end
+      avail = @match.available_quantity + num
       @match.update(available_quantity: avail)
       @rent = @match.rent
       respond_to do |format|

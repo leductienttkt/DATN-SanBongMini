@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_user_status_for_action
-
+  
   def index
   end
 

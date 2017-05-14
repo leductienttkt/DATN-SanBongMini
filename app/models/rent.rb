@@ -8,6 +8,8 @@ class Rent < ApplicationRecord
   enum status: {pending: 0, accepted: 1, rejected: 2}
   delegate :name, to: :user, prefix: :user, allow_nil: true
 
+  after_create :check_status_rent, if: -> {self.pending?}
+
   scope :by_mini_pitch, -> id do
     where mini_pitch_id: id
   end
@@ -66,4 +68,26 @@ class Rent < ApplicationRecord
     self.end_hour.to_s(:time)
   end
 
+  private
+  def update_new_status_rent
+    if self.pending?
+      self.update_attributes(status: :rejected)
+      if self.user_id != 1
+        Event.create message: :rent_handle,
+          user_id: self.user.id, eventable_id: self.id,
+          eventable_type: Rent.name, eventitem_id: self.id
+      end
+    end
+  end
+
+  def check_status_rent
+    delay(run_at: time_auto_reject_rent.minutes.from_now)
+      .update_new_status_rent
+  end
+
+  def time_auto_reject_rent
+    rent_at_min = self.date.to_s + " " + self.start_hour.to_s(:time)
+    auto_reject = self.mini_pitch.pitch.auto_reject_to_min
+    from_now = (Time.parse(rent_at_min) - Time.now)/60 - auto_reject 
+  end
 end

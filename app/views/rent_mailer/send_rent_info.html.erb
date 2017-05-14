@@ -1,0 +1,25 @@
+<p><%= t ".hello", name: @rent.mini_pitch.user.name %></p>
+<p><%= t ".have_a_request" %></p>
+<p><%= t ".details" %></p>
+<table style="border: 1px solid black; color:blue; height: 100px;">
+  <thead  style="border-bottom: 1px solid black; text-align: center;">
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".phone" %></th>
+      <th><%= t ".start_hour" %></th>
+      <th><%= t ".end_hour" %></th>
+      <th><%= t ".date" %></th>
+      <th><%= t ".picth" %></th>
+    </tr>
+  </thead>
+  <tbody style="text-align: center;">
+    <tr>
+      <td><%= @rent.user.name %></td>
+      <td><%= @rent.user.phone %></td>
+      <td><%= l @rent.start_hour, format: :short_time %></td>
+      <td><%= l @rent.end_hour, format: :short_time %></td>
+      <td><%= l @rent.date, format: :long %></td>
+      <td><%= @rent.mini_pitch.name %></td>
+    </tr>
+  </tbody>
+</table>

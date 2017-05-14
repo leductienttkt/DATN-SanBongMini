@@ -87,7 +87,8 @@
       phone = $('.rent-phone-' + mini_pitch_id).val();
       console.log(phone);
       if (!phone) {
-        $.growl.error({message: "Nhap sdt vo!"});
+        $.growl.warning({title: I18n.t("growl.title.warning"),
+          message: I18n.t("growl.number_phone")});
         return;
       }
     }
@@ -99,11 +100,13 @@
       method: "POST",
       data: {rent: rent, phone: phone},
       success: function(data) {
-        $.growl.notice({message: data['message']});
+        $.growl.notice({title: I18n.t("growl.title.notice"),
+          message: data['message']});
         window.location.href = '/rents/' + data.id;
       },
       error: function(error) {
-        $.growl.error({message: error});
+        $.growl.error({title: I18n.t("growl.title.error"),
+          message: error});
         window.reload();
       }
     });

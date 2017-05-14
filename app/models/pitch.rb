@@ -31,6 +31,10 @@ class Pitch < ApplicationRecord
     self.owner == user
   end
 
+  def auto_reject_to_min
+    auto_reject = self.time_auto_reject.hour * 60 + self.time_auto_reject.min
+  end
+
   private
 
   def image_size

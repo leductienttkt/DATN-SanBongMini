@@ -1,0 +1,33 @@
+<p><%= t ".hello", name: @rent.user.name %></p>
+<p><%= t ".request_handle" %>: 
+  <% if @rent.accepted? %>
+    <span style="color:green;"><%= t("all_status.#{@rent.status}") %></span>
+  <% else %>
+    <span style="color:red;"><%= t("all_status.#{@rent.status}") %></span>
+  <% end %>
+</p>
+<p><%= t ".details" %></p>
+<table style="border: 1px solid black; color:blue;">
+  <thead  style="border-bottom: 1px solid black; text-align: center;">
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".phone" %></th>
+      <th><%= t ".start_hour" %></th>
+      <th><%= t ".end_hour" %></th>
+      <th><%= t ".date" %></th>
+      <th><%= t ".picth" %></th>
+      <th><%= t ".address" %></th>
+    </tr>
+  </thead>
+  <tbody style="text-align: center;">
+    <tr>
+      <td><%= @rent.user.name %></td>
+      <td><%= @rent.user.phone %></td>
+      <td><%= l @rent.start_hour, format: :short_time %></td>
+      <td><%= l @rent.end_hour, format: :short_time %></td>
+      <td><%= l @rent.date, format: :long %></td>
+      <td><%= @rent.mini_pitch.name %></td>
+      <td><%= @rent.mini_pitch.address_details %></td>
+    </tr>
+  </tbody>
+</table>

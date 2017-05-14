@@ -42,8 +42,9 @@ class CheckMiniPitchesController < ApplicationController
         return false
       end  
     when params[:date].to_date == Date.today
+      auto_reject = @mini_pitch.pitch.auto_reject_to_min
       if params[:start_hour] >= params[:end_hour] ||
-        params[:start_hour].to_time < Time.now
+        ((params[:start_hour].to_time - Time.now)/60 - auto_reject) <= 0
         render_json t("controllers.error_hour"), 200
         return false
       end

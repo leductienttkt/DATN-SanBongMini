@@ -74,10 +74,12 @@
       },
       success: function(data) {
         if (data.status === 100) {
-          $.growl.notice({message: data.message});
+          $.growl.notice({title: I18n.t("growl.title.notice"),
+            message: data.message});
         }
         else {
-          $.growl.warning({message: data.message});
+          $.growl.warning({title: I18n.t("growl.title.warning"),
+            message: data.message});
         }
         $('.rent-done-action-'+ data.id).remove();
       },

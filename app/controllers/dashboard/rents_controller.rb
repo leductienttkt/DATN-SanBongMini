@@ -14,6 +14,10 @@ class Dashboard::RentsController < BaseDashboardController
 
   def update
     if @rent.update_attributes status: params[:status]
+      RentHandleMailer.send_rent_info(@rent).deliver_later
+      Event.create message: :rent_handle,
+        user_id: @rent.user.id, eventable_id: @rent.id,
+        eventable_type: Rent.name, eventitem_id: @rent.id
       if params[:status] == "rejected"
         render_json t("controllers.rejected"), 101, @rent.id
       else
