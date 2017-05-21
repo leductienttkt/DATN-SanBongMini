@@ -5,7 +5,7 @@ class Dashboard::PromotionsController < BaseDashboardController
 
   def index
     @closed_promotions = @pitch.promotions.closed
-    @opening_promotions = @pitch.promotions - @closed_promotions
+    @opening_promotions = @pitch.promotions.opening
   end
 
   def create
@@ -43,7 +43,7 @@ class Dashboard::PromotionsController < BaseDashboardController
 
   def render_js
     @closed_promotions = @pitch.promotions.closed
-    @opening_promotions = @pitch.promotions - @closed_promotions
+    @opening_promotions = @pitch.promotions.opening
     respond_to do |format|
       format.js
     end

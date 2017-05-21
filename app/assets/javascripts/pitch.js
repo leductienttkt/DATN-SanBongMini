@@ -62,7 +62,7 @@ $(document).ready(function() {
       phone = $('.rent-phone-'+mini_pitch_id).val();
       console.log(phone);
       if (!phone) {
-        $.growl.danger({title: I18n.t("growl.title.danger"),
+        $.growl.warning({title: I18n.t("growl.title.warning"),
           message: I18n.t("growl.number_phone")});
         return;
       }
@@ -125,8 +125,8 @@ $(document).ready(function() {
     var available = $('#available_quantity').val();
     var quantity = $('#quantity').val();
 
-    if (Number(quantity) <= 0 || Number(quantity) > Number(available)) {
-      $.growl.danger({title: I18n.t("growl.title.danger"),
+    if (!quantity || Number(quantity) <= 0 || Number(quantity) > Number(available)) {
+      $.growl.warning({title: I18n.t("growl.title.warning"),
         message: I18n.t("growl.invalid_quantity")});
     }
     else {

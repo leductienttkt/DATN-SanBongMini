@@ -8,4 +8,5 @@ class Promotion < ApplicationRecord
   validates :content, presence: true
   
   scope :closed, -> {where "end_date < ?", Date.today}
+  scope :opening, -> {where "end_date >= ?", Date.today}
 end

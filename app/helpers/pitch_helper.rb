@@ -4,12 +4,6 @@ module PitchHelper
   end
 
   def available_rent rent
-    if rent.rejected? || (rent.date.to_date < Date.today)
-      return false
-    end
-    if (rent.date.to_date == Date.today) && (@rent.get_start_hour.to_time < Time.now)
-      return false
-    end
-    true
+    !rent.rejected?
   end
 end

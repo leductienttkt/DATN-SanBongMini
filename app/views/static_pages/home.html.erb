@@ -1,0 +1,68 @@
+<div class="col-sm-12 top_home">
+  <div id="id_top_products" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <% @promotions.each_with_index do |promotion, index| %>
+        
+          <div class="<%= index == 0 ? 'item active' : 'item' %>">
+            <%= image_tag promotion.pitch.cover_image.url,
+              alt: promotion.pitch.name, class: "defaut-pic-cover" %>
+            <%= link_to promotion.pitch do %>
+              <div class="carousel-caption slide_bottom">
+                <h3><%= promotion.pitch.name %></h3>
+                <%= t ".from" %>
+                <%= l promotion.start_date, format: :long %>
+                <%= t ".to" %>
+                <%= l promotion.end_date, format: :long %>
+                <h2><%= promotion.content %></h2>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+    <a class="left carousel-control" href="#id_top_products" role="button"
+       data-slide="prev">
+      <span class="fa fa-angle-left" aria-hidden="true"></span>
+      <span class="sr-only"><%= t ".previous" %></span>
+    </a>
+    <a class="right carousel-control" href="#id_top_products" role="button"
+       data-slide="next">
+      <span class="fa fa-angle-right left-55" aria-hidden="true"></span>
+      <span class="sr-only"><%= t ".next" %></span>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 row-title">
+    <h2 class="section_title">
+      <%= t ".top_pitches" %>
+    </h2>
+  </div>
+  <div class="col-md-12 padding_0" id="id_shops_list">
+    <%= render @pitches %>
+  </div>
+  <div class="btn_view_all_wrapper pull-center col-md-12 col-sm-12 col-xs-12">
+    <%= link_to t(".btn_view_all"), pitches_path,
+      class: "btn btn_view_all btn-warning top_shop" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 row-title">
+    <h2 class="section_title">
+      <%= t ".top_mini_pitches" %>
+    </h2>
+  </div>
+  <hr>
+  <div class="col-md-12 magin_top_10px" id="id_products_list">
+    <%= render @mini_pitches %>
+  </div>
+  <div class="btn_view_all_wrapper pull-center">
+    <%= link_to t(".btn_view_all"), mini_pitches_path,
+      class: "btn btn_view_all btn-warning top_shop" %>
+  </div>
+</div>
+
+
+
+

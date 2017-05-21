@@ -670,6 +670,15 @@ vi:
       statr_hour: 'Giờ bắt đầu: '
   split: ' -'
   start: Từ ngày
+  static_pages:
+    home:
+      btn_view_all: Xem tất cả
+      from: 'Từ ngày: '
+      next: Tiếp
+      previous: Trước
+      to: 'Đến ngày: '
+      top_mini_pitches: Những sân mini mới
+      top_pitches: Những sân bóng mới
   submit: Xác nhận
   time:
     formats:

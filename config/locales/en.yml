@@ -674,6 +674,15 @@ en:
       note: Please come %{time} minutes early
       phone: 'Phone number: '
       statr_hour: "Statr hour: \n"
+  static_pages:
+    home:
+      btn_view_all: View all
+      from: 'From: '
+      next: Next
+      previous: Previous
+      to: 'To: '
+      top_mini_pitches: New mini pitches
+      top_pitches: New Pitches
   submit: Submit
   time:
     formats:

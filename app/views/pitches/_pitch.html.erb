@@ -11,6 +11,7 @@
       <div class="shop-name-small">
         <h3 class="margin_top_5px">
           <%= link_to pitch.name, pitch_path(pitch) %>
+          <div><%= pitch.description %></div>
         </h3>
       </div>
       <%= render "shared/pitch_status_label", pitch: pitch %>
